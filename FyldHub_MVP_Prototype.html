@@ -4575,7 +4575,7 @@ body.dash-edit-mode .dw-normal-btns { display:none !important; }
               <div class="flex ic g2"><span class="fw-n" style="font-size:13px">Off-Premise Summer Push</span><span class="chip" style="font-size:11px">National</span><span class="chip" style="font-size:11px">Off-Premise</span><span class="ts tsl">Kim M.</span></div>
               <div class="flex ic g2"><span class="fw" style="font-size:13px;color:var(--dark)">$310,000</span><button class="btn btn-ghost btn-sm" style="font-size:12px" onclick="openEditBudgetPool(&#39;Off-Premise Summer Push&#39;,&#39;Off-Premise · National&#39;,&#39;310000&#39;)">Edit</button><button class="btn btn-ghost btn-sm" style="font-size:12px;color:var(--teal)" onclick="openCreateBudget()">+ Sub-Pool</button></div>
             </div>
-            <div style="padding:8px 16px"><button style="font-size:12px;color:var(--teal);background:none;border:1px dashed var(--teal);border-radius:5px;padding:5px 12px;cursor:pointer;width:100%;text-align:center" onclick="openCreateBudget(&#39;bacrtd&#39;)">+ Add Pool</button></div>
+            <div style="padding:8px 16px"><button style="font-size:12px;color:var(--teal);background:none;border:1px dashed var(--teal);border-radius:5px;padding:5px 12px;cursor:pointer;width:100%;text-align:center" onclick="openCreateBudget()">+ Add Pool</button></div>
           </div>
         </div>
 
@@ -16940,46 +16940,15 @@ var savedDashWidgets = [];
 var savedDashKpiTiles = [];
 
 /* ═══ LOGISTICS SEED DATA ═══ */
-var KIT_INVENTORY = [
-  {name:'BACARDI Off-Premise Demo Kit', assembled:12, available:8, inTransit:2, inField:2, needsAssembly:0, status:'ok'},
-  {name:'BACARDI Pool Party Kit',       assembled:4,  available:3, inTransit:1, inField:0, needsAssembly:2, status:'warn'},
-  {name:'PATRON On-Premise Kit',        assembled:6,  available:4, inTransit:0, inField:2, needsAssembly:4, status:'warn'},
-  {name:'Planogram Kit',                assembled:3,  available:3, inTransit:0, inField:0, needsAssembly:0, status:'ok'}
-];
+var KIT_INVENTORY=[];
 
-var KITS_TO_SHIP = [
-  {event:"BevMo! #312 - Providence",   kit:"PATRON On-Premise Kit",        shipBy:"Apr 5",  status:"ready"},
-  {event:"Star Market #33 - Boston",   kit:"BACARDI Off-Premise Demo Kit", shipBy:"Apr 7",  status:"ready"},
-  {event:"Total Wine #604 - Dallas",   kit:"BACARDI Off-Premise Demo Kit", shipBy:"Apr 8",  status:"low"},
-  {event:"Kroger #447 - Natick",       kit:"Planogram Kit",                shipBy:"Apr 8",  status:"ready"},
-  {event:"Spec's #88 - Houston",       kit:"BACARDI RTD Summer Kit",       shipBy:"Apr 10", status:"missing"}
-];
+var KITS_TO_SHIP=[];
 
-var DELIVERIES = [
-  {id:'d1', kit:"BACARDI Off-Premise Demo Kit", dest:"Total Wine #1205 - Boston",    runner:"Tanya Williams", status:"delivered", eta:"Today 9:45 AM"},
-  {id:'d2', kit:"BACARDI Off-Premise Demo Kit", dest:"Star Market #33 - Brookline",  runner:"Tanya Williams", status:"in_transit", eta:"Today 2:00 PM"},
-  {id:'d3', kit:"PATRON On-Premise Kit",        dest:"BevMo! #312 - Providence",     runner:"Unassigned",     status:"pending",    eta:"Apr 5"},
-  {id:'d4', kit:"BACARDI Pool Party Kit",       dest:"BevMo! #312 - Providence",     runner:"Tanya Williams", status:"damaged",    eta:"Mar 29"}
-];
+var DELIVERIES=[];
 
-var ASSET_INVENTORY = [
-  {name:"Branded Table Cover (6ft)", total:18, available:12, inKits:6, status:"ok"},
-  {name:"2oz Sample Cups (cs/500)",  total:4,  available:2,  inKits:2, status:"warn"},
-  {name:"BACARDI Ice Bucket",        total:8,  available:4,  inKits:4, status:"ok"},
-  {name:"PATRON Branded Bar Mat",    total:6,  available:2,  inKits:4, status:"ok"},
-  {name:"Cocktail Napkins (case)",   total:3,  available:1,  inKits:2, status:"critical"},
-  {name:"Boston Shaker + Strainer",  total:4,  available:4,  inKits:0, status:"ok"},
-  {name:"Coupe Glasses (set of 6)",  total:3,  available:1,  inKits:2, status:"warn"}
-];
+var ASSET_INVENTORY=[];
 
-var WEATHER_MARKETS = [
-  {market:"Boston, MA",     today:"58F Sun",  tomorrow:"45F Rain", day3:"41F Storm", risk:"warn"},
-  {market:"New York, NY",   today:"62F Sun",  tomorrow:"60F Sun",  day3:"55F Rain",  risk:"ok"},
-  {market:"Chicago, IL",    today:"44F Rain",  tomorrow:"32F Snow", day3:"28F Snow", risk:"danger"},
-  {market:"Miami, FL",      today:"79F Sun",  tomorrow:"77F Sun",  day3:"72F Storm", risk:"warn"},
-  {market:"Houston, TX",    today:"74F Sun",  tomorrow:"71F Sun",  day3:"69F Sun",  risk:"ok"},
-  {market:"Providence, RI", today:"52F Rain",  tomorrow:"48F Rain", day3:"55F Sun",  risk:"warn"}
-];
+var WEATHER_MARKETS=[];
 
 function toggleSidebar() {
   _sbExpanded = !_sbExpanded;
@@ -17427,21 +17396,8 @@ function getAutoBookingConfig() {
 function getProdsForBrand(bn){var b=(APP_DATA.brands||[]).find(function(x){return x.name===bn;});if(b&&b.products&&b.products.length){var g=[];b.products.forEach(function(p){var e=g.find(function(x){return x.n===p.n;});if(e){if(!e.sz.find(function(s){return s.s===p.sz;}))e.sz.push({s:p.sz,p:p.p});if(p.pk&&e.pk.indexOf(p.pk)===-1)e.pk.push(p.pk);}else{g.push({n:p.n,sz:[{s:p.sz,p:p.p}],pk:p.pk?[p.pk]:[]});}});return g;}return PRODS[bn]||[];}
 var LOCS=APP_DATA.locations.map(function(l){return{name:l.name,city:l.city,reg:l.region,chain:l.chain,address:l.address||'',store:l.store||''}});
 
-var WK=[
-  {n:'Chloe B.',t:'Lead FyldPromoter',ev:31,r:4.9,st:'Available',i:'CB',c:'#27AE60',dist:2.9,age:28,gender:'F'},
-  {n:'Maria S.',t:'FyldPromoter',ev:24,r:4.9,st:'Available',i:'MS',c:'#E8536D',dist:3.2,age:31,gender:'F'},
-  {n:'Priya K.',t:'FyldPromoter',ev:22,r:5.0,st:'Available',i:'PK',c:'#9B59B6',dist:4.1,age:26,gender:'F'},
-  {n:'Rosa P.',t:'FyldPromoter',ev:18,r:4.8,st:'Available',i:'RP',c:'#E84393',dist:6.4,age:24,gender:'F'},
-  {n:'James T.',t:'FyldPromoter',ev:19,r:4.8,st:'Available',i:'JT',c:'#5B8DEF',dist:7.8,age:29,gender:'M'},
-  {n:'Isabella R.',t:'FyldPromoter',ev:27,r:4.9,st:'Available',i:'IR',c:'#6C5CE7',dist:8.1,age:33,gender:'F'},
-  {n:'Devon R.',t:'FyldPromoter',ev:16,r:4.7,st:'Busy',i:'DR',c:'#E67E22',dist:12.3,age:27,gender:'M'},
-  {n:'Tyrell M.',t:'FyldPromoter',ev:14,r:4.6,st:'Available',i:'TM',c:'#3498DB',dist:18.7,age:30,gender:'M'}
-];
-var ET={
-  Activations:{'Off-Premise':['In-Store Tasting','Retail Pop-Up','Street Team'],'On-Premise':['Bar/Restaurant Demo','Nightlife/Pool Party','Bartender Engagement'],Special:['Festival/Event Tasting','Brand Experience/Activation','Sponsorship Event']},
-  Merchandising:{'Off-Premise':['Shelf Audit','Planogram Audit','Reset/Restock','Display & POS Installation'],'On-Premise':['Back Bar Audit','Menu Placement Check'],Special:['Trade Show Setup','Event Display']},
-  'On-Demand':{'Off-Premise':['Kit Delivery','Emergency Restock','Display Setup'],'On-Premise':['Bar Supply Delivery','On-Site Runner'],Special:['Event Kit Delivery','Event Setup/Teardown']}
-};
+var WK=[];
+var ET={};
 /* ═══ WORKERS DATA ═══ */
 var WORKERS = [];
 
@@ -17465,9 +17421,9 @@ function getEventTypes(hub, channel) {
   }
   return types;
 }
-var RECS=['BACARDÍ Mojito Classic','BACARDÍ Sunrise','BACARDÍ Rum Punch'];
-var BK_RES=['BACARDÍ Brand Guide 2026','BACARDÍ Heritage Story','BACARDÍ Cocktail Training'];
-var TPLS={tw:{hub:'Activations',ch:'Off-Premise',type:'In-Store Tasting',brand:'BACARDÍ Rum',prog:'BACARDÍ Rum Off-Premise 2026',products:[{n:'Superior',sz:'750mL',pk:'Single',p:'$18.99'}],rec:['BACARDÍ Mojito Classic']},op:{hub:'Activations',ch:'On-Premise',type:'Bar/Restaurant Demo',brand:'PATRÓN',prog:'PATRÓN On-Premise Elite',products:[{n:'Silver',sz:'750mL',pk:'Single',p:'$42.99'}],rec:[]},ka:{hub:'Merchandising',ch:'Off-Premise',type:'Planogram Audit',brand:'BACARDÍ Rum',prog:'',products:[],rec:[]}};
+var RECS=[];
+var BK_RES=[];
+var TPLS={};
 
 /* ═══ STATE ═══ */
 var kpiCollapsed=false;
@@ -17477,30 +17433,13 @@ var fltDateFrom=null;
 var fltDateTo=null;
 var curView='table',calMonth=TODAY.getMonth(),calYear=TODAY.getFullYear();
 var step=1,maxStep=1,langs=[],distFilter=999,ratingFilter=0,showBusy=false,wkPage=1;
-var D={sm:'scratch',tpl:'',hub:'',ch:'',type:'',prog:'',brand:'BACARDÍ Rum',products:[],bak:[],rec:[],sup:[{item:'',src:'',max:'$15.00',rcpt:true},{item:'',src:'',max:'$15.00',rcpt:true},{item:'',src:'',max:'$15.00',rcpt:true}],loc:null,locF:'All',locM:'my',sched:{date:'2026-04-01',start:'14:00',dur:4},blocks:[],workersNeeded:2,staffM:'both',invited:[],blockInvited:{},openPost:true,autoApp:false,autoAppDirect:false,dl:'24h',dlCustom:'',bkWorkers:[],inst:{gen:'',bAtt:'',wAtt:'',pre:'',post:'',arrival:'',contact:'',access:'',pickup:'',delivery:''},bkRes:[],kitOpt:'none',kitTpl:'',kitName:'',kitItems:[],kitSave:false,kitTplName:'',kitDel:'logistics',addSec:[],reqs:null,saveTpl:false,tplName:'',tplLoc:false,showBak:false,showSup:true,showBkW:false,multiBrand:[],certs:[],certRequired:false,auditScope:{shelf:true,pricing:true,planogram:true,expiration:true,display:false,backbar:false,menu:false},planogramId:'',complianceThreshold:80,minPhotos:2,geoRequired:true,autoTriggers:{oos:true,expiry:true,planoDev:true,lowScore:true},expiryDays:30,odScale:1,odPickupLoc:'',odKitTpl:'',odDeliveryWindow:'2h',odChainOfCustody:{pickupPhoto:true,deliveryPhoto:true,recipientConfirm:false},odAutoClose:true,odLoadInWindow:{date:'',start:'08:00',end:'12:00'},odTeardownWindow:{date:'',start:'18:00',end:'22:00'},odStagingLoc:''};
+var D={sm:'scratch',tpl:'',hub:'',ch:'',type:'',prog:'',brand:'',products:[],bak:[],rec:[],sup:[{item:'',src:'',max:'$15.00',rcpt:true},{item:'',src:'',max:'$15.00',rcpt:true},{item:'',src:'',max:'$15.00',rcpt:true}],loc:null,locF:'All',locM:'my',sched:{date:'2026-04-01',start:'14:00',dur:4},blocks:[],workersNeeded:2,staffM:'both',invited:[],blockInvited:{},openPost:true,autoApp:false,autoAppDirect:false,dl:'24h',dlCustom:'',bkWorkers:[],inst:{gen:'',bAtt:'',wAtt:'',pre:'',post:'',arrival:'',contact:'',access:'',pickup:'',delivery:''},bkRes:[],kitOpt:'none',kitTpl:'',kitName:'',kitItems:[],kitSave:false,kitTplName:'',kitDel:'logistics',addSec:[],reqs:null,saveTpl:false,tplName:'',tplLoc:false,showBak:false,showSup:true,showBkW:false,multiBrand:[],certs:[],certRequired:false,auditScope:{shelf:true,pricing:true,planogram:true,expiration:true,display:false,backbar:false,menu:false},planogramId:'',complianceThreshold:80,minPhotos:2,geoRequired:true,autoTriggers:{oos:true,expiry:true,planoDev:true,lowScore:true},expiryDays:30,odScale:1,odPickupLoc:'',odKitTpl:'',odDeliveryWindow:'2h',odChainOfCustody:{pickupPhoto:true,deliveryPhoto:true,recipientConfirm:false},odAutoClose:true,odLoadInWindow:{date:'',start:'08:00',end:'12:00'},odTeardownWindow:{date:'',start:'18:00',end:'22:00'},odStagingLoc:''};
 var EC_DATA = [];
 var EC_EDIT = { type:null, catId:null, subcatId:null, typeId:null };
 
-var OPC_PARTNERS = [
-  { id:'mosaic', name:'Mosaic North America', type:'Brand Activations Agency', tracked:true },
-  { id:'advantage', name:'Advantage Solutions', type:'Merchandising Agency', tracked:true },
-  { id:'sgws', name:"Southern Glazer's Wine & Spirits", type:'Distributor', tracked:false }
-];
-var OPC_CATEGORIES = [
-  { id:'mgmt-fee', name:'Management Fee', active:true, custom:false },
-  { id:'production', name:'Production', active:true, custom:false },
-  { id:'staffing', name:'Staffing', active:true, custom:false },
-  { id:'event-costs', name:'Event Costs', active:true, custom:false },
-  { id:'equipment', name:'Equipment', active:true, custom:false },
-  { id:'travel', name:'Travel & Expenses', active:true, custom:false },
-  { id:'creative', name:'Creative & Design', active:false, custom:false },
-  { id:'other', name:'Other', active:true, custom:false }
-];
-var OPC_ENTRIES = [
-  { id:1, partnerId:'mosaic', partner:'Mosaic North America', category:'Management Fee', period:'Q1 2026', amount:'$18,000', brand:'BACARDÍ Rum', status:'Paid', notes:'' },
-  { id:2, partnerId:'mosaic', partner:'Mosaic North America', category:'Production', period:'Q1 2026', amount:'$8,400', brand:'BACARDÍ RTD', status:'Pending', notes:'' },
-  { id:3, partnerId:'advantage', partner:'Advantage Solutions', category:'Management Fee', period:'Q1 2026', amount:'$12,500', brand:'PATRÓN', status:'Paid', notes:'' }
-];
+var OPC_PARTNERS=[];
+var OPC_CATEGORIES=[];
+var OPC_ENTRIES=[];
 var OPC_EDIT_ID = null;
 
 
@@ -18029,15 +17968,7 @@ function renderEvWorkers(e) {
     return;
   }
 
-  var WORKER_DATA = {
-    'Maria S.':   {type:'FyldPromoter', rating:'4.9', events:24, color:'#E8536D', status:'Confirmed'},
-    'James T.':   {type:'FyldPromoter', rating:'4.8', events:19, color:'#5B8DEF', status:'Confirmed'},
-    'Isabella R.':{type:'FyldPromoter', rating:'5.0', events:12, color:'#6C5CE7', status:'Confirmed'},
-    'Priya K.':   {type:'FyldPromoter', rating:'5.0', events:22, color:'#9B59B6', status:'Confirmed'},
-    'Chloe B.':   {type:'FyldPromoter', rating:'4.9', events:31, color:'#27AE60', status:'Confirmed'},
-    'Devon R.':   {type:'FyldPromoter', rating:'4.7', events:16, color:'#E67E22', status:'Confirmed'},
-    'Tanya W.':   {type:'FyldRunner',   rating:'4.7', events: 8, color:'#7C3AED', status:'En Route'},
-  };
+  var WORKER_DATA={};
 
   var html = assigned.map(function(name) {
     var init = (e.w && e.wNames) ? e.w[e.wNames.indexOf(name)] || name.split(' ').map(function(n){return n[0];}).join('') : name.split(' ').map(function(n){return n[0];}).join('');
@@ -19339,7 +19270,7 @@ function buildEvFromD(status){
   };
 }
 function resetD(){
-  D={sm:'scratch',tpl:'',hub:'',ch:'',type:'',prog:'',brand:'BACARDÍ Rum',products:[],bak:[],rec:[],sup:[{item:'',src:'',max:'$15.00',rcpt:true},{item:'',src:'',max:'$15.00',rcpt:true},{item:'',src:'',max:'$15.00',rcpt:true}],loc:null,locF:'All',locM:'my',sched:{date:'2026-04-01',start:'14:00',dur:4},blocks:[],workersNeeded:2,staffM:'both',invited:[],blockInvited:{},openPost:true,autoApp:false,autoAppDirect:false,dl:'24h',dlCustom:'',bkWorkers:[],inst:{gen:'',bAtt:'',wAtt:'',pre:'',post:'',arrival:'',contact:'',access:'',pickup:'',delivery:''},bkRes:[],kitOpt:'none',kitTpl:'',kitName:'',kitItems:[],kitSave:false,kitTplName:'',kitDel:'logistics',addSec:[],reqs:null,saveTpl:false,tplName:'',tplLoc:false,showBak:false,showSup:true,showBkW:false,multiBrand:[],certs:[],certRequired:false,auditScope:{shelf:true,pricing:true,planogram:true,expiration:true,display:false,backbar:false,menu:false},planogramId:'',complianceThreshold:80,minPhotos:2,geoRequired:true,autoTriggers:{oos:true,expiry:true,planoDev:true,lowScore:true},expiryDays:30,odScale:1,odPickupLoc:'',odKitTpl:'',odDeliveryWindow:'2h',odChainOfCustody:{pickupPhoto:true,deliveryPhoto:true,recipientConfirm:false},odAutoClose:true,odLoadInWindow:{date:'',start:'08:00',end:'12:00'},odTeardownWindow:{date:'',start:'18:00',end:'22:00'},odStagingLoc:''};
+  D={sm:'scratch',tpl:'',hub:'',ch:'',type:'',prog:'',brand:'',products:[],bak:[],rec:[],sup:[{item:'',src:'',max:'$15.00',rcpt:true},{item:'',src:'',max:'$15.00',rcpt:true},{item:'',src:'',max:'$15.00',rcpt:true}],loc:null,locF:'All',locM:'my',sched:{date:'2026-04-01',start:'14:00',dur:4},blocks:[],workersNeeded:2,staffM:'both',invited:[],blockInvited:{},openPost:true,autoApp:false,autoAppDirect:false,dl:'24h',dlCustom:'',bkWorkers:[],inst:{gen:'',bAtt:'',wAtt:'',pre:'',post:'',arrival:'',contact:'',access:'',pickup:'',delivery:''},bkRes:[],kitOpt:'none',kitTpl:'',kitName:'',kitItems:[],kitSave:false,kitTplName:'',kitDel:'logistics',addSec:[],reqs:null,saveTpl:false,tplName:'',tplLoc:false,showBak:false,showSup:true,showBkW:false,multiBrand:[],certs:[],certRequired:false,auditScope:{shelf:true,pricing:true,planogram:true,expiration:true,display:false,backbar:false,menu:false},planogramId:'',complianceThreshold:80,minPhotos:2,geoRequired:true,autoTriggers:{oos:true,expiry:true,planoDev:true,lowScore:true},expiryDays:30,odScale:1,odPickupLoc:'',odKitTpl:'',odDeliveryWindow:'2h',odChainOfCustody:{pickupPhoto:true,deliveryPhoto:true,recipientConfirm:false},odAutoClose:true,odLoadInWindow:{date:'',start:'08:00',end:'12:00'},odTeardownWindow:{date:'',start:'18:00',end:'22:00'},odStagingLoc:''};
   langs=[];step=1;maxStep=1;distFilter=999;ratingFilter=0;showBusy=false;wkPage=1;
 }
 function openWiz(cont){if(!cont)resetD();el('wizOv').classList.add('show');renderWS()}
@@ -34021,41 +33952,9 @@ function confirmSheetImport() { closeImportModal(); if (typeof toast === 'functi
 
 // ── BRAND RESOURCES ───────────────────────────────────────────────
 var RES_DATA = {
-  'Kit': [
-    { name:'BACARDÍ Off-Premise Demo Kit', meta:'Table cover, 2oz cups (50), napkins (100), product cards, cooler', brands:'BACARDÍ Rum', date:'Mar 1, 2026', uses:'18 events' },
-    { name:'BACARDÍ Pool Party Kit', meta:'Branded cooler, cocktail supplies, cups (100), branded towels, ice bucket', brands:'BACARDÍ Rum', date:'Feb 20, 2026', uses:'3 events' },
-    { name:'PATRÓN On-Premise Kit', meta:'Jigger, coupe glasses (6), shaker, muddler, garnish kit, bar mat', brands:'PATRÓN', date:'Feb 14, 2026', uses:'9 events' },,
-    { id:'variety_pack', label:'Variety Pack', desc:'Enable variety pack as a package type option for this brand', defaultOn:false },
-    { id:'variety_pack', label:'Variety Pack', desc:'Enable variety pack as a package type option for this brand', defaultOn:false },
-    { id:'variety_pack', label:'Variety Pack', desc:'Enable variety pack as a package type option for this brand', defaultOn:false }
-  ],
-  'Recipe': [
-    { name:'Classic BACARDÍ Mojito', meta:'2 oz BACARDÍ Superior, mint, lime juice, soda water, sugar', brands:'BACARDÍ Rum', date:'Jan 15, 2026', uses:'22 events' },
-    { name:'PATRÓN Silver Margarita', meta:'2 oz PATRÓN Silver, lime juice, triple sec, salt rim', brands:'PATRÓN', date:'Feb 1, 2026', uses:'11 events' },
-  ],
-  'Instructions': [
-    { name:'BACARDÍ Off-Premise Demo — General Instructions', meta:'Setup procedures, consumer engagement, station close-out checklist', brands:'BACARDÍ Rum', date:'Mar 10, 2026', uses:'14 events' },
-    { name:'PATRÓN On-Premise Activation Instructions', meta:'Bar setup, cocktail presentation, brand story talking points', brands:'PATRÓN', date:'Feb 28, 2026', uses:'8 events' },
-  ],
-  'Knowledge Base': [
-    { name:'BACARDÍ Brand Story & History', meta:'Founded 1862 in Cuba, bat icon origin, key messaging for promoters', brands:'BACARDÍ Rum', date:'Jan 1, 2026', uses:'24 events' },
-  ],
-  'Attire Guide': [
-    { name:'BACARDÍ Pool Party Attire Guide', meta:'Branded swimwear requirements, appearance standards, footwear policy', brands:'BACARDÍ Rum', date:'Feb 20, 2026', uses:'3 events' },
-  ],
-  'Compliance': [
-    { name:'Responsible Service Compliance Checklist', meta:'21+ verification, overconsumption monitoring, incident reporting', brands:'All Brands', date:'Jan 1, 2026', uses:'All events' },
-  ],
-  'Assets': [
-    { name:'BACARDÍ Branded Table Cover (6ft)', meta:'White with bat logo, 6ft table standard', brands:'BACARDÍ Rum', date:'Jan 1, 2026', uses:'Qty: 42 in stock' },
-    { name:'BACARDÍ Branded Ice Bucket', meta:'Stainless steel, brushed finish, bat logo embossed', brands:'BACARDÍ Rum', date:'Jan 1, 2026', uses:'Qty: 18 in stock' },
-    { name:'PATRÓN Branded Bar Mat', meta:'Rubber, 18x12 in, PATRÓN Silver logo', brands:'PATRÓN', date:'Jan 1, 2026', uses:'Qty: 24 in stock' },
-    { name:'2oz Sample Cups (case of 500)', meta:'Clear plastic, compostable, unbranded', brands:'All Brands', date:'Jan 1, 2026', uses:'Qty: 12 cases' },
-    { name:'Cocktail Napkins (pack of 100)', meta:'White, unbranded, cocktail size', brands:'All Brands', date:'Jan 1, 2026', uses:'Qty: 34 packs' },
-    { name:'Cocktail Shaker Set', meta:'Stainless, 24oz Boston shaker + strainer', brands:'All Brands', date:'Jan 1, 2026', uses:'Qty: 8 in stock' },
-    { name:'Branded Branded Cooler', meta:'BACARDÍ 28qt rolling cooler', brands:'BACARDÍ Rum', date:'Feb 1, 2026', uses:'Qty: 5 in stock' },
-    { name:'PATRÓN Coupe Glasses (set of 6)', meta:'Crystal, 6oz, PATRÓN etched logo', brands:'PATRÓN', date:'Jan 1, 2026', uses:'Qty: 6 sets' },
-  ]
+  'Kit': [],
+  'Digital': [],
+  'Physical': []
 };
 
 function openResCategory(type) {
@@ -34159,11 +34058,7 @@ function addKitItemRow() {
   d.innerHTML = '<input class="form-control" placeholder="Item name" type="text" style="font-size:14px"><input class="form-control" value="1" type="number" min="1" style="font-size:14px"><select class="form-control" style="font-size:14px"><option value="">Custom (not in assets)</option><option>BACARDÍ Branded Table Cover</option><option>BACARDÍ Branded Ice Bucket</option><option>2oz Sample Cups</option><option>Cocktail Napkins</option><option>Product Info Cards</option><option>Branded Cooler</option><option>Cocktail Shaker</option><option>Jigger</option></select><button onclick="this.closest(\'.kit-item-row\').remove()" style="background:none;border:none;cursor:pointer;font-size:18px;color:var(--slate);line-height:1">×</button>';
   c.appendChild(d);
 }
-var BRAND_PRODUCTS = {
-  'BACARDÍ Rum': ['BACARDÍ Superior','BACARDÍ Gold','BACARDÍ Black','BACARDÍ Spiced','BACARDÍ Reserva Ocho','BACARDÍ Añejo Cuatro','BACARDÍ Limón','BACARDÍ Pineapple'],
-  'BACARDÍ Ready-to-Drink': ['BACARDÍ Rum Punch','BACARDÍ Lime & Soda','BACARDÍ Razz and Up','BACARDÍ +Fizz'],
-  'PATRÓN': ['PATRÓN Silver','PATRÓN Reposado','PATRÓN Añejo','PATRÓN Extra Añejo','PATRÓN Cristalino','PATRÓN El Alto'],
-};
+var BRAND_PRODUCTS={};
 function updateResProductList() {
   var brand = document.getElementById('res-brand-select').value;
   var psel = document.getElementById('res-product-select');
@@ -38328,8 +38223,8 @@ function closePhotoViewer() {
 
 /* === MONTHLY STATS SEED (P2-06) === */
 var MONTHLY_STATS = {
-  eventsTotal: 13, completionRate: '87%', consumerInteractions: 462,
-  samplesDistributed: 318, avgExecScore: '91%', totalSpend: '$31.2K'
+  eventsTotal: 0, completionRate: '0%', consumerInteractions: 0,
+  samplesDistributed: 0, avgExecScore: '0%', totalSpend: '$0'
 };
 
 /* === DASHBOARD RENDER FUNCTIONS (P2-01,02,03,06) === */
@@ -38444,55 +38339,14 @@ var REP_SIDEBAR=[
   {cat:'Financial',items:[{id:'worker-pay-summary',label:'Worker Pay Summary',roles:['vp','finance']},{id:'payment-ledger',label:'Worker Payment Ledger',roles:['vp','finance']}]},
   {cat:'Recap',items:[{id:'recap-rollup',label:'Recap Roll-Up',roles:['vp','pm']}]},
 ];
-var REP_SIDEBAR_ENTERPRISE=[
-  {cat:'Executive',items:[{id:'exec-summary',label:'Executive Summary',roles:['vp']}]},
-  {cat:'Execution',items:[{id:'event-performance',label:'Event Performance',roles:['vp','pm','ops']},{id:'worker-performance',label:'Worker Performance',roles:['vp','pm','ops']},{id:'worker-roster',label:'Worker Roster',roles:['vp','pm','ops']},{id:'event-briefing',label:'Event Briefing',roles:['vp','pm','ops']}]},
-  {cat:'Performance',items:[{id:'sampling-activity',label:'Sampling Activity',roles:['vp','pm']},{id:'channel-breakdown',label:'Channel Breakdown',roles:['vp','pm']},{id:'program-summary',label:'Program Summary',roles:['vp','pm']},{id:'program-health',label:'Program Health',roles:['vp','pm','ops']}]},
-  {cat:'Financial',items:[{id:'budget-actual',label:'Budget vs. Actual',roles:['vp','pm']},{id:'program-budget',label:'Program Budget Tracker',roles:['vp','pm','ops']},{id:'cost-per-activation',label:'Cost Per Activation',roles:['vp','pm']},{id:'worker-pay-summary',label:'Worker Pay Summary',roles:['vp']},{id:'fc-reconciliation',label:'FyldCard Reconciliation',roles:['vp','finance']},{id:'expense-audit',label:'Expense Audit',roles:['vp','finance']},{id:'payment-ledger',label:'Worker Payment Ledger',roles:['vp','finance']}]},
-  {cat:'Compliance',items:[{id:'compliance-proof',label:'Compliance & Proof',roles:['vp','pm','ops','logistics']}]},
-  {cat:'Operations',items:[{id:'ops-event-health',label:'Event Health',roles:['vp','ops']},{id:'ops-fill-rate',label:'Fill Rate Report',roles:['vp','ops']},{id:'ops-worker-reliability',label:'Worker Brand Profile',roles:['vp','ops']}]},
-  {cat:'Logistics',items:[{id:'ops-kit-inventory',label:'Kit Inventory',roles:['vp','logistics']},{id:'ops-runner-activity',label:'FyldRunner Activity',roles:['vp','logistics']},{id:'ops-logistics-exception',label:'Logistics Exceptions',roles:['vp','logistics']}]},
-  {cat:'Recap',items:[{id:'recap-rollup',label:'Recap Roll-Up',roles:['vp','pm']}]},
-  {cat:'Platform',items:[{id:'platform-billing',label:'Platform Billing',roles:['vp','finance']}]}
-];
+var REP_SIDEBAR_ENTERPRISE=[];
 var BILLING_SEED = {
   account: {
-    name: 'Bacardí USA', tier: 'Enterprise', billing: 'Monthly',
-    since: 'Jan 1, 2026', next: 'May 1, 2026',
-    hubs: ['Activations', 'Merchandising', 'On-Demand']
+    name: '', tier: '', billing: 'Monthly',
+    since: '', next: '',
+    hubs: []
   },
-  invoices: [
-    {
-      id: 'INV-2026-003', period: 'March 2026', date: 'Apr 1, 2026', amount: 3122, status: 'Paid',
-      lines: [
-        { item: 'Enterprise Platform Fee',            qty: '1 mo',              rate: '$2,500/mo',          amount: 2500 },
-        { item: 'Per-Event Fee \u2014 Activations Hub',   qty: '12 events',         rate: '$25.00 / event',     amount: 300  },
-        { item: 'Per-Event Fee \u2014 Merchandising Hub', qty: '2 events',          rate: '$15.00 / event',     amount: 30   },
-        { item: 'HubPay Processing Fee',              qty: '$8,451 processed',   rate: '2.9% + $0.30/txn',   amount: 267  },
-        { item: 'Logistics Add-on',                   qty: '1 mo',              rate: '$25.00/mo',          amount: 25   }
-      ]
-    },
-    {
-      id: 'INV-2026-002', period: 'February 2026', date: 'Mar 1, 2026', amount: 3063, status: 'Paid',
-      lines: [
-        { item: 'Enterprise Platform Fee',            qty: '1 mo',              rate: '$2,500/mo',          amount: 2500 },
-        { item: 'Per-Event Fee \u2014 Activations Hub',   qty: '11 events',         rate: '$25.00 / event',     amount: 275  },
-        { item: 'Per-Event Fee \u2014 Merchandising Hub', qty: '2 events',          rate: '$15.00 / event',     amount: 30   },
-        { item: 'HubPay Processing Fee',              qty: '$7,990 processed',   rate: '2.9% + $0.30/txn',   amount: 233  },
-        { item: 'Logistics Add-on',                   qty: '1 mo',              rate: '$25.00/mo',          amount: 25   }
-      ]
-    },
-    {
-      id: 'INV-2026-001', period: 'January 2026', date: 'Feb 1, 2026', amount: 3062, status: 'Paid',
-      lines: [
-        { item: 'Enterprise Platform Fee',            qty: '1 mo',              rate: '$2,500/mo',          amount: 2500 },
-        { item: 'Per-Event Fee \u2014 Activations Hub',   qty: '11 events',         rate: '$25.00 / event',     amount: 275  },
-        { item: 'Per-Event Fee \u2014 Merchandising Hub', qty: '2 events',          rate: '$15.00 / event',     amount: 30   },
-        { item: 'HubPay Processing Fee',              qty: '$8,010 processed',   rate: '2.9% + $0.30/txn',   amount: 232  },
-        { item: 'Logistics Add-on',                   qty: '1 mo',              rate: '$25.00/mo',          amount: 25   }
-      ]
-    }
-  ]
+  invoices: []
 };
 function renderPlatformBilling(area, ev) {
   var inv = BILLING_SEED.invoices;
@@ -39335,7 +39189,7 @@ APP_DATA.runnerTransport = {
   'w-205': ['car', 'van', 'suv']
 };
 
-var EV_RCP_DATA={1:{v:87,s:48,sold:14,score:94},8:{v:104,s:61,sold:18,score:91},12:{v:92,s:54,sold:16,score:96},16:{v:78,s:41,sold:11,score:89},17:{v:115,s:65,sold:19,score:93},18:{v:96,s:55,sold:16,score:92},19:{v:88,s:49,sold:14,score:90},21:{v:48,s:44,sold:4,score:88},22:{v:62,s:59,sold:3,score:94},23:{v:54,s:50,sold:4,score:91},24:{v:71,s:68,sold:3,score:96},25:{v:45,s:41,sold:4,score:89},26:{v:58,s:55,sold:3,score:93},29:{v:12,s:12,sold:0,score:97},30:{v:8,s:7,sold:1,score:92},31:{v:14,s:13,sold:1,score:88},32:{v:10,s:10,sold:0,score:95},33:{v:9,s:8,sold:1,score:91},34:{v:11,s:11,sold:0,score:94}};
+var EV_RCP_DATA={};
 function repKpi(v,l,d,u){return '<div class="rep-kpi"><div class="rep-kpi-val">'+v+'</div><div class="rep-kpi-lbl">'+l+'</div>'+(d?'<div class="rep-kpi-delta '+(u?'up':'dn')+'">'+(u?'\u2191':'\u2193')+' '+d+'</div>':'')+'</div>';}
 function renderRepChart(id){var area=document.getElementById('rep-chart-area');if(!area)return;var ev=filteredEV();var r={'event-performance':renderEventPerf,'worker-performance':renderWorkerPerf,'sampling-activity':renderSamplingAct,'channel-breakdown':renderChannelBrkdn,'program-summary':renderProgramSum,'budget-actual':renderBudgetActual,'worker-pay-summary':renderWorkerPaySum,'compliance-proof':renderComplianceProof,'recap-rollup':renderRecapRollup,'exec-summary':renderExecutiveSummary,'program-health':renderProgramHealth,'worker-roster':renderWorkerRoster,'event-briefing':renderEventBriefing,'fc-reconciliation':renderFCRecon,'expense-audit':renderExpenseAudit,'payment-ledger':renderPaymentLedger,'cost-per-activation':renderCostPerActivation,'program-budget':renderProgramBudget,'ops-event-health':renderOpsEventHealth,'ops-fill-rate':renderOpsFillRate,'ops-worker-reliability':renderOpsWorkerProfile,'ops-kit-inventory':renderOpsKitInventory,'ops-runner-activity':renderOpsRunnerActivity,'ops-logistics-exception':renderOpsLogisticsException,'platform-billing':renderPlatformBilling};if(r[id])r[id](area,ev);}
 
@@ -39360,14 +39214,8 @@ function renderBudgetActual(area,ev){var hubs=['Activations','Merchandising','On
 
 /* H.4 FINANCE REPORTS */
 var _fcFilter='all';var _expFilter='all';var _expSeedStatus={};
-var EXP_AUDIT_SEED=[
-{id:'es1',evId:8,evName:'Total Wine #604 \u00b7 Dallas',worker:'Devon R.',lineId:'misc',label:'Miscellaneous',payType:'Worker Self Pay',amt:23.50,status:'Pending',brand:'PATR\u00d3N'},
-{id:'es2',evId:16,evName:'Total Wine #1034 \u00b7 Natick',worker:'Jordan T.',lineId:'parking',label:'Parking',payType:'Worker Self Pay',amt:18.00,status:'Pending',brand:'BACARD\u00cd Rum'},
-{id:'es3',evId:12,evName:'Whole Foods #220 \u00b7 Cambridge',worker:'Priya K.',lineId:'misc',label:'Miscellaneous',payType:'Worker Self Pay',amt:14.75,status:'Disputed',brand:'BACARD\u00cd Rum'},
-{id:'es4',evId:17,evName:'BevMo! #312 \u00b7 Providence',worker:'Carlos B.',lineId:'supplies',label:'Supplies',payType:'FyldCard',amt:7.00,status:'Pending',brand:'BACARD\u00cd Rum'},
-{id:'es5',evId:1,evName:'Total Wine #1205 \u00b7 Boston',worker:'Maria S.',lineId:'parking',label:'Parking',payType:'Worker Self Pay',amt:22.00,status:'Approved',brand:'BACARD\u00cd Rum'}
-];
-var FIN_BUDGETS={p1:{alloc:45000,weeks:12,elapsed:8,label:'BACARD\u00cd Rum Off-Premise 2026',prog:'Off-Premise 2026'},p2:{alloc:12000,weeks:8,elapsed:2,label:'BACARD\u00cd RTD Summer Push',prog:'RTD Summer Push'},p3:{alloc:28000,weeks:16,elapsed:8,label:'PATR\u00d3N On-Premise Elite',prog:'On-Premise Elite'},p4:{alloc:18000,weeks:12,elapsed:8,label:'Total Wine National Demo',prog:'Total Wine National Demo'}};
+var EXP_AUDIT_SEED=[];
+var FIN_BUDGETS={};
 function _finBadge(s,m){var b=m[s]||{bg:'#F3F4F6',c:'#374151'};return '<span style="background:'+b.bg+';color:'+b.c+';font-size:13px;font-weight:700;padding:2px 8px;border-radius:20px">'+s+'</span>';}
 function _finPill(lbl,val,cur,cb){var act=cur===val;return '<button onclick="'+cb+'(\''+val+'\')" style="padding:4px 14px;border-radius:20px;border:1px solid '+(act?'#00767B':'var(--border)')+';background:'+(act?'#E0F5F3':'#fff')+';color:'+(act?'#00767B':'var(--slate)')+';font-size:14px;font-weight:'+(act?'700':'400')+';cursor:pointer">'+lbl+'</button>';}
 function _fcSetFilter(v){window._fcFilter=v;renderRepChart('fc-reconciliation');}
@@ -39428,12 +39276,12 @@ function renderProgramBudget(area,ev){
 }
 /* H.5 OPS & LOGISTICS REPORTS */
 var _evHealthFilter='all';var _fillRateFilter='all';var _wpBrandFilter='all';var _wpMarketFilter='all';var _wpCompareMode=false;var _logExFilter='all';var _logExStatus={};
-var CITY_MARKET={'Boston, MA':'Northeast','Natick, MA':'Northeast','Newton, MA':'Northeast','Cambridge, MA':'Northeast','Dedham, MA':'Northeast','Framingham, MA':'Northeast','Burlington, MA':'Northeast','Brookline, MA':'Northeast','Providence, RI':'Northeast','New York, NY':'Northeast','Tampa, FL':'Southeast','Atlanta, GA':'Southeast','Houston, TX':'South','Dallas, TX':'South','Chicago, IL':'Midwest'};
+var CITY_MARKET={};
 function _mkt(city){return CITY_MARKET[city]||'Other';}
 function _chain(venue){if(!venue)return'Other';if(venue.indexOf('Total Wine')>-1)return'Total Wine';if(venue.indexOf('Kroger')>-1)return'Kroger';if(venue.indexOf('BevMo')>-1)return'BevMo';if(venue.indexOf('Whole Foods')>-1)return'Whole Foods';return'Other';}
-var WORKER_PROFILE_SEED={'Maria S.':{primary:'BACARD\u00cd Rum',sold:49,samples:167,onTime:98},'Carlos B.':{primary:'PATR\u00d3N',sold:46,samples:308,onTime:94},'Devon R.':{primary:'BACARD\u00cd Rum',sold:42,samples:244,onTime:96},'Jordan T.':{primary:'BACARD\u00cd Rum',sold:57,samples:199,onTime:95},'Priya K.':{primary:'BACARD\u00cd Rum',sold:32,samples:109,onTime:97},'Isabella R.':{primary:'PATR\u00d3N',sold:16,samples:55,onTime:99},'Ryan J.':{primary:'BACARD\u00cd RTD',sold:8,samples:32,onTime:91}};
-var RUNNER_ACTIVITY_SEED=[{name:'Tanya Williams',ini:'TW',color:'#7C3AED',deliveries:24,score:88,onTime:91,status:'active',current:'Star Market #33',mtd:3},{name:'Marcus Webb',ini:'MW',color:'#1E4DB7',deliveries:18,score:94,onTime:97,status:'available',current:'Available',mtd:2},{name:'Sofia Reyes',ini:'SR',color:'#059669',deliveries:31,score:96,onTime:98,status:'available',current:'Available',mtd:4}];
-var LOGISTICS_EXCEPTIONS=[{id:'lx1',type:'Damaged',kit:'BACARD\u00cd Pool Party Kit',event:'BevMo! #312 \u00b7 Providence',runner:'Tanya Williams',reported:'Mar 29',severity:'high',notes:'Display damaged.',status:'open'},{id:'lx2',type:'Missing',kit:'BACARD\u00cd RTD Kit',event:'Spec\'s #88 \u00b7 Houston',runner:'Unassigned',reported:'Mar 27',severity:'high',notes:'Kit not found.',status:'open'},{id:'lx3',type:'Unassigned',kit:'PATR\u00d3N Kit',event:'BevMo! #312 \u00b7 Providence',runner:'Unassigned',reported:'Mar 26',severity:'medium',notes:'No runner for Apr 5.',status:'open'},{id:'lx4',type:'Delayed',kit:'BACARD\u00cd Demo Kit',event:'Total Wine #604 \u00b7 Dallas',runner:'Marcus Webb',reported:'Mar 24',severity:'medium',notes:'Weather delay.',status:'resolved'}];
+var WORKER_PROFILE_SEED={};
+var RUNNER_ACTIVITY_SEED=[];
+var LOGISTICS_EXCEPTIONS=[];
 function _setEvHealth(v){window._evHealthFilter=v;renderRepChart('ops-event-health');}
 function _setFillRate(v){window._fillRateFilter=v;renderRepChart('ops-fill-rate');}
 function _setWpBrand(v){window._wpBrandFilter=v;renderRepChart('ops-worker-reliability');}
@@ -39470,7 +39318,7 @@ function renderOpsFillRate(area,ev){
 
 function renderOpsWorkerProfile(area,ev){
   var bf=window._wpBrandFilter||'all';var mf=window._wpMarketFilter||'all';var cmp=window._wpCompareMode||false;
-  var BRANDS=['BACARD\u00cd Rum','BACARD\u00cd RTD','PATR\u00d3N'];var MARKETS=['Northeast','Southeast','South','Midwest'];
+  var BRANDS=[];var MARKETS=['Northeast','Southeast','South','Midwest'];
   var wkMap={};if(typeof WK!=='undefined')WK.forEach(function(w){wkMap[w.n]={r:w.r,ev:w.ev,t:w.t,i:w.i,c:w.c};});
   var allNames=Object.keys(WORKER_PROFILE_SEED);var evByWorker={};
   ev.forEach(function(e){(e.wNames||[]).forEach(function(n){if(!evByWorker[n])evByWorker[n]=[];evByWorker[n].push(e);});});
@@ -39558,23 +39406,7 @@ function initAdvancedCharts(){setTimeout(function(){destroyChart('adv-lift');var
 
 
 /* FyldCard Module */
-var FC_TXNS=[
-{id:'fc1',date:'Mar 25',time:'2:31 PM',event:'Total Wine #1205 \u00b7 Boston',evId:1,brand:'BACARD\u00cd Rum',worker:'Maria S.',desc:'Sampling Supplies',cat:'Supplies',amt:7,status:'Verified',hub:'Activations'},
-{id:'fc2',date:'Mar 25',time:'2:35 PM',event:'Total Wine #1205 \u00b7 Boston',evId:1,brand:'BACARD\u00cd Rum',worker:'Jordan T.',desc:'Sampling Supplies',cat:'Supplies',amt:7,status:'Verified',hub:'Activations'},
-{id:'fc3',date:'Mar 22',time:'4:18 PM',event:'Total Wine #604 \u00b7 Dallas',evId:8,brand:'PATR\u00d3N',worker:'Carlos B.',desc:'Sampling Supplies',cat:'Supplies',amt:7,status:'Verified',hub:'Activations'},
-{id:'fc4',date:'Mar 22',time:'4:22 PM',event:'Total Wine #604 \u00b7 Dallas',evId:8,brand:'PATR\u00d3N',worker:'Jordan T.',desc:'Sampling Supplies',cat:'Supplies',amt:7,status:'Verified',hub:'Activations'},
-{id:'fc5',date:'Mar 22',time:'4:45 PM',event:'Total Wine #604 \u00b7 Dallas',evId:8,brand:'PATR\u00d3N',worker:'Devon R.',desc:'Sampling Supplies',cat:'Supplies',amt:7,status:'Verified',hub:'Activations'},
-{id:'fc6',date:'Mar 22',time:'5:12 PM',event:'Total Wine #604 \u00b7 Dallas',evId:8,brand:'PATR\u00d3N',worker:'Carlos B.',desc:'Garnish & Bar Kit',cat:'Event Materials',amt:42,status:'Verified',hub:'Activations'},
-{id:'fc7',date:'Mar 15',time:'1:22 PM',event:'Total Wine #1034 \u00b7 Natick',evId:16,brand:'BACARD\u00cd Rum',worker:'Jordan T.',desc:'Sampling Supplies',cat:'Supplies',amt:7,status:'Verified',hub:'Activations'},
-{id:'fc8',date:'Mar 15',time:'1:38 PM',event:'Total Wine #1034 \u00b7 Natick',evId:16,brand:'BACARD\u00cd Rum',worker:'Devon R.',desc:'Sampling Supplies',cat:'Supplies',amt:7,status:'Verified',hub:'Activations'},
-{id:'fc9',date:'Mar 15',time:'1:55 PM',event:'Total Wine #1034 \u00b7 Natick',evId:16,brand:'BACARD\u00cd Rum',worker:'Devon R.',desc:'Branded Napkins',cat:'Event Materials',amt:18,status:'Verified',hub:'Activations'},
-{id:'fc10',date:'Mar 12',time:'11:34 AM',event:'Whole Foods #220 \u00b7 Cambridge',evId:12,brand:'BACARD\u00cd Rum',worker:'Maria S.',desc:'Sampling Supplies',cat:'Supplies',amt:7,status:'Verified',hub:'Activations'},
-{id:'fc11',date:'Mar 12',time:'11:38 AM',event:'Whole Foods #220 \u00b7 Cambridge',evId:12,brand:'BACARD\u00cd Rum',worker:'Priya K.',desc:'Sampling Supplies',cat:'Supplies',amt:7,status:'Verified',hub:'Activations'},
-{id:'fc12',date:'Mar 12',time:'12:04 PM',event:'Whole Foods #220 \u00b7 Cambridge',evId:12,brand:'BACARD\u00cd Rum',worker:'Maria S.',desc:'Misc. expense',cat:'Miscellaneous',amt:12.5,status:'Verified',hub:'Activations'},
-{id:'fc13',date:'Mar 14',time:'9:45 AM',event:'Kroger #447 \u00b7 Natick',evId:22,brand:'BACARD\u00cd Rum',worker:'Carlos B.',desc:'Audit Supplies',cat:'Supplies',amt:7,status:'Verified',hub:'Merchandising'},
-{id:'fc14',date:'Mar 10',time:'12:21 PM',event:'BevMo! #312 \u00b7 Providence',evId:17,brand:'BACARD\u00cd Rum',worker:'Maria S.',desc:'Sampling Supplies',cat:'Supplies',amt:7,status:'Verified',hub:'Activations'},
-{id:'fc15',date:'Mar 10',time:'12:22 PM',event:'BevMo! #312 \u00b7 Providence',evId:17,brand:'BACARD\u00cd Rum',worker:'Carlos B.',desc:'Sampling Supplies',cat:'Supplies',amt:7,status:'Pending',hub:'Activations'}
-];
+var FC_TXNS=[];
 var FC_HUB_COLORS={Activations:'#00767B',Merchandising:'#1E4DB7','On-Demand':'#7C3AED'};
 function fcFmtDate(d){var M=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];var p=d?d.split('-'):[];if(p.length<3)return d||'';return M[parseInt(p[1],10)-1]+' '+parseInt(p[2],10);}
 function buildFCTxns(){
@@ -39622,7 +39454,7 @@ tbody.innerHTML=filtered.map(function(t){var sp=t.status==='Verified'?'<span sty
 
 
 /* Programs Module */
-var PROG_BUDGETS={p1:45000,p2:12000,p3:28000,p4:18000};
+var PROG_BUDGETS={};
 var _selProg=null;
 function initPrograms(){setTimeout(function(){renderPrograms();},0);}
 function progEventsFor(prog){return(typeof EV!=='undefined'?EV:[]).filter(function(e){return e.prog&&(prog.name.indexOf(e.prog)>-1||e.prog.indexOf(prog.name)>-1);});}
