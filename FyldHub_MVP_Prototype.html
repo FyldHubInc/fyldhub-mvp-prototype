@@ -2835,7 +2835,7 @@ body.dash-edit-mode .dw-normal-btns { display:none !important; }
 .onb-checklist-progress { width:100%; height:6px; background:var(--lgray); border-radius:3px; margin-top:10px; }
 .onb-checklist-bar { height:6px; background:var(--teal); border-radius:3px; transition:width .3s; }
 .onb-checklist-row { display:flex; align-items:center; gap:12px; padding:12px 20px; border-bottom:1px solid var(--lgray); cursor:pointer; transition:background .15s; }
-.onb-checklist-row:hover { background:var(--bg); }
+.onb-checklist-row:hover { background:var(--bg); cursor:pointer; }
 .onb-checklist-row:last-child { border-bottom:none; }
 .onb-checklist-check { width:20px; height:20px; border-radius:50%; border:2px solid var(--border); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
 .onb-checklist-row.completed .onb-checklist-check { border-color:var(--green); background:var(--green); }
@@ -35015,9 +35015,8 @@ function goOnbStep(n) {
 
 function finishOnboarding() {
   closeOnboarding();
-  switchModule('events');
-  setTimeout(function() { switchModule('events'); }, 50);
-  renderOnboardingChecklist();
+  switchModule('dashboard');
+  setTimeout(function() { renderOnboardingChecklist(); }, 100);
   toast('Account setup complete! Your getting-started checklist is on the Dashboard.');
 }
 
@@ -35047,12 +35046,13 @@ function renderOnboardingChecklist() {
     h += '</div>';
   }
   h += '</div>';
-  // Insert at top of dashboard main area
-  var dashMain = document.querySelector('#module-events .page-body') || document.querySelector('#module-events');
-  if (dashMain) {
+  // Insert at top of Dashboard main area (by specific ID)
+  var dashMod = document.getElementById('module-dashboard');
+  if (dashMod) {
+    var target = dashMod.querySelector('.page-body') || dashMod;
     var wrapper = document.createElement('div');
     wrapper.innerHTML = h;
-    dashMain.insertBefore(wrapper.firstChild, dashMain.firstChild);
+    target.insertBefore(wrapper.firstChild, target.firstChild);
   }
 }
 
