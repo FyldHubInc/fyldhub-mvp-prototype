@@ -3890,11 +3890,13 @@ body.dash-edit-mode .dw-normal-btns { display:none !important; }
             <th></th>
           </tr></thead>
           <tbody id="brands-tbody">
-            <tr><td colspan="5" style="text-align:center;padding:48px 24px;color:var(--slate)">
-                <div style="font-size:15px;font-weight:600;color:var(--dark);margin-bottom:6px">No brands yet</div>
-                <div style="font-size:13px;margin-bottom:16px">Add your first brand to get started. Each brand has its own product catalog and settings.</div>
-                <button class="btn btn-primary btn-sm" onclick="openAddBrand()">+ Add Brand</button>
-              </td></tr>
+              <tr>
+                <td colspan="5" style="text-align:center;padding:48px 24px;color:var(--slate)">
+                  <div style="font-size:15px;font-weight:600;color:var(--dark);margin-bottom:6px">No brands yet</div>
+                  <div style="font-size:13px;margin-bottom:16px">Add your first brand to get started. Each brand has its own product catalog and settings.</div>
+                  <button class="btn btn-primary btn-sm" onclick="openAddBrand()">+ Add Brand</button>
+                </td>
+              </tr>
             </tbody></table>
                       </td></tr>
 <tr class="prod-cat-hd" data-status="active" style="cursor:pointer;border-top:1px solid var(--border)" onclick="toggleProdCat(&#39;bacrm-gold&#39;)"><td style="padding:9px 12px 9px 14px"><span class="fw" style="font-size:13px">Gold</span></td><td class="ts tsl" style="padding:9px 12px">4 SKUs</td><td style="padding:9px 12px"><div class="flex ic g2" onclick="event.stopPropagation()"><div class="tog on" id="pcat-tog-bacrm-gold" style="flex-shrink:0" onclick="event.stopPropagation();toggleProdCatActive(&#39;bacrm-gold&#39;,this)"></div><span class="ts" style="font-size:12px;color:var(--green)" id="pcat-lbl-bacrm-gold">Active</span></div></td><td style="text-align:right;padding:9px 12px;white-space:nowrap"><button class="btn btn-ghost btn-sm" style="font-size:12px;margin-right:6px" onclick="event.stopPropagation()">Edit</button><svg id="pcat-arr-bacrm-gold" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--slate)" stroke-width="2" style="transition:.2s;vertical-align:middle"><path d="M6 9l6 6 6-6"></path></svg></td></tr>
@@ -18096,11 +18098,7 @@ var DAY_NAMES=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
 var EV=[];
 
 
-var PRODS={
-  'BACARDÍ Rum':[{n:'Superior',sz:[{s:'750mL',p:'$18.99'},{s:'1.75L',p:'$29.99'}],pk:['Single','6-pack']},{n:'Gold',sz:[{s:'750mL',p:'$17.99'},{s:'1.75L',p:'$27.99'}],pk:['Single']},{n:'Black',sz:[{s:'750mL',p:'$21.99'}],pk:['Single']},{n:'Spiced',sz:[{s:'750mL',p:'$19.99'}],pk:['Single']},{n:'Coconut',sz:[{s:'750mL',p:'$17.99'}],pk:['Single']}],
-  'BACARDÍ RTD':[{n:'Sunset',sz:[{s:'355mL',p:'$2.99'}],pk:['Single','12-pack']},{n:'Limón',sz:[{s:'355mL',p:'$2.99'}],pk:['Single','12-pack']}],
-  'PATRÓN':[{n:'Silver',sz:[{s:'750mL',p:'$42.99'},{s:'1.75L',p:'$74.99'}],pk:['Single']},{n:'Reposado',sz:[{s:'750mL',p:'$47.99'}],pk:['Single']},{n:'Añejo',sz:[{s:'750mL',p:'$52.99'}],pk:['Single']}]
-};
+var PRODS={};
 function getAutoBookingState(eventId) {
   if (!APP_DATA.autoBooking) APP_DATA.autoBooking = {};
   if (!APP_DATA.autoBooking[eventId]) {
