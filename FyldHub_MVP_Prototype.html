@@ -2829,7 +2829,7 @@ body.dash-edit-mode .dw-normal-btns { display:none !important; }
     </button>
     <div class="gt-logo" onclick="switchModule('dashboard')" style="cursor:pointer"><span class="gt-logo-fyld">Fyld</span><span class="gt-logo-hub">Hub</span></div>
   </div>
-  <div class="gt-mid"><span class="gt-company">Bacardí USA</span></div>
+  <div class="gt-mid"><span class="gt-company">Your Company</span></div>
   <div class="role-switcher" id="roleSwitcher">
     <button class="role-btn" id="roleBtn" onclick="toggleRoleDropdown()">
       <span class="role-demo-badge">Demo</span>
@@ -3802,14 +3802,14 @@ body.dash-edit-mode .dw-normal-btns { display:none !important; }
           <div id="cp-logo-avatar" style="width:56px;height:56px;border-radius:10px;background:var(--dark);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;color:#fff;flex-shrink:0;overflow:hidden">B</div>
           <div>
             <div style="font-size:15px;font-weight:700;color:var(--dark)">Your Company Name</div>
-            <div class="ts tsl" style="font-size:12px" id="cp-subtitle">Adult Beverage</div>
+            <div class="ts tsl" style="font-size:12px" id="cp-subtitle" style="color:var(--slate);font-style:italic">Not set</div>
             <button class="btn btn-ghost btn-sm" style="font-size:12px;margin-top:4px;padding:2px 8px" onclick="openLogoUploadModal()">Change Logo</button>
           </div>
         </div>
 
         <div class="cp-row"><div class="cp-label">Legal Name</div><div class="cp-value" id="cp-legal" style="color:var(--slate);font-style:italic">Not set</div></div>
         <div class="cp-row"><div class="cp-label">DBA / Trade Name</div><div class="cp-value" id="cp-dba" style="color:var(--slate);font-style:italic">Not set</div></div>
-        <div class="cp-row"><div class="cp-label">Parent Categories</div><div class="cp-value" id="cp-parent-categories"><span class="badge b-teal" style="font-size:12px">Adult Beverage</span></div></div>
+        <div class="cp-row"><div class="cp-label">Parent Categories</div><div class="cp-value" id="cp-parent-categories" style="color:var(--slate);font-style:italic">Not set</div></div>
         <div class="cp-row" id="cp-row-verticals" style="display:none"><div class="cp-label">Active Verticals</div><div class="cp-value" id="cp-active-verticals"></div></div>
         <div class="cp-row"><div class="cp-label">Company Type</div><div class="cp-value"></div></div>
         <div class="cp-row"><div class="cp-label">Founded</div><div class="cp-value" style="color:var(--slate);font-style:italic">Not set</div></div>
@@ -3847,7 +3847,7 @@ body.dash-edit-mode .dw-normal-btns { display:none !important; }
 
     <div class="card" style="padding:0">
       <div class="card-hd-np">
-        <div><div class="card-title">Brand Portfolio</div><div class="card-sub">3 brands · 34 products</div></div>
+        <div><div class="card-title">Brand Portfolio</div><div class="card-sub">0 brands · 0 products</div></div>
         <div class="flex g2">
           <button class="btn btn-outline btn-sm" onclick="openBrandImport()">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
@@ -3890,36 +3890,12 @@ body.dash-edit-mode .dw-normal-btns { display:none !important; }
             <th></th>
           </tr></thead>
           <tbody id="brands-tbody">
-            <!-- BACARDÍ Rum -->
-            <tr style="cursor:pointer" data-active="true" onclick="toggleBrand(&#39;bacardi&#39;)">
-              <td><div class="flex ic g2"><div class="avs" style="background:#842029">B</div><div><div class="fw">BACARDÍ Rum</div></div></div></td>
-              <td style="font-size:12px">Spirits</td>
-              <td><span class="badge b-gray">Rum</span></td>
-              <td class="ts tsl">14 products</td>
-              <td data-sort="active"><div class="flex ic g2" style="flex-wrap:nowrap"><div class="tog on bp-brand-tog" id="brand-tog-bacrm" data-brand-id="bacrm"></div><span id="brand-badge-bacrm" style="font-size:12px;font-weight:500;color:var(--green)">Active</span></div></td>
-              <td style="text-align:right;white-space:nowrap"><button class="btn btn-ghost btn-sm bp-edit-brand-btn" style="font-size:11px;margin-right:4px" data-brand-id="bacrm" data-brand-name="BACARDÍ Rum" data-cat="Spirits" data-sub="Rum" data-active="true">Edit Brand</button><svg id="arr-bacardi" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--slate)" stroke-width="2" style="transition:.2s;vertical-align:middle"><path d="M6 9l6 6 6-6"></path></svg></td>
-            </tr>
-            <tr class="brand-expand" id="exp-bacardi"><td colspan="6">
-              <div class="expand-inner">
-                <div class="flex ic jb mb2">
-                  <div></div>
-                  <div class="flex g2"><button class="btn btn-primary btn-sm bp-add-product-btn" data-brand-id="bacrm" data-brand-name="BACARDÍ Rum" data-cat="Spirits" data-sub="Rum">+ Add Product</button><select id="prodStatusFilter-bacrm" onchange="filterProdTable(&#39;bacrm&#39;)" style="padding:5px 10px;border:1px solid var(--border);border-radius:6px;font-size:12px;color:var(--body);margin-left:8px"><option value="active" selected="">Active</option><option value="">All Statuses</option><option value="inactive">Inactive</option></select></div>
-                </div>
-                <table class="pt">
-                  <thead><tr><th>Product Category</th><th style="width:90px">SKU Count</th><th style="width:70px">Status</th><th style="width:120px"></th></tr></thead>
-                  <tbody id="pt-bacardi">
-<tr class="prod-cat-hd" data-status="active" style="cursor:pointer;border-top:1px solid var(--border)" onclick="toggleProdCat(&#39;bacrm-whtslv&#39;)"><td style="padding:9px 12px 9px 14px"><span class="fw" style="font-size:13px">White / Silver</span></td><td class="ts tsl" style="padding:9px 12px">5 SKUs</td><td style="padding:9px 12px"><div class="flex ic g2" onclick="event.stopPropagation()"><div class="tog on" id="pcat-tog-bacrm-whtslv" style="flex-shrink:0" onclick="event.stopPropagation();toggleProdCatActive(&#39;bacrm-whtslv&#39;,this)"></div><span class="ts" style="font-size:12px;color:var(--green)" id="pcat-lbl-bacrm-whtslv">Active</span></div></td><td style="text-align:right;padding:9px 12px;white-space:nowrap"><button class="btn btn-ghost btn-sm" style="font-size:12px;margin-right:6px" onclick="event.stopPropagation()">Edit</button><svg id="pcat-arr-bacrm-whtslv" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--slate)" stroke-width="2" style="transition:.2s;vertical-align:middle"><path d="M6 9l6 6 6-6"></path></svg></td></tr>
-<tr class="prod-in-cat" data-pcat="bacrm-whtslv" style="cursor:pointer;display:none" onclick="toggleVariant(&#39;bsup&#39;)"><td style="padding:6px 12px 6px 20px"><div class="flex ic"><div class="prod-thumb" style="width:26px;height:26px;flex-shrink:0;margin-right:8px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg></div><span class="fw">BACARDÍ Superior</span></div></td><td class="ts tsl fw" style="padding:6px 12px">5 SKUs</td><td style="padding:6px 12px"><div class="flex ic g2" onclick="event.stopPropagation()"><div class="tog on" id="prod-tog-bsup" style="flex-shrink:0" onclick="event.stopPropagation();toggleProdActive(&#39;bsup&#39;,this)"></div><span class="ts" style="font-size:12px;color:var(--green)" id="prod-lbl-bsup">Active</span></div></td><td style="text-align:right;padding:6px 12px;white-space:nowrap"><button class="btn btn-ghost btn-sm" style="font-size:12px;margin-right:6px" onclick="event.stopPropagation();openEditProduct(&#39;BACARDÍ Superior&#39;,&#39;&#39;,&#39;&#39;)">Edit</button><svg id="v-bsup" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--slate)" stroke-width="2" style="transition:.2s;vertical-align:middle"><path d="M6 9l6 6 6-6"></path></svg></td></tr>
-<tr class="vr prod-in-cat" data-pcat="bacrm-whtslv" id="vr-bsup" style="display:none"><td colspan="4" style="padding:0;border-bottom:3px solid var(--border)"><div class="flex ic jb" style="padding:8px 12px 6px"><div></div><div class="flex g2" style="align-items:center"><button class="btn btn-primary btn-sm" onclick="addSKURow(this)">+ Add SKU</button><select onchange="filterSKUTable(this)" style="padding:5px 10px;border:1px solid var(--border);border-radius:6px;font-size:12px;color:var(--body);margin-left:8px"><option value="active" selected="">Active</option><option value="">All Statuses</option><option value="inactive">Inactive</option></select></div></div><table style="width:100%;font-size:12px;border-collapse:collapse;table-layout:fixed">
-                        <colgroup><col style="width:18%"><col style="width:14%"><col style="width:20%"><col style="width:12%"><col style="width:10%"><col style="width:13%"><col style="width:13%"></colgroup><thead><tr style="background:var(--teal-xl)"><th style="padding:5px 8px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--slate);text-align:left;border-bottom:1px solid var(--border)">UPC</th><th style="padding:5px 8px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--slate);text-align:left;border-bottom:1px solid var(--border)">Package Type</th><th style="padding:5px 8px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--slate);text-align:left;border-bottom:1px solid var(--border)">Size</th><th style="padding:5px 8px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--slate);text-align:left;border-bottom:1px solid var(--border)">Pack Config</th><th style="padding:5px 8px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--slate);text-align:left;border-bottom:1px solid var(--border)">Avg Retail</th><th style="padding:5px 8px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--slate);text-align:left;border-bottom:1px solid var(--border)">Status</th><th style="padding:5px 8px;border-bottom:1px solid var(--border)"></th></tr></thead>
-                        <tbody>
-                          <tr><td style="padding:5px 8px;color:var(--slate)">080432400001</td><td style="padding:5px 8px;color:var(--slate)">Bottle</td><td style="padding:5px 8px">50 mL</td><td style="padding:5px 8px">Single</td><td style="padding:5px 8px">$3.49</td><td style="padding:5px 8px"><div class="flex ic g2" onclick="event.stopPropagation()"><div class="tog on" style="flex-shrink:0" onclick="this.classList.toggle(&#39;on&#39;);var l=this.nextElementSibling;l.textContent=this.classList.contains(&#39;on&#39;)?&#39;Active&#39;:&#39;Inactive&#39;;l.style.color=this.classList.contains(&#39;on&#39;)?&#39;var(--green)&#39;:&#39;var(--slate)&#39;;"></div><span style="font-size:12px;color:var(--green);margin-left:4px">Active</span></div></td><td style="padding:5px 8px"><button class="btn btn-ghost btn-sm" style="font-size:12px" onclick="openEditSKU(this,this.closest(&#39;tr&#39;))">Edit</button></td></tr>
-                          <tr><td style="padding:5px 8px;color:var(--slate)">080432400018</td><td style="padding:5px 8px;color:var(--slate)">Bottle</td><td style="padding:5px 8px">375 mL</td><td style="padding:5px 8px">Single</td><td style="padding:5px 8px">$9.99</td><td style="padding:5px 8px"><div class="flex ic g2" onclick="event.stopPropagation()"><div class="tog on" style="flex-shrink:0" onclick="this.classList.toggle(&#39;on&#39;);var l=this.nextElementSibling;l.textContent=this.classList.contains(&#39;on&#39;)?&#39;Active&#39;:&#39;Inactive&#39;;l.style.color=this.classList.contains(&#39;on&#39;)?&#39;var(--green)&#39;:&#39;var(--slate)&#39;;"></div><span style="font-size:12px;color:var(--green);margin-left:4px">Active</span></div></td><td style="padding:5px 8px"><button class="btn btn-ghost btn-sm" style="font-size:12px" onclick="openEditSKU(this,this.closest(&#39;tr&#39;))">Edit</button></td></tr>
-                          <tr><td style="padding:5px 8px;color:var(--slate)">080432400025</td><td style="padding:5px 8px;color:var(--slate)">Bottle</td><td style="padding:5px 8px">750 mL</td><td style="padding:5px 8px">Single</td><td style="padding:5px 8px">$16.99</td><td style="padding:5px 8px"><div class="flex ic g2" onclick="event.stopPropagation()"><div class="tog on" style="flex-shrink:0" onclick="this.classList.toggle(&#39;on&#39;);var l=this.nextElementSibling;l.textContent=this.classList.contains(&#39;on&#39;)?&#39;Active&#39;:&#39;Inactive&#39;;l.style.color=this.classList.contains(&#39;on&#39;)?&#39;var(--green)&#39;:&#39;var(--slate)&#39;;"></div><span style="font-size:12px;color:var(--green);margin-left:4px">Active</span></div></td><td style="padding:5px 8px"><button class="btn btn-ghost btn-sm" style="font-size:12px" onclick="openEditSKU(this,this.closest(&#39;tr&#39;))">Edit</button></td></tr>
-                          <tr><td style="padding:5px 8px;color:var(--slate)">080432400032</td><td style="padding:5px 8px;color:var(--slate)">Bottle</td><td style="padding:5px 8px">1 L</td><td style="padding:5px 8px">Single</td><td style="padding:5px 8px">$21.99</td><td style="padding:5px 8px"><div class="flex ic g2" onclick="event.stopPropagation()"><div class="tog on" style="flex-shrink:0" onclick="this.classList.toggle(&#39;on&#39;);var l=this.nextElementSibling;l.textContent=this.classList.contains(&#39;on&#39;)?&#39;Active&#39;:&#39;Inactive&#39;;l.style.color=this.classList.contains(&#39;on&#39;)?&#39;var(--green)&#39;:&#39;var(--slate)&#39;;"></div><span style="font-size:12px;color:var(--green);margin-left:4px">Active</span></div></td><td style="padding:5px 8px"><button class="btn btn-ghost btn-sm" style="font-size:12px" onclick="openEditSKU(this,this.closest(&#39;tr&#39;))">Edit</button></td></tr>
-                          <tr><td style="padding:5px 8px;color:var(--slate)">080432400049</td><td style="padding:5px 8px;color:var(--slate)">Bottle</td><td style="padding:5px 8px">1.75 L</td><td style="padding:5px 8px">Single</td><td style="padding:5px 8px">$28.99</td><td style="padding:5px 8px"><div class="flex ic g2" onclick="event.stopPropagation()"><div class="tog on" style="flex-shrink:0" onclick="this.classList.toggle(&#39;on&#39;);var l=this.nextElementSibling;l.textContent=this.classList.contains(&#39;on&#39;)?&#39;Active&#39;:&#39;Inactive&#39;;l.style.color=this.classList.contains(&#39;on&#39;)?&#39;var(--green)&#39;:&#39;var(--slate)&#39;;"></div><span style="font-size:12px;color:var(--green);margin-left:4px">Active</span></div></td><td style="padding:5px 8px"><button class="btn btn-ghost btn-sm" style="font-size:12px" onclick="openEditSKU(this,this.closest(&#39;tr&#39;))">Edit</button></td></tr>
-                        </tbody>
-                      </table>
+            <tr><td colspan="5" style="text-align:center;padding:48px 24px;color:var(--slate)">
+                <div style="font-size:15px;font-weight:600;color:var(--dark);margin-bottom:6px">No brands yet</div>
+                <div style="font-size:13px;margin-bottom:16px">Add your first brand to get started. Each brand has its own product catalog and settings.</div>
+                <button class="btn btn-primary btn-sm" onclick="openAddBrand()">+ Add Brand</button>
+              </td></tr>
+            </tbody></table>
                       </td></tr>
 <tr class="prod-cat-hd" data-status="active" style="cursor:pointer;border-top:1px solid var(--border)" onclick="toggleProdCat(&#39;bacrm-gold&#39;)"><td style="padding:9px 12px 9px 14px"><span class="fw" style="font-size:13px">Gold</span></td><td class="ts tsl" style="padding:9px 12px">4 SKUs</td><td style="padding:9px 12px"><div class="flex ic g2" onclick="event.stopPropagation()"><div class="tog on" id="pcat-tog-bacrm-gold" style="flex-shrink:0" onclick="event.stopPropagation();toggleProdCatActive(&#39;bacrm-gold&#39;,this)"></div><span class="ts" style="font-size:12px;color:var(--green)" id="pcat-lbl-bacrm-gold">Active</span></div></td><td style="text-align:right;padding:9px 12px;white-space:nowrap"><button class="btn btn-ghost btn-sm" style="font-size:12px;margin-right:6px" onclick="event.stopPropagation()">Edit</button><svg id="pcat-arr-bacrm-gold" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--slate)" stroke-width="2" style="transition:.2s;vertical-align:middle"><path d="M6 9l6 6 6-6"></path></svg></td></tr>
 <tr class="prod-in-cat" data-pcat="bacrm-gold" style="cursor:pointer;display:none" onclick="toggleVariant(&#39;bgold&#39;)"><td style="padding:6px 12px 6px 20px"><div class="flex ic"><div class="prod-thumb" style="width:26px;height:26px;flex-shrink:0;margin-right:8px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg></div><span class="fw">BACARDÍ Gold</span></div></td><td class="ts tsl fw" style="padding:6px 12px">4 SKUs</td><td style="padding:6px 12px"><div class="flex ic g2" onclick="event.stopPropagation()"><div class="tog on" id="prod-tog-bgold" style="flex-shrink:0" onclick="event.stopPropagation();toggleProdActive(&#39;bgold&#39;,this)"></div><span class="ts" style="font-size:12px;color:var(--green)" id="prod-lbl-bgold">Active</span></div></td><td style="text-align:right;padding:6px 12px;white-space:nowrap"><button class="btn btn-ghost btn-sm" style="font-size:12px;margin-right:6px" onclick="event.stopPropagation();openEditProduct(&#39;BACARDÍ Gold&#39;,&#39;&#39;,&#39;&#39;)">Edit</button><svg id="v-bgold" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--slate)" stroke-width="2" style="transition:.2s;vertical-align:middle"><path d="M6 9l6 6 6-6"></path></svg></td></tr>
@@ -17563,19 +17539,19 @@ Tier 3"></textarea>
               <div style="font-size:12px;color:var(--slate);margin-top:1px">Demos, tastings, pop-ups, sponsorships. Brand Promoters as workforce type.</div>
             </div>
           </label>
-          <label id="iu-hub-me-wrap" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border:1.5px solid var(--border);border-radius:var(--radius);cursor:pointer;font-size:13px">
+          <label id="iu-hub-me-wrap" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border:1.5px solid var(--border);border-radius:var(--radius);cursor:not-allowed;font-size:13px;opacity:.45;pointer-events:none">
             <input type="checkbox" id="iu-hub-me" style="width:15px;height:15px;accent-color:#1E4DB7" onchange="iuHubToggle(&#39;me&#39;)">
             <div style="width:8px;height:8px;border-radius:2px;background:#1E4DB7;flex-shrink:0"></div>
             <div>
-              <div style="font-weight:600;color:var(--dark)">Merchandising</div>
+              <div style="font-weight:600;color:var(--dark)">Merchandising <span style="font-size:9px;font-weight:700;background:#F59E0B;color:#fff;padding:2px 5px;border-radius:3px;vertical-align:middle;margin-left:4px">PHASE 2</span></div>
               <div style="font-size:12px;color:var(--slate);margin-top:1px">Shelf audits, planogram compliance, display installations. FyldCheckers as workforce type.</div>
             </div>
           </label>
-          <label id="iu-hub-od-wrap" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border:1.5px solid var(--border);border-radius:var(--radius);cursor:pointer;font-size:13px">
+          <label id="iu-hub-od-wrap" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border:1.5px solid var(--border);border-radius:var(--radius);cursor:not-allowed;font-size:13px;opacity:.45;pointer-events:none">
             <input type="checkbox" id="iu-hub-od" style="width:15px;height:15px;accent-color:#7C3AED" onchange="iuHubToggle(&#39;od&#39;)">
             <div style="width:8px;height:8px;border-radius:2px;background:#7C3AED;flex-shrink:0"></div>
             <div>
-              <div style="font-weight:600;color:var(--dark)">On-Demand Support</div>
+              <div style="font-weight:600;color:var(--dark)">On-Demand Support <span style="font-size:9px;font-weight:700;background:#F59E0B;color:#fff;padding:2px 5px;border-radius:3px;vertical-align:middle;margin-left:4px">PHASE 2</span></div>
               <div style="font-size:12px;color:var(--slate);margin-top:1px">FyldRunners, logistics, emergency replenishment, event setup/teardown.</div>
             </div>
           </label>
@@ -33451,7 +33427,7 @@ function getSearchableValue(containerId) { var val = document.getElementById(con
 function updateProductCategories() {
   var subcat = getSearchableValue('brand-subcat-wrap');
   var brandCat = getSearchableValue('brand-cat-wrap');
-  var parentCats = APP_DATA.parentCategories || ['Adult Beverage'];
+  var parentCats = APP_DATA.parentCategories || [];
   var activeVerticals = APP_DATA.activeVerticals || [];
   var DIRECT_PARENTS = ['Adult Beverage', 'Cannabis & Hemp'];
   var prodCats = [];
@@ -33472,7 +33448,7 @@ function updateProductCategories() {
 }
 function updateBrandSubcats() {
   var brandCat = getSearchableValue('brand-cat-wrap');
-  var parentCats = APP_DATA.parentCategories || ['Adult Beverage'];
+  var parentCats = APP_DATA.parentCategories || [];
   var activeVerticals = APP_DATA.activeVerticals || [];
   var DIRECT_PARENTS = ['Adult Beverage', 'Cannabis & Hemp'];
   var subcats = [];
@@ -33492,7 +33468,7 @@ function updateBrandSubcats() {
   buildSearchableSelect('brand-subcat-wrap', subcats, 'Search sub-category...', 'updateProductCategories()');
 }
 function updateBrandCats() {
-  var parentCats = APP_DATA.parentCategories || ['Adult Beverage'];
+  var parentCats = APP_DATA.parentCategories || [];
   var activeVerticals = APP_DATA.activeVerticals || [];
   var DIRECT_PARENTS = ['Adult Beverage', 'Cannabis & Hemp'];
   var brandCats = [];
@@ -33707,7 +33683,7 @@ function openAddBrand() {
   goBrandStep(1);
   _sessionProducts = [];
   _vpContents = [];
-  var parentCats = APP_DATA.parentCategories || ['Adult Beverage'];
+  var parentCats = APP_DATA.parentCategories || [];
   var activeVerticals = APP_DATA.activeVerticals || [];
   var DIRECT_PARENTS = ['Adult Beverage', 'Cannabis & Hemp'];
   var brandCats = [];
@@ -38031,7 +38007,7 @@ function openEditCompanyProfile() {
   var existing = document.getElementById('edit-profile-modal');
   if (existing) existing.remove();
   var parentCats = ['Adult Beverage','Consumer Packaged Goods','Consumer Goods','Cannabis & Hemp','Automotive & Powersports','Agriculture & Outdoor Power','Services & Experiences','Education & EdTech'];
-  var activePCs = APP_DATA.parentCategories || ['Adult Beverage'];
+  var activePCs = APP_DATA.parentCategories || [];
   var pcGrid = parentCats.map(function(c) {
     var isChecked = activePCs.indexOf(c) !== -1;
     return '<label style="display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid ' + (isChecked ? 'var(--teal)' : 'var(--border)') + ';border-radius:6px;cursor:pointer;background:' + (isChecked ? 'var(--teal-xl)' : 'var(--white)') + '"><input type="checkbox" class="ep-pc-cb" value="' + c + '"' + (isChecked ? ' checked' : '') + ' onchange="(function(){var cbs=document.querySelectorAll(\'.ep-pc-cb\');var pcs=[];cbs.forEach(function(cb){if(cb.checked)pcs.push(cb.value);});APP_DATA.parentCategories=pcs;showHideVertTab();})()" style="accent-color:var(--teal);width:15px;height:15px;flex-shrink:0"><span style="font-size:13px;font-weight:500;color:var(--dark);flex:1">' + c + '</span></label>';
@@ -38044,16 +38020,16 @@ function openEditCompanyProfile() {
     '<div style="padding:18px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0"><span style="font-size:15px;font-weight:700;color:var(--dark)">Edit Company Profile</span><button style="background:none;border:none;font-size:22px;color:var(--slate);cursor:pointer;line-height:1;padding:0 4px" onclick="document.getElementById(\'edit-profile-modal\').remove()">\u00d7</button></div>' +
     '<div style="display:flex;border-bottom:1px solid var(--border);padding:0 24px;flex-shrink:0"><button id="ecp-tab-general" onclick="ecpTab(\'general\')" style="background:none;border:none;border-bottom:2px solid var(--teal);color:var(--teal);font-size:13px;font-weight:600;padding:10px 16px 9px;cursor:pointer;margin-bottom:-1px">General</button><button id="ecp-tab-verticals" onclick="ecpTab(\'verticals\')" style="background:none;border:none;border-bottom:2px solid transparent;color:var(--slate);font-size:13px;font-weight:600;padding:10px 16px 9px;cursor:pointer;margin-bottom:-1px">Parent Categories</button><button id="ecp-tab-verticals2" onclick="ecpTab(\'verticals2\')" style="background:none;border:none;border-bottom:2px solid transparent;color:var(--slate);font-size:13px;font-weight:600;padding:10px 16px 9px;cursor:pointer;margin-bottom:-1px;display:none">Verticals</button></div>' +
     '<div id="ecp-panel-general" style="padding:20px 24px;overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:14px">' +
-    '<div style="display:flex;flex-direction:column;gap:5px"><label style="font-size:14px;font-weight:600;color:var(--dark)">Legal Name</label><input type="text" class="form-control" value="Bacardi Limited" id="ep-legal"></div>' +
-    '<div style="display:flex;flex-direction:column;gap:5px"><label style="font-size:14px;font-weight:600;color:var(--dark)">DBA / Trade Name</label><input type="text" class="form-control" value="Bacardí USA" id="ep-dba"></div>' +
-    '<div style="display:flex;flex-direction:column;gap:5px"><label style="font-size:14px;font-weight:600;color:var(--dark)">Website</label><input type="text" class="form-control" value="bacardilimited.com"></div>' +
-    '<div style="display:flex;flex-direction:column;gap:5px"><label style="font-size:14px;font-weight:600;color:var(--dark)">Headquarters</label><input type="text" class="form-control" value="Hamilton, Bermuda" placeholder="City, Country"></div>' +
+    '<div style="display:flex;flex-direction:column;gap:5px"><label style="font-size:14px;font-weight:600;color:var(--dark)">Legal Name</label><input type="text" class="form-control" value="" placeholder="Legal name" id="ep-legal"></div>' +
+    '<div style="display:flex;flex-direction:column;gap:5px"><label style="font-size:14px;font-weight:600;color:var(--dark)">DBA / Trade Name</label><input type="text" class="form-control" value="" placeholder="DBA / Trade name" id="ep-dba"></div>' +
+    '<div style="display:flex;flex-direction:column;gap:5px"><label style="font-size:14px;font-weight:600;color:var(--dark)">Website</label><input type="text" class="form-control" value="" placeholder="https://yourcompany.com"></div>' +
+    '<div style="display:flex;flex-direction:column;gap:5px"><label style="font-size:14px;font-weight:600;color:var(--dark)">Headquarters</label><input type="text" class="form-control" value="" placeholder="City, Country"></div>' +
     '<div style="display:flex;flex-direction:column;gap:5px"><label style="font-size:14px;font-weight:600;color:var(--dark)">Operations Locations</label><div style="font-size:14px;color:var(--slate);margin-bottom:6px">Add all offices and operating locations globally. Mark one as Primary.</div>' +
     '<div id="ops-list" style="display:flex;flex-direction:column;gap:6px;margin-bottom:6px">' +
-    '<div style="display:flex;align-items:center;gap:6px"><input type="text" class="form-control" value="Coral Gables, FL, USA" style="flex:1;font-size:13px" placeholder="City, Country"><span class="badge b-teal" style="font-size:14px;flex-shrink:0">Primary</span></div>' +
-    '<div style="display:flex;align-items:center;gap:6px"><input type="text" class="form-control" value="New York, NY, USA" style="flex:1;font-size:13px" placeholder="City, Country"><button onclick="this.closest(\'div\').remove()" style="background:none;border:none;color:var(--slate);cursor:pointer;font-size:16px;line-height:1;padding:0 2px">\u00d7</button></div>' +
-    '<div style="display:flex;align-items:center;gap:6px"><input type="text" class="form-control" value="Hamilton, Bermuda" style="flex:1;font-size:13px" placeholder="City, Country"><button onclick="this.closest(\'div\').remove()" style="background:none;border:none;color:var(--slate);cursor:pointer;font-size:16px;line-height:1;padding:0 2px">\u00d7</button></div>' +
-    '<div style="display:flex;align-items:center;gap:6px"><input type="text" class="form-control" value="London, UK" style="flex:1;font-size:13px" placeholder="City, Country"><button onclick="this.closest(\'div\').remove()" style="background:none;border:none;color:var(--slate);cursor:pointer;font-size:16px;line-height:1;padding:0 2px">\u00d7</button></div>' +
+    '<div style="display:flex;align-items:center;gap:6px"><input type="text" class="form-control" value="" style="flex:1;font-size:13px" placeholder="City, Country"><span class="badge b-teal" style="font-size:14px;flex-shrink:0">Primary</span></div>' +
+    '<div style="display:flex;align-items:center;gap:6px"><input type="text" class="form-control" value="" style="flex:1;font-size:13px" placeholder="City, Country"><button onclick="this.closest(\'div\').remove()" style="background:none;border:none;color:var(--slate);cursor:pointer;font-size:16px;line-height:1;padding:0 2px">\u00d7</button></div>' +
+    '<div style="display:flex;align-items:center;gap:6px"><input type="text" class="form-control" value="" style="flex:1;font-size:13px" placeholder="City, Country"><button onclick="this.closest(\'div\').remove()" style="background:none;border:none;color:var(--slate);cursor:pointer;font-size:16px;line-height:1;padding:0 2px">\u00d7</button></div>' +
+    '<div style="display:flex;align-items:center;gap:6px"><input type="text" class="form-control" value="" style="flex:1;font-size:13px" placeholder="City, Country"><button onclick="this.closest(\'div\').remove()" style="background:none;border:none;color:var(--slate);cursor:pointer;font-size:16px;line-height:1;padding:0 2px">\u00d7</button></div>' +
     '</div>' +
     '<button type="button" class="btn btn-ghost btn-sm" style="align-self:flex-start;color:var(--teal)" onclick="addOpsLocation()">+ Add Location</button>' +
     '</div>' +
@@ -38133,7 +38109,7 @@ function ecpTab(tab) {
 }
 function showHideVertTab() {
   var NO_VERT = ['Adult Beverage'];
-  var activePCs = APP_DATA.parentCategories || ['Adult Beverage'];
+  var activePCs = APP_DATA.parentCategories || [];
   var hasVerts = activePCs.some(function(pc) { return NO_VERT.indexOf(pc) === -1; });
   var btn = document.getElementById('ecp-tab-verticals2');
   if (btn) btn.style.display = hasVerts ? '' : 'none';
@@ -38148,7 +38124,7 @@ function initVerticalGrid() {
   'Services & Experiences': ['Financial Services','Telecom','Travel & Hospitality','Entertainment & Media','Healthcare & Wellness','Technology','Real Estate & Home Services','Energy & Utilities'],
   'Education & EdTech': ['K-12 Education','Higher Education','Test Prep & Admissions','Tutoring & Academic Support','EdTech Products','Early Childhood Education','Corporate & Professional Development','Tutoring Franchises & Events']
 };
-  var activePCs = APP_DATA.parentCategories || ['Adult Beverage'];
+  var activePCs = APP_DATA.parentCategories || [];
   var grid = document.getElementById('ep-vert-grid2');
   if (!grid) return;
   var html = '';
@@ -38231,7 +38207,7 @@ function saveCompanyProfile() {
   var cbs  = grid ? grid.querySelectorAll('.ep-pc-cb') : [];
   var newPCs = [];
   cbs.forEach(function(cb) { if (cb.checked) newPCs.push(cb.value); });
-  if (newPCs.length === 0) newPCs = APP_DATA.parentCategories || ['Adult Beverage'];
+  if (newPCs.length === 0) newPCs = APP_DATA.parentCategories || [];
   APP_DATA.parentCategories = newPCs;
   var vertCbs = document.querySelectorAll('.ep-vert-cb2');
   var newVerts = [];
