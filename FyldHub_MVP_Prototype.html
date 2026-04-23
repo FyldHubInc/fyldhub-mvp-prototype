@@ -2915,10 +2915,7 @@ body.dash-edit-mode .dw-normal-btns { display:none !important; }
       <div class="acct-menu" id="acctMenu">
         <div class="acct-menu-hd"><div style="display:flex;align-items:center;gap:10px"><div class="gt-avatar" id="acct-menu-avatar" style="width:38px;height:38px;font-size:13px;flex-shrink:0">AM</div><div><div class="acct-menu-name" id="acct-menu-name">Alex Morgan</div><div class="acct-menu-role" id="acct-menu-role">Account Owner</div><div class="acct-menu-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="056469607d456764666477616c2b666a68">[email&#160;protected]</a></div></div></div></div>
         <div class="acct-menu-section">
-          <div class="acct-menu-item" onclick="closeAcctMenu();openMyAccount('profile')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>My Profile</div>
-          <div class="acct-menu-item" onclick="closeAcctMenu();openMyAccount('security')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Security &amp; MFA</div>
-          <div class="acct-menu-item" onclick="closeAcctMenu();openMyAccount('notifications')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>Notifications</div>
-          <div class="acct-menu-item" onclick="closeAcctMenu();openMyAccount('appearance')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>Appearance</div>
+          <div class="acct-menu-item" onclick="closeAcctMenu();openUserProfile()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>My Profile &amp; Security</div>
         </div>
         <div class="acct-menu-section"><div class="acct-menu-item" onclick="closeAcctMenu();switchModule('settings')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>Company Settings</div></div>
         <div class="acct-menu-section"><div class="acct-menu-item danger" onclick="closeAcctMenu();toast('Signed out')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Sign Out</div></div>
@@ -18195,7 +18192,7 @@ function renderEC() {
   }
   var container = document.getElementById('ec-container');
   if (!container) return;
-  container.innerHTML = '<div class="flex ic jb mb3"><div><div style="font-size:15px;font-weight:700;color:var(--dark)">Event Categories</div><div class="ts tsl mt1">Define the taxonomy used when creating events, assigning budget pools, and filtering reports.</div></div><button class="btn btn-primary btn-sm" onclick="ecOpenAddCat()"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg> Add Category</button></div><div style="display:flex;align-items:center;gap:16px;font-size:14px;color:var(--slate);margin-bottom:20px;padding:10px 14px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius)"><span style="font-weight:600;color:var(--dark)">Legend:</span><span class="flex ic g1"><span style="width:8px;height:8px;border-radius:50%;background:var(--teal);display:inline-block"></span> Active</span><span class="flex ic g1"><span style="width:8px;height:8px;border-radius:50%;background:var(--border);display:inline-block"></span> Inactive</span></div>'+EC_DATA.map(catBlock).join('');
+  container.innerHTML = '<div class="flex ic jb mb3"><div><div style="font-size:15px;font-weight:700;color:var(--dark)">Event Categories</div><div class="ts tsl mt1">Define the taxonomy used when creating events, assigning budget pools, and filtering reports.</div></div><button class="btn btn-primary btn-sm" onclick="ecOpenAddCat()"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg> Add Category</button></div><div style="display:flex;align-items:center;gap:16px;font-size:14px;color:var(--slate);margin-bottom:20px;padding:10px 14px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius)"><span style="font-weight:600;color:var(--dark)">Legend:</span><span class="flex ic g1"><span style="width:8px;height:8px;border-radius:50%;background:var(--teal);display:inline-block"></span> Active</span><span class="flex ic g1"><span style="width:8px;height:8px;border-radius:50%;background:var(--border);display:inline-block"></span> Inactive</span></div>'+(EC_DATA.length===0?'<div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:48px 24px;text-align:center"><div style="font-size:15px;font-weight:600;color:var(--dark);margin-bottom:6px">No categories yet</div><div style="font-size:14px;color:var(--slate);margin-bottom:16px">Create your first event category to start organizing activations, audits, and deliveries.</div><button class="btn btn-primary btn-sm" onclick="ecOpenAddCat()">+ Add Category</button></div>':EC_DATA.map(catBlock).join(''));
 }
 function ecToggleCatExpand(catId){var cat=EC_DATA.find(function(c){return c.id===catId});if(cat){cat.expanded=!cat.expanded;renderEC()}}
 function ecToggleSubExpand(catId,subId){var cat=EC_DATA.find(function(c){return c.id===catId});if(!cat)return;var sub=cat.subcats.find(function(s){return s.id===subId});if(sub){sub.expanded=!sub.expanded;renderEC()}}
@@ -18208,12 +18205,15 @@ function ecShowModal(title, bodyHtml, onSave) {
   document.getElementById('ec-modal-title').textContent = title;
   document.getElementById('ec-modal-body').innerHTML = bodyHtml;
   document.getElementById('ec-modal-save').onclick = onSave;
+  modal.classList.add('open');
   modal.style.display = 'flex';
   document.body.style.overflow = 'hidden';
 }
 
 function ecCloseModal() {
-  document.getElementById('ec-modal-ov').style.display = 'none';
+  var modal = document.getElementById('ec-modal-ov');
+  modal.classList.remove('open');
+  modal.style.display = 'none';
   document.body.style.overflow = '';
 }
 function ecOpenAddCat(){EC_EDIT={type:'addCat',catId:null,subcatId:null,typeId:null};ecShowModal('Add Main Category','<div class="fg"><label>Category Name</label><input type="text" id="ec-f-name" placeholder="e.g., Trade Marketing" style="width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px"></div><div class="fg"><label>Hub</label><select id="ec-f-hub" style="width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px"><option value="Activations">Activations</option><option value="Merchandising">Merchandising</option><option value="On-Demand">On-Demand</option><option value="All">All Hubs</option></select></div><div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0"><label style="font-size:13px;font-weight:500">Active</label><span class="toggle on" id="ec-f-active" onclick="this.classList.toggle(\'on\')"></span></div>',function(){ecSaveAddCat()})}
@@ -35212,6 +35212,38 @@ function closeUserProfile() {
 
 // -- ACCEPT INVITE ONBOARDING --------------------------------------
 window._onboardStep = 1;
+
+function openAcceptInvite() {
+  document.getElementById('accept-invite-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  goOnboardStep(1);
+}
+
+function closeAcceptInvite() {
+  document.getElementById('accept-invite-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function goOnboardStep(n) {
+  if (n < 1 || n > 4) return;
+  window._onboardStep = n;
+  for (var i = 1; i <= 4; i++) {
+    var sec = document.getElementById('ob-sec-' + i);
+    var tab = document.getElementById('ob-tab-' + i);
+    if (sec) sec.classList.toggle('active', i === n);
+    if (tab) {
+      tab.classList.remove('active','done');
+      if (i === n) tab.classList.add('active');
+      else if (i < n) tab.classList.add('done');
+    }
+  }
+  var back = document.getElementById('ob-back');
+  var next = document.getElementById('ob-next');
+  var done = document.getElementById('ob-done');
+  if (back) back.style.display = n > 1 ? 'inline-flex' : 'none';
+  if (next) next.style.display = n < 4 ? 'inline-flex' : 'none';
+  if (done) done.style.display = n === 4 ? 'inline-flex' : 'none';
+}
 
 
 function _showNrPreview(baseId, roleName) {
