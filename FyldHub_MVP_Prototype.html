@@ -14804,305 +14804,6 @@ Tier 3"></textarea>
     </div>
   </div>
 </div>
-
-
-
-
-<!-- ═══ USER PROFILE OVERLAY (restored from v5) ═══ -->
-<div class="wiz-overlay" id="user-profile-overlay" onclick="if(event.target===this)closeUserProfile()">
-  <div class="wiz-modal wiz-modal-lg">
-    <div class="wiz-hd">
-      <div style="display:flex;align-items:center;gap:16px">
-        <div style="width:52px;height:52px;border-radius:50%;background:var(--teal);color:#fff;font-size:18px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">AM</div>
-        <div>
-          <div class="wiz-hd-title">Alex Morgan</div>
-          <div class="wiz-hd-sub">VP Field Marketing · Org Admin · <a href="#" class="__cf_email__" data-cfemail="ec8d808994ac8e8d8f8d9e8885c28f8381">[email&nbsp;protected]</a></div>
-        </div>
-      </div>
-      <button onclick="closeUserProfile()" style="background:none;border:none;cursor:pointer;color:var(--slate)">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"></path></svg>
-      </button>
-    </div>
-    <div class="wiz-body" style="display:grid;grid-template-columns:1fr 1fr;gap:28px">
-
-      <!-- LEFT: Identity -->
-      <div>
-        <div style="font-size:13px;font-weight:700;color:var(--dark);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border)">Personal Information</div>
-        <div class="form-row">
-          <div class="form-group"><label class="form-label">First Name</label><input class="form-control" type="text" value="Alex"></div>
-          <div class="form-group"><label class="form-label">Last Name</label><input class="form-control" type="text" value="Morgan"></div>
-        </div>
-        <div class="form-group"><label class="form-label">Work Email</label><input class="form-control" type="email" value="alex@bacardi.com"></div>
-        <div class="form-group"><label class="form-label">Phone</label><input class="form-control" type="tel" placeholder="+1 (555) 000-0000"></div>
-        <div class="form-group"><label class="form-label">Job Title <span class="ts tsl" style="font-weight:400">— your actual company title</span></label><input class="form-control" type="text" value="VP Field Marketing"></div>
-        <div class="form-group"><label class="form-label">Department</label><input class="form-control" type="text" value="Field Marketing"></div>
-        <div class="form-group"><label class="form-label">Location / Time Zone</label>
-          <select class="form-control"><option>Eastern (ET) — New York</option><option>Central (CT)</option><option>Mountain (MT)</option><option>Pacific (PT)</option></select>
-        </div>
-
-        <div style="font-size:13px;font-weight:700;color:var(--dark);margin:20px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--border)">Profile Photo</div>
-        <div style="display:flex;align-items:center;gap:14px">
-          <div style="width:60px;height:60px;border-radius:50%;background:var(--teal);color:#fff;font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center">AM</div>
-          <div>
-            <button class="btn btn-outline btn-sm">Upload Photo</button>
-            <div class="ts tsl mt1">JPG or PNG, max 2 MB</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- RIGHT: FyldHub Role + Preferences -->
-      <div>
-        <div style="font-size:13px;font-weight:700;color:var(--dark);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border)">FyldHub Access</div>
-        <div class="form-group">
-          <label class="form-label">FyldHub Role</label>
-          <div style="padding:10px 14px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);font-size:13px">
-            <span class="badge b-teal">Org Admin</span>
-            <span class="ts tsl" style="margin-left:8px">Full account access — set by account owner</span>
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Brand Scope</label>
-          <div style="font-size:13px;color:var(--slate);padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius)">All Brands <span class="ts tsl">(Org Admin)</span></div>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Location Scope</label>
-          <div style="font-size:13px;color:var(--slate);padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius)">All Locations <span class="ts tsl">(Org Admin)</span></div>
-        </div>
-
-        <div style="font-size:13px;font-weight:700;color:var(--dark);margin:20px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--border)">Preferences</div>
-        <div class="form-group">
-          <label class="form-label">Default Dashboard View</label>
-          <select class="form-control"><option>Overview (all brands)</option></select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Notification Delivery</label>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px">
-            <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer"><input type="checkbox" checked=""> Email notifications</label>
-            <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer"><input type="checkbox" checked=""> In-app notifications</label>
-            <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer"><input type="checkbox"> SMS / text alerts</label>
-          </div>
-        </div>
-
-        <div style="font-size:13px;font-weight:700;color:var(--dark);margin:20px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--border)">Security</div>
-        <div class="form-group">
-          <label class="form-label">Password</label>
-          <button class="btn btn-outline btn-sm">Change Password</button>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Two-Factor Authentication</label>
-          <div style="display:flex;align-items:center;gap:8px">
-            <span class="badge b-green">Enabled — Email code</span>
-            <button class="btn btn-ghost btn-sm">Manage MFA</button>
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Active Sessions</label>
-          <button class="btn btn-ghost btn-sm">View &amp; Revoke Sessions</button>
-        </div>
-
-        <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border)">
-          <button class="btn btn-danger btn-sm">Sign Out of All Devices</button>
-        </div>
-      </div>
-
-    </div>
-    <div class="wiz-ft">
-      <button class="btn btn-ghost" onclick="closeUserProfile()">Cancel</button>
-      <button class="btn btn-primary" onclick="closeUserProfile()">Save Profile</button>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ ACCEPT INVITE OVERLAY (restored from v5) ═══ -->
-<div class="wiz-overlay" id="accept-invite-overlay">
-  <div class="wiz-modal wiz-modal-lg">
-    <div class="wiz-hd" style="background:var(--dark);padding:20px 28px">
-      <div>
-        <div style="font-size:17px;font-weight:700;color:#fff;font-family:&#39;IBM Plex Serif&#39;,serif">Welcome to FyldHub</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:2px">Complete your profile to get started — takes about 2 minutes.</div>
-      </div>
-      <div style="width:36px;height:36px;background:var(--teal);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:#fff">F</div>
-    </div>
-
-    <div class="wiz-steps" style="padding:0 24px">
-      <div class="wiz-step-tab active" id="ob-tab-1"><span class="wiz-step-num">1</span> Create Password</div>
-      <div class="wiz-step-tab" id="ob-tab-2"><span class="wiz-step-num">2</span> Your Profile</div>
-      <div class="wiz-step-tab" id="ob-tab-3"><span class="wiz-step-num">3</span> MFA Setup</div>
-      <div class="wiz-step-tab" id="ob-tab-4"><span class="wiz-step-num">4</span> All Set</div>
-    </div>
-
-    <div class="wiz-body">
-
-      <!-- STEP 1: Create Password -->
-      <div class="wiz-section active" id="ob-sec-1">
-        <div class="info-box mb3">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-          You were invited by <strong>Alex Morgan</strong> at your company. Your email <strong><a href="#" class="__cf_email__" data-cfemail="bfd5d0cddbded1ffdddedcdecddbd691dcd0d2">[email&nbsp;protected]</a></strong> is already verified.
-        </div>
-        <div class="form-group" style="margin-bottom:20px">
-          <label class="form-label" style="font-size:12px;text-transform:uppercase;letter-spacing:.4px;color:var(--slate)">Creating password for</label>
-          <div style="font-size:14px;font-weight:600;color:var(--dark)"><a href="#" class="__cf_email__" data-cfemail="abcac6c9ced985c6c8cdceceebcdd2c7cfc3dec985c8c4c6">[email&nbsp;protected]</a></div>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Create Password <span style="color:#e53e3e">*</span></label>
-          <input class="form-control" type="password" placeholder="Min. 8 characters" style="max-width:400px">
-          <div class="ts tsl mt1">Must include uppercase, number, and special character.</div>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Confirm Password <span style="color:#e53e3e">*</span></label>
-          <input class="form-control" type="password" placeholder="Re-enter password" style="max-width:400px">
-        </div>
-      </div>
-
-      <!-- STEP 2: Your Profile -->
-      <div class="wiz-section" id="ob-sec-2">
-        <div style="font-size:13px;color:var(--slate);margin-bottom:20px">Tell us a bit about yourself. This helps your teammates know who you are and how to reach you.</div>
-        <div class="form-row" style="align-items:flex-end">
-          <div class="form-group" style="max-width:130px">
-            <label class="form-label">Salutation <span style="font-weight:400;color:var(--slate)">(optional)</span></label>
-            <select class="form-control">
-              <option value="">—</option>
-              <option>Mr.</option>
-              <option>Ms.</option>
-              <option>Mrs.</option>
-              <option>Dr.</option>
-              <option>Mx.</option>
-            </select>
-          </div>
-          <div class="form-group"><label class="form-label">First Name <span style="color:#e53e3e">*</span></label><input class="form-control" type="text" placeholder="First name"></div>
-          <div class="form-group"><label class="form-label">Last Name <span style="color:#e53e3e">*</span></label><input class="form-control" type="text" placeholder="Last name"></div>
-          <div class="form-group" style="max-width:130px">
-            <label class="form-label">Suffix <span style="font-weight:400;color:var(--slate)">(optional)</span></label>
-            <select class="form-control">
-              <option value="">—</option>
-              <option>Jr.</option>
-              <option>Sr.</option>
-              <option>II</option>
-              <option>III</option>
-              <option>MD</option>
-              <option>PhD</option>
-              <option>Esq.</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label">Job Title <span style="color:#e53e3e">*</span></label>
-            <input class="form-control" type="text" placeholder="e.g. Field Marketing Manager, Regional Director…">
-            <div class="ts tsl mt1">Your real company title — shown on events and in team views.</div>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Department <span style="font-weight:400;color:var(--slate)">(optional)</span></label>
-            <input class="form-control" type="text" placeholder="e.g. Field Marketing, Ops…">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Phone <span style="font-weight:400;color:var(--slate)">(optional)</span></label>
-          <input class="form-control" type="tel" placeholder="+1 (555) 000-0000" style="max-width:280px">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Time Zone</label>
-          <select class="form-control" style="max-width:320px">
-            <option>Eastern (ET) — New York</option>
-            <option>Central (CT) — Chicago</option>
-            <option>Mountain (MT) — Denver</option>
-            <option>Pacific (PT) — Los Angeles</option>
-          </select>
-        </div>
-        <div style="margin-top:16px">
-          <label class="form-label">Profile Photo <span style="font-weight:400;color:var(--slate)">(optional)</span></label>
-          <div style="display:flex;align-items:center;gap:14px;margin-top:6px">
-            <div style="width:52px;height:52px;border-radius:50%;background:var(--teal);color:#fff;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center">J</div>
-            <button class="btn btn-outline btn-sm">Upload Photo</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- STEP 3: MFA -->
-      <div class="wiz-section" id="ob-sec-3">
-        <div style="font-size:13px;font-weight:700;color:var(--dark);margin-bottom:6px">Set Up Two-Factor Authentication</div>
-        <div style="font-size:13px;color:var(--slate);margin-bottom:20px">Required by your account admin. Adds an extra layer of security when signing in.</div>
-        <div style="display:flex;flex-direction:column;gap:10px">
-          <label style="display:flex;align-items:flex-start;gap:12px;padding:14px;border:1.5px solid var(--teal);background:var(--teal-xl);border-radius:var(--radius);cursor:pointer">
-            <input type="radio" name="ob-mfa" checked="" style="margin-top:2px">
-            <div>
-              <div style="font-weight:600;color:var(--dark);font-size:13px">Email code</div>
-              <div class="ts tsl">A 6-digit code sent to your verified email address.</div>
-            </div>
-          </label>
-          <label style="display:flex;align-items:flex-start;gap:12px;padding:14px;border:1.5px solid var(--border);border-radius:var(--radius);cursor:pointer">
-            <input type="radio" name="ob-mfa" style="margin-top:2px">
-            <div>
-              <div style="font-weight:600;color:var(--dark);font-size:13px">SMS / Text code</div>
-              <div class="ts tsl">A 6-digit code texted to your phone number.</div>
-            </div>
-          </label>
-          <label style="display:flex;align-items:flex-start;gap:12px;padding:14px;border:1.5px solid var(--border);border-radius:var(--radius);cursor:pointer">
-            <input type="radio" name="ob-mfa" style="margin-top:2px">
-            <div>
-              <div style="font-weight:600;color:var(--dark);font-size:13px">Authenticator app (TOTP)</div>
-              <div class="ts tsl">Use Google Authenticator, Authy, or similar app.</div>
-            </div>
-          </label>
-        </div>
-      </div>
-
-      <!-- STEP 4: All Set -->
-      <div class="wiz-section" id="ob-sec-4">
-        <div style="text-align:center;padding:20px 0">
-          <div style="width:64px;height:64px;border-radius:50%;background:var(--teal);margin:0 auto 16px;display:flex;align-items:center;justify-content:center">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          </div>
-          <div style="font-size:20px;font-weight:700;color:var(--dark);margin-bottom:8px;font-family:&#39;IBM Plex Serif&#39;,serif">You're all set!</div>
-          <div style="font-size:14px;color:var(--slate);max-width:400px;margin:0 auto 28px">Your profile is complete. Here's a quick overview of what you have access to.</div>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:560px;margin:0 auto">
-          <div class="card" style="padding:14px;margin:0">
-            <div class="ts tsl mb1">Your FyldHub Role</div>
-            <div style="font-weight:700;color:var(--dark)">Program Manager</div>
-          </div>
-          <div class="card" style="padding:14px;margin:0">
-            <div class="ts tsl mb1">Brand Access</div>
-            <div style="font-weight:700;color:var(--dark)">Your assigned brands</div>
-            <div class="ts tsl mt1">Assigned by your account admin.</div>
-          </div>
-          <div class="card" style="padding:14px;margin:0">
-            <div class="ts tsl mb1">Location Scope</div>
-            <div style="font-weight:700;color:var(--dark)">West Coast · Northeast</div>
-            <div class="ts tsl mt1">You manage events in these regions.</div>
-          </div>
-          <div class="card" style="padding:14px;margin:0">
-            <div class="ts tsl mb1">MFA</div>
-            <div style="font-weight:700;color:var(--teal)">Enabled ✓</div>
-            <div class="ts tsl mt1">Your account is protected.</div>
-          </div>
-        </div>
-        <div class="info-box mt3" style="max-width:560px;margin:16px auto 0">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-          You can update your profile, preferences, and security settings at any time by clicking your avatar in the top-right corner.
-        </div>
-      </div>
-
-    </div>
-    <div class="wiz-ft">
-      <button id="ob-back" class="btn btn-ghost" onclick="goOnboardStep(window._onboardStep-1)" style="display:none">Back</button>
-      <div class="flex g2">
-        <button id="ob-next" class="btn btn-primary" onclick="goOnboardStep(window._onboardStep+1)">Continue</button>
-        <button id="ob-done" class="btn btn-primary" onclick="closeAcceptInvite()" style="display:none">Go to Dashboard →</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Preview button for Accept Invite flow (for prototype demo) -->
-<div style="position:fixed;bottom:20px;right:20px;z-index:9999">
-  <button class="btn btn-outline btn-sm" onclick="openAcceptInvite()" style="box-shadow:0 2px 8px rgba(0,0,0,.15)">
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-    Preview: Accept Invite Flow
-  </button>
-</div>
-
-
 <!-- ═══ ADD / EDIT ORG NODE ═══════════════════════════════ -->
 <div class="wiz-overlay" id="node-overlay" onclick="if(event.target===this)closeAddNode()">
   <div class="wiz-modal" style="width:480px">
@@ -38819,6 +38520,303 @@ function toggleBrandProdRow(rowId) {
 </script>
 
 </div></div></div>
+
+
+<!-- ═══ BODY-LEVEL OVERLAYS — moved out of module-settings by Patch 19 ═══ -->
+<!-- ═══ USER PROFILE OVERLAY (restored from v5) ═══ -->
+<div class="wiz-overlay" id="user-profile-overlay" onclick="if(event.target===this)closeUserProfile()">
+  <div class="wiz-modal wiz-modal-lg">
+    <div class="wiz-hd">
+      <div style="display:flex;align-items:center;gap:16px">
+        <div style="width:52px;height:52px;border-radius:50%;background:var(--teal);color:#fff;font-size:18px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">AM</div>
+        <div>
+          <div class="wiz-hd-title">Alex Morgan</div>
+          <div class="wiz-hd-sub">VP Field Marketing · Org Admin · <a href="#" class="__cf_email__" data-cfemail="ec8d808994ac8e8d8f8d9e8885c28f8381">[email&nbsp;protected]</a></div>
+        </div>
+      </div>
+      <button onclick="closeUserProfile()" style="background:none;border:none;cursor:pointer;color:var(--slate)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+      </button>
+    </div>
+    <div class="wiz-body" style="display:grid;grid-template-columns:1fr 1fr;gap:28px">
+
+      <!-- LEFT: Identity -->
+      <div>
+        <div style="font-size:13px;font-weight:700;color:var(--dark);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border)">Personal Information</div>
+        <div class="form-row">
+          <div class="form-group"><label class="form-label">First Name</label><input class="form-control" type="text" value="Alex"></div>
+          <div class="form-group"><label class="form-label">Last Name</label><input class="form-control" type="text" value="Morgan"></div>
+        </div>
+        <div class="form-group"><label class="form-label">Work Email</label><input class="form-control" type="email" value="alex@bacardi.com"></div>
+        <div class="form-group"><label class="form-label">Phone</label><input class="form-control" type="tel" placeholder="+1 (555) 000-0000"></div>
+        <div class="form-group"><label class="form-label">Job Title <span class="ts tsl" style="font-weight:400">— your actual company title</span></label><input class="form-control" type="text" value="VP Field Marketing"></div>
+        <div class="form-group"><label class="form-label">Department</label><input class="form-control" type="text" value="Field Marketing"></div>
+        <div class="form-group"><label class="form-label">Location / Time Zone</label>
+          <select class="form-control"><option>Eastern (ET) — New York</option><option>Central (CT)</option><option>Mountain (MT)</option><option>Pacific (PT)</option></select>
+        </div>
+
+        <div style="font-size:13px;font-weight:700;color:var(--dark);margin:20px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--border)">Profile Photo</div>
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="width:60px;height:60px;border-radius:50%;background:var(--teal);color:#fff;font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center">AM</div>
+          <div>
+            <button class="btn btn-outline btn-sm">Upload Photo</button>
+            <div class="ts tsl mt1">JPG or PNG, max 2 MB</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: FyldHub Role + Preferences -->
+      <div>
+        <div style="font-size:13px;font-weight:700;color:var(--dark);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border)">FyldHub Access</div>
+        <div class="form-group">
+          <label class="form-label">FyldHub Role</label>
+          <div style="padding:10px 14px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);font-size:13px">
+            <span class="badge b-teal">Org Admin</span>
+            <span class="ts tsl" style="margin-left:8px">Full account access — set by account owner</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Brand Scope</label>
+          <div style="font-size:13px;color:var(--slate);padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius)">All Brands <span class="ts tsl">(Org Admin)</span></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Location Scope</label>
+          <div style="font-size:13px;color:var(--slate);padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius)">All Locations <span class="ts tsl">(Org Admin)</span></div>
+        </div>
+
+        <div style="font-size:13px;font-weight:700;color:var(--dark);margin:20px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--border)">Preferences</div>
+        <div class="form-group">
+          <label class="form-label">Default Dashboard View</label>
+          <select class="form-control"><option>Overview (all brands)</option></select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Notification Delivery</label>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px">
+            <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer"><input type="checkbox" checked=""> Email notifications</label>
+            <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer"><input type="checkbox" checked=""> In-app notifications</label>
+            <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer"><input type="checkbox"> SMS / text alerts</label>
+          </div>
+        </div>
+
+        <div style="font-size:13px;font-weight:700;color:var(--dark);margin:20px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--border)">Security</div>
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <button class="btn btn-outline btn-sm">Change Password</button>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Two-Factor Authentication</label>
+          <div style="display:flex;align-items:center;gap:8px">
+            <span class="badge b-green">Enabled — Email code</span>
+            <button class="btn btn-ghost btn-sm">Manage MFA</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Active Sessions</label>
+          <button class="btn btn-ghost btn-sm">View &amp; Revoke Sessions</button>
+        </div>
+
+        <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border)">
+          <button class="btn btn-danger btn-sm">Sign Out of All Devices</button>
+        </div>
+      </div>
+
+    </div>
+    <div class="wiz-ft">
+      <button class="btn btn-ghost" onclick="closeUserProfile()">Cancel</button>
+      <button class="btn btn-primary" onclick="closeUserProfile()">Save Profile</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ ACCEPT INVITE OVERLAY (restored from v5) ═══ -->
+<div class="wiz-overlay" id="accept-invite-overlay">
+  <div class="wiz-modal wiz-modal-lg">
+    <div class="wiz-hd" style="background:var(--dark);padding:20px 28px">
+      <div>
+        <div style="font-size:17px;font-weight:700;color:#fff;font-family:&#39;IBM Plex Serif&#39;,serif">Welcome to FyldHub</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:2px">Complete your profile to get started — takes about 2 minutes.</div>
+      </div>
+      <div style="width:36px;height:36px;background:var(--teal);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:#fff">F</div>
+    </div>
+
+    <div class="wiz-steps" style="padding:0 24px">
+      <div class="wiz-step-tab active" id="ob-tab-1"><span class="wiz-step-num">1</span> Create Password</div>
+      <div class="wiz-step-tab" id="ob-tab-2"><span class="wiz-step-num">2</span> Your Profile</div>
+      <div class="wiz-step-tab" id="ob-tab-3"><span class="wiz-step-num">3</span> MFA Setup</div>
+      <div class="wiz-step-tab" id="ob-tab-4"><span class="wiz-step-num">4</span> All Set</div>
+    </div>
+
+    <div class="wiz-body">
+
+      <!-- STEP 1: Create Password -->
+      <div class="wiz-section active" id="ob-sec-1">
+        <div class="info-box mb3">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          You were invited by <strong>Alex Morgan</strong> at your company. Your email <strong><a href="#" class="__cf_email__" data-cfemail="bfd5d0cddbded1ffdddedcdecddbd691dcd0d2">[email&nbsp;protected]</a></strong> is already verified.
+        </div>
+        <div class="form-group" style="margin-bottom:20px">
+          <label class="form-label" style="font-size:12px;text-transform:uppercase;letter-spacing:.4px;color:var(--slate)">Creating password for</label>
+          <div style="font-size:14px;font-weight:600;color:var(--dark)"><a href="#" class="__cf_email__" data-cfemail="abcac6c9ced985c6c8cdceceebcdd2c7cfc3dec985c8c4c6">[email&nbsp;protected]</a></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Create Password <span style="color:#e53e3e">*</span></label>
+          <input class="form-control" type="password" placeholder="Min. 8 characters" style="max-width:400px">
+          <div class="ts tsl mt1">Must include uppercase, number, and special character.</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Confirm Password <span style="color:#e53e3e">*</span></label>
+          <input class="form-control" type="password" placeholder="Re-enter password" style="max-width:400px">
+        </div>
+      </div>
+
+      <!-- STEP 2: Your Profile -->
+      <div class="wiz-section" id="ob-sec-2">
+        <div style="font-size:13px;color:var(--slate);margin-bottom:20px">Tell us a bit about yourself. This helps your teammates know who you are and how to reach you.</div>
+        <div class="form-row" style="align-items:flex-end">
+          <div class="form-group" style="max-width:130px">
+            <label class="form-label">Salutation <span style="font-weight:400;color:var(--slate)">(optional)</span></label>
+            <select class="form-control">
+              <option value="">—</option>
+              <option>Mr.</option>
+              <option>Ms.</option>
+              <option>Mrs.</option>
+              <option>Dr.</option>
+              <option>Mx.</option>
+            </select>
+          </div>
+          <div class="form-group"><label class="form-label">First Name <span style="color:#e53e3e">*</span></label><input class="form-control" type="text" placeholder="First name"></div>
+          <div class="form-group"><label class="form-label">Last Name <span style="color:#e53e3e">*</span></label><input class="form-control" type="text" placeholder="Last name"></div>
+          <div class="form-group" style="max-width:130px">
+            <label class="form-label">Suffix <span style="font-weight:400;color:var(--slate)">(optional)</span></label>
+            <select class="form-control">
+              <option value="">—</option>
+              <option>Jr.</option>
+              <option>Sr.</option>
+              <option>II</option>
+              <option>III</option>
+              <option>MD</option>
+              <option>PhD</option>
+              <option>Esq.</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Job Title <span style="color:#e53e3e">*</span></label>
+            <input class="form-control" type="text" placeholder="e.g. Field Marketing Manager, Regional Director…">
+            <div class="ts tsl mt1">Your real company title — shown on events and in team views.</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Department <span style="font-weight:400;color:var(--slate)">(optional)</span></label>
+            <input class="form-control" type="text" placeholder="e.g. Field Marketing, Ops…">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone <span style="font-weight:400;color:var(--slate)">(optional)</span></label>
+          <input class="form-control" type="tel" placeholder="+1 (555) 000-0000" style="max-width:280px">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Time Zone</label>
+          <select class="form-control" style="max-width:320px">
+            <option>Eastern (ET) — New York</option>
+            <option>Central (CT) — Chicago</option>
+            <option>Mountain (MT) — Denver</option>
+            <option>Pacific (PT) — Los Angeles</option>
+          </select>
+        </div>
+        <div style="margin-top:16px">
+          <label class="form-label">Profile Photo <span style="font-weight:400;color:var(--slate)">(optional)</span></label>
+          <div style="display:flex;align-items:center;gap:14px;margin-top:6px">
+            <div style="width:52px;height:52px;border-radius:50%;background:var(--teal);color:#fff;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center">J</div>
+            <button class="btn btn-outline btn-sm">Upload Photo</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3: MFA -->
+      <div class="wiz-section" id="ob-sec-3">
+        <div style="font-size:13px;font-weight:700;color:var(--dark);margin-bottom:6px">Set Up Two-Factor Authentication</div>
+        <div style="font-size:13px;color:var(--slate);margin-bottom:20px">Required by your account admin. Adds an extra layer of security when signing in.</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <label style="display:flex;align-items:flex-start;gap:12px;padding:14px;border:1.5px solid var(--teal);background:var(--teal-xl);border-radius:var(--radius);cursor:pointer">
+            <input type="radio" name="ob-mfa" checked="" style="margin-top:2px">
+            <div>
+              <div style="font-weight:600;color:var(--dark);font-size:13px">Email code</div>
+              <div class="ts tsl">A 6-digit code sent to your verified email address.</div>
+            </div>
+          </label>
+          <label style="display:flex;align-items:flex-start;gap:12px;padding:14px;border:1.5px solid var(--border);border-radius:var(--radius);cursor:pointer">
+            <input type="radio" name="ob-mfa" style="margin-top:2px">
+            <div>
+              <div style="font-weight:600;color:var(--dark);font-size:13px">SMS / Text code</div>
+              <div class="ts tsl">A 6-digit code texted to your phone number.</div>
+            </div>
+          </label>
+          <label style="display:flex;align-items:flex-start;gap:12px;padding:14px;border:1.5px solid var(--border);border-radius:var(--radius);cursor:pointer">
+            <input type="radio" name="ob-mfa" style="margin-top:2px">
+            <div>
+              <div style="font-weight:600;color:var(--dark);font-size:13px">Authenticator app (TOTP)</div>
+              <div class="ts tsl">Use Google Authenticator, Authy, or similar app.</div>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- STEP 4: All Set -->
+      <div class="wiz-section" id="ob-sec-4">
+        <div style="text-align:center;padding:20px 0">
+          <div style="width:64px;height:64px;border-radius:50%;background:var(--teal);margin:0 auto 16px;display:flex;align-items:center;justify-content:center">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <div style="font-size:20px;font-weight:700;color:var(--dark);margin-bottom:8px;font-family:&#39;IBM Plex Serif&#39;,serif">You're all set!</div>
+          <div style="font-size:14px;color:var(--slate);max-width:400px;margin:0 auto 28px">Your profile is complete. Here's a quick overview of what you have access to.</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:560px;margin:0 auto">
+          <div class="card" style="padding:14px;margin:0">
+            <div class="ts tsl mb1">Your FyldHub Role</div>
+            <div style="font-weight:700;color:var(--dark)">Program Manager</div>
+          </div>
+          <div class="card" style="padding:14px;margin:0">
+            <div class="ts tsl mb1">Brand Access</div>
+            <div style="font-weight:700;color:var(--dark)">Your assigned brands</div>
+            <div class="ts tsl mt1">Assigned by your account admin.</div>
+          </div>
+          <div class="card" style="padding:14px;margin:0">
+            <div class="ts tsl mb1">Location Scope</div>
+            <div style="font-weight:700;color:var(--dark)">West Coast · Northeast</div>
+            <div class="ts tsl mt1">You manage events in these regions.</div>
+          </div>
+          <div class="card" style="padding:14px;margin:0">
+            <div class="ts tsl mb1">MFA</div>
+            <div style="font-weight:700;color:var(--teal)">Enabled ✓</div>
+            <div class="ts tsl mt1">Your account is protected.</div>
+          </div>
+        </div>
+        <div class="info-box mt3" style="max-width:560px;margin:16px auto 0">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          You can update your profile, preferences, and security settings at any time by clicking your avatar in the top-right corner.
+        </div>
+      </div>
+
+    </div>
+    <div class="wiz-ft">
+      <button id="ob-back" class="btn btn-ghost" onclick="goOnboardStep(window._onboardStep-1)" style="display:none">Back</button>
+      <div class="flex g2">
+        <button id="ob-next" class="btn btn-primary" onclick="goOnboardStep(window._onboardStep+1)">Continue</button>
+        <button id="ob-done" class="btn btn-primary" onclick="closeAcceptInvite()" style="display:none">Go to Dashboard →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Preview button for Accept Invite flow (for prototype demo) -->
+<div style="position:fixed;bottom:20px;right:20px;z-index:9999">
+  <button class="btn btn-outline btn-sm" onclick="openAcceptInvite()" style="box-shadow:0 2px 8px rgba(0,0,0,.15)">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+    Preview: Accept Invite Flow
+  </button>
+</div>
+
 <!-- ═══ WORKERS MODULE ═══ -->
 <div class="module-workers" id="module-workers" style="display:none;position:fixed;left:var(--sb-w);top:var(--topbar-h);right:0;bottom:0;overflow-y:auto;background:var(--bg);transition:left .2s">
 <div class="page-content" id="workers-page-content">
