@@ -2953,7 +2953,7 @@ body.dash-edit-mode .dw-normal-btns { display:none !important; }
   <div id="rep-advanced" class="rep-panel" style="display:none;flex:1;overflow-y:auto;padding:24px;background:var(--bg)"><div style="max-width:900px;margin:0 auto"><div style="background:linear-gradient(135deg,#4C1D95,#7C3AED);border-radius:12px;padding:28px 32px;margin-bottom:24px;color:#fff"><div style="font-size:22px;font-weight:800;margin-bottom:8px">Connect your sales data. Answer the why.</div><div style="font-size:13px;opacity:.85;line-height:1.6;max-width:480px;margin-bottom:16px">FyldHub Advanced Analytics layers distributor data, POS sell-through, and third-party signals onto your field execution data.</div><button class="btn btn-sm" style="background:#fff;color:#7C3AED;font-weight:700;padding:10px 20px;border:none;border-radius:8px" onclick="toast('Contact sales@fyldhub.com')">Talk to Sales</button></div><div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><div style="font-size:13px;font-weight:700;color:var(--dark)">Preview</div><span style="font-size:11px;font-weight:700;background:#F3F0FF;color:#7C3AED;padding:2px 8px;border-radius:4px">ILLUSTRATIVE</span></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:16px"><div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:20px"><div style="font-size:12px;font-weight:700;margin-bottom:16px">Sell-Through Lift</div><canvas id="rep-adv-lift" height="160"></canvas></div><div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:20px"><div style="font-size:12px;font-weight:700;margin-bottom:16px">Market Performance</div><div id="rep-adv-heatmap" style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px"></div></div><div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:20px"><div style="font-size:12px;font-weight:700;margin-bottom:16px">SKU Velocity</div><canvas id="rep-adv-sku" height="160"></canvas></div><div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:20px"><div style="font-size:12px;font-weight:700;margin-bottom:16px">Data Sources</div><div style="display:flex;flex-direction:column;gap:8px"><div style="display:flex;justify-content:space-between;padding:8px 12px;background:var(--lgray);border-radius:6px"><span style="font-size:12px;font-weight:600">Crisp POS</span><span style="font-size:11px;font-weight:700;background:#DCFCE7;color:#145523;padding:2px 8px;border-radius:4px">Live</span></div><div style="display:flex;justify-content:space-between;padding:8px 12px;background:var(--lgray);border-radius:6px"><span style="font-size:12px;font-weight:600">SGWS EDI</span><span style="font-size:11px;font-weight:700;background:#DCFCE7;color:#145523;padding:2px 8px;border-radius:4px">Live</span></div><div style="display:flex;justify-content:space-between;padding:8px 12px;background:var(--lgray);border-radius:6px"><span style="font-size:12px;font-weight:600">Placer.ai</span><span style="font-size:11px;font-weight:700;background:#FEF3C7;color:#92400E;padding:2px 8px;border-radius:4px">Pending</span></div></div></div></div></div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px">
         <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:20px"><div style="font-size:12px;font-weight:700;margin-bottom:4px">Execution Quality vs. Sell-Through</div><div style="font-size:12px;color:var(--slate);margin-bottom:14px">Each dot = one event</div><canvas id="rep-adv-scatter" height="170"></canvas></div>
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:20px"><div style="font-size:12px;font-weight:700;margin-bottom:4px">Benchmarking</div><div style="font-size:12px;color:var(--slate);margin-bottom:14px">Bacardi USA vs. industry average</div><canvas id="rep-adv-bench" height="170"></canvas></div>
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:20px"><div style="font-size:12px;font-weight:700;margin-bottom:4px">Benchmarking</div><div style="font-size:12px;color:var(--slate);margin-bottom:14px">Your company vs. industry average</div><canvas id="rep-adv-bench" height="170"></canvas></div>
       </div>
       <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:20px;margin-top:16px"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px"><div><div style="font-size:12px;font-weight:700">Predictive Execution Risk</div><div style="font-size:12px;color:var(--slate)">Upcoming events ranked by predicted risk</div></div><span style="font-size:11px;font-weight:700;background:#FFF3CD;color:#92400E;padding:3px 8px;border-radius:4px">3 AT RISK</span></div><table style="width:100%;border-collapse:collapse;font-size:12px"><thead><tr style="border-bottom:2px solid var(--border)"><th style="text-align:left;padding:6px 10px;font-size:11px;text-transform:uppercase;color:var(--slate)">Event</th><th style="text-align:left;padding:6px 10px;font-size:11px;text-transform:uppercase;color:var(--slate)">Hub</th><th style="text-align:left;padding:6px 10px;font-size:11px;text-transform:uppercase;color:var(--slate)">Date</th><th style="text-align:center;padding:6px 10px;font-size:11px;text-transform:uppercase;color:var(--slate)">Risk</th><th style="text-align:left;padding:6px 10px;font-size:11px;text-transform:uppercase;color:var(--slate)">Factor</th></tr></thead><tbody><tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;font-weight:600">Spec's #88 Houston</td><td style="padding:8px 10px"><span style="font-size:11px;font-weight:700;background:#EDE9FE;color:#7C3AED;padding:2px 7px;border-radius:4px">On-Demand</span></td><td style="padding:8px 10px;color:var(--slate)">Mar 27</td><td style="padding:8px 10px;text-align:center"><span style="font-size:11px;font-weight:700;background:#FEE2E2;color:#991B1B;padding:2px 8px;border-radius:4px">HIGH</span></td><td style="padding:8px 10px;color:var(--slate)">No runner confirmed</td></tr><tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;font-weight:600">BJ's #45 Framingham</td><td style="padding:8px 10px"><span style="font-size:11px;font-weight:700;background:#EDE9FE;color:#7C3AED;padding:2px 7px;border-radius:4px">On-Demand</span></td><td style="padding:8px 10px;color:var(--slate)">Mar 19</td><td style="padding:8px 10px;text-align:center"><span style="font-size:11px;font-weight:700;background:#FEF3C7;color:#92400E;padding:2px 8px;border-radius:4px">MED</span></td><td style="padding:8px 10px;color:var(--slate)">Kit not dispatched</td></tr><tr><td style="padding:8px 10px;font-weight:600">TW #892 Tampa</td><td style="padding:8px 10px"><span style="font-size:11px;font-weight:700;background:#CCFBF1;color:#0F766E;padding:2px 7px;border-radius:4px">Activations</span></td><td style="padding:8px 10px;color:var(--slate)">Mar 28</td><td style="padding:8px 10px;text-align:center"><span style="font-size:11px;font-weight:700;background:#DCFCE7;color:#145523;padding:2px 8px;border-radius:4px">LOW</span></td><td style="padding:8px 10px;color:var(--slate)">Fully staffed</td></tr></tbody></table></div>
       <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:20px;margin-top:16px"><div style="font-size:12px;font-weight:700;margin-bottom:4px">Recommendations</div><div style="font-size:12px;color:var(--slate);margin-bottom:14px">AI-generated next-best actions</div><div style="display:flex;flex-direction:column;gap:10px"><div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px"><div><div style="font-size:13px;font-weight:700;color:#14532D">Assign Chloe B. to Total Wine #1205 Boston</div><div style="font-size:12px;color:#166534;margin-top:2px">98% match &#183; 4.9 rating &#183; 2.9 mi away</div></div><button class="btn btn-sm" style="background:#145523;color:#fff;border:none" onclick="toast('Invite sent')">Assign</button></div><div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:#EFF6FF;border:1px solid #93C5FD;border-radius:8px"><div><div style="font-size:13px;font-weight:700;color:#1E3A8A">Add Merch event at BevMo! #312 Providence</div><div style="font-size:12px;color:#1D4ED8;margin-top:2px">4-week shelf gap detected &#183; Competitor activity flagged</div></div><button class="btn btn-sm btn-outline" onclick="toast('Opening wizard')">Create</button></div><div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:#FFFBEB;border:1px solid #FDE68A;border-radius:8px"><div><div style="font-size:13px;font-weight:700;color:#78350F">PATR&#211;N program 18% under budget</div><div style="font-size:12px;color:#92400E;margin-top:2px">$6,840 remaining &#183; 2 events available before Q1 close</div></div><button class="btn btn-sm btn-outline" onclick="toast('Viewing budget')">Review</button></div></div></div>
@@ -2965,7 +2965,7 @@ body.dash-edit-mode .dw-normal-btns { display:none !important; }
   <div style="display:flex;gap:0;border-bottom:1px solid var(--border);background:var(--white);flex-shrink:0"><div id="fc-kpi-spend" class="kpi" style="flex:1;border-right:1px solid var(--border)"><div class="lbl">Total Spend</div><div class="val" style="color:var(--teal)">$0</div><div class="ksub">March 2026</div></div><div id="fc-kpi-verified" class="kpi" style="flex:1;border-right:1px solid var(--border)"><div class="lbl">Auto-Verified</div><div class="val">0</div><div class="ksub">transactions</div></div><div id="fc-kpi-pending" class="kpi" style="flex:1;border-right:1px solid var(--border)"><div class="lbl">Pending Review</div><div class="val" style="color:#92400E">0</div><div class="ksub">need approval</div></div><div id="fc-kpi-reimb" class="kpi" style="flex:1"><div class="lbl">Reimbursements</div><div class="val">$0</div><div class="ksub">owed to workers</div></div></div>
   <div style="display:flex;flex:1;overflow:hidden;background:var(--bg);gap:0">
     <div style="width:280px;flex-shrink:0;border-right:1px solid var(--border);background:var(--white);overflow-y:auto;padding:20px 16px">
-      <div style="background:linear-gradient(135deg,#134E4A,#0F766E);border-radius:12px;padding:20px;color:#fff;margin-bottom:16px"><div style="font-size:9px;font-weight:700;opacity:.7;text-transform:uppercase;letter-spacing:.8px;margin-bottom:16px">FyldCard · Powered by Stripe</div><div style="font-size:17px;font-weight:800;letter-spacing:2.5px;margin-bottom:14px">•••• •••• •••• 4821</div><div style="display:flex;justify-content:space-between;align-items:flex-end"><div><div style="font-size:9px;opacity:.7;text-transform:uppercase">Card Holder</div><div style="font-size:12px;font-weight:600">Bacardí USA</div></div><div style="text-align:right"><div style="font-size:9px;opacity:.7;text-transform:uppercase">Expires</div><div style="font-size:12px;font-weight:600">03/29</div></div></div></div>
+      <div style="background:linear-gradient(135deg,#134E4A,#0F766E);border-radius:12px;padding:20px;color:#fff;margin-bottom:16px"><div style="font-size:9px;font-weight:700;opacity:.7;text-transform:uppercase;letter-spacing:.8px;margin-bottom:16px">FyldCard · Powered by Stripe</div><div style="font-size:17px;font-weight:800;letter-spacing:2.5px;margin-bottom:14px">•••• •••• •••• 4821</div><div style="display:flex;justify-content:space-between;align-items:flex-end"><div><div style="font-size:9px;opacity:.7;text-transform:uppercase">Card Holder</div><div style="font-size:12px;font-weight:600">Your Company</div></div><div style="text-align:right"><div style="font-size:9px;opacity:.7;text-transform:uppercase">Expires</div><div style="font-size:12px;font-weight:600">03/29</div></div></div></div>
       <div style="background:var(--lgray);border-radius:8px;padding:14px;margin-bottom:16px"><div style="display:flex;justify-content:space-between;margin-bottom:10px"><div><div style="font-size:11px;color:var(--slate);text-transform:uppercase">Available</div><div style="font-size:22px;font-weight:800;color:var(--teal)">$4,843.50</div></div><div style="text-align:right"><div style="font-size:11px;color:var(--slate);text-transform:uppercase">Monthly Limit</div><div style="font-size:16px;font-weight:700;color:var(--dark)">$5,000</div></div></div><div style="height:6px;background:var(--border);border-radius:3px;overflow:hidden"><div id="fc-spend-bar" style="height:100%;background:var(--teal);border-radius:3px;width:3.1%"></div></div><div style="display:flex;justify-content:space-between;margin-top:4px"><div style="font-size:11px;color:var(--slate)" id="fc-spend-pct">3.1% used</div><div style="font-size:11px;color:var(--slate)">Resets Apr 1</div></div></div>
       <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--slate);margin-bottom:8px">Spend by Category</div><div id="fc-cat-breakdown" style="display:flex;flex-direction:column;gap:8px"></div>
       <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--border)"><div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--slate);margin-bottom:8px">Card Controls</div><div style="display:flex;flex-direction:column;gap:6px"><div style="display:flex;justify-content:space-between;align-items:center;font-size:12px"><span>Per-event limit</span><span style="font-weight:700">$50</span></div><div style="display:flex;justify-content:space-between;align-items:center;font-size:12px"><span>Auto-verify</span><span style="font-size:11px;font-weight:700;background:#CCFBF1;color:#0F766E;padding:1px 7px;border-radius:4px">ON</span></div><div style="display:flex;justify-content:space-between;align-items:center;font-size:12px"><span>Require receipt</span><span style="font-size:11px;font-weight:700;background:#F1F5F9;color:#475569;padding:1px 7px;border-radius:4px">OFF</span></div></div></div>
@@ -3046,7 +3046,7 @@ body.dash-edit-mode .dw-normal-btns { display:none !important; }
 
       <div id="dwidget-hub-activity" class="dash-widget" data-widget-id="hub-activity"><div class="dw-header"><div><div class="dw-title">Hub Activity</div><div class="dw-sub">Live status across Activations, Merch &amp; On-Demand hubs</div></div><div class="dw-actions"><div class="dw-normal-btns"><span class="badge b-teal">March 2026</span></div><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('hub-activity')">⇄</button><button class="dw-action-btn" onclick="hideDashWidget('hub-activity')">✕</button></div></div></div><div class="dw-body"><div class="dw-hub-row"><div class="dw-hub-item"><div class="dw-hub-dot" style="background:#00767B"></div><div class="dw-hub-info"><div class="dw-hub-name">Activations</div><div class="dw-hub-stat">11 events · 87% completion</div></div><div class="dw-hub-badge" style="background:#E0F5F3;color:#00767B">Active</div></div><div class="dw-hub-item"><div class="dw-hub-dot" style="background:#1E4DB7"></div><div class="dw-hub-info"><div class="dw-hub-name">Merchandising</div><div class="dw-hub-stat">1 event · 100% completion</div></div><div class="dw-hub-badge" style="background:#EEF2FF;color:#1E4DB7">Active</div></div><div class="dw-hub-item"><div class="dw-hub-dot" style="background:#7C3AED"></div><div class="dw-hub-info"><div class="dw-hub-name">On-Demand</div><div class="dw-hub-stat">2 events · Active</div></div><div class="dw-hub-badge" style="background:#F5F3FF;color:#7C3AED">Pending</div></div></div><div class="dw-hub-footer"><span class="dw-meta">13 total events this month</span><a class="dw-link" onclick="switchModule('events')">View all →</a></div></div></div>
 
-      <div id="dwidget-programs" class="dash-widget" data-widget-id="programs" style="position:relative;opacity:.5;pointer-events:none"><div class="dw-header"><div><div class="dw-title">Program Performance <span style="font-size:9px;font-weight:700;letter-spacing:.4px;background:#F59E0B;color:#fff;padding:2px 5px;border-radius:3px;vertical-align:middle">PHASE 2</span></div><div class="dw-sub">Budget burn &amp; event completion by program</div></div><div class="dw-actions"><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('programs')">⇄</button><button class="dw-action-btn" onclick="hideDashWidget('programs')">✕</button></div></div></div><div class="dw-body"><table class="dw-prog-table"><thead><tr><th>Program</th><th>Events</th><th>Completion</th><th>Budget</th><th>Status</th></tr></thead><tbody><tr><td><div class="dw-prog-name">BACARDÍ Rum Off-Premise 2026</div><div class="dw-prog-brand">BACARDÍ Rum</div></td><td>8 / 10</td><td><div class="dw-prog-bar"><div class="dw-prog-fill" style="width:80%;background:#00767B"></div></div><span>80%</span></td><td>$18.4K / $24K</td><td><span class="badge b-teal">On Track</span></td></tr><tr><td><div class="dw-prog-name">BACARDÍ RTD Summer Push</div><div class="dw-prog-brand">BACARDÍ RTD</div></td><td>1 / 4</td><td><div class="dw-prog-bar"><div class="dw-prog-fill" style="width:25%;background:#F59E0B"></div></div><span>25%</span></td><td>$3.2K / $12K</td><td><span class="badge b-amber">Behind</span></td></tr><tr><td><div class="dw-prog-name">PATRÓN On-Premise Elite</div><div class="dw-prog-brand">PATRÓN</div></td><td>3 / 6</td><td><div class="dw-prog-bar"><div class="dw-prog-fill" style="width:50%;background:#00767B"></div></div><span>50%</span></td><td>$9.6K / $18K</td><td><span class="badge b-teal">On Track</span></td></tr></tbody></table></div></div>
+      <div id="dwidget-programs" class="dash-widget" data-widget-id="programs" style="position:relative;opacity:.5;pointer-events:none"><div class="dw-header"><div><div class="dw-title">Program Performance <span style="font-size:9px;font-weight:700;letter-spacing:.4px;background:#F59E0B;color:#fff;padding:2px 5px;border-radius:3px;vertical-align:middle">PHASE 2</span></div><div class="dw-sub">Budget burn &amp; event completion by program</div></div><div class="dw-actions"><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('programs')">⇄</button><button class="dw-action-btn" onclick="hideDashWidget('programs')">✕</button></div></div></div><div class="dw-body"><div style="padding:40px 20px;text-align:center;color:var(--slate);font-size:13px">No active programs</div></div></div>
 
       <div id="dwidget-month-snapshot" class="dash-widget" data-widget-id="month-snapshot"><div class="dw-header"><div><div class="dw-title">Month Snapshot</div><div class="dw-sub" id="dash-month-snapshot-label">Summary KPIs · March 2026</div></div><div class="dw-actions"><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('month-snapshot')">⇄</button><button class="dw-action-btn" onclick="hideDashWidget('month-snapshot')">✕</button></div></div></div><div class="dw-body"><div class="dw-snap-grid"><div class="dw-snap-item"><div class="dw-snap-val">13</div><div class="dw-snap-lbl">Events Total</div></div><div class="dw-snap-item"><div class="dw-snap-val">87%</div><div class="dw-snap-lbl">Completion Rate</div></div><div class="dw-snap-item"><div class="dw-snap-val">462</div><div class="dw-snap-lbl">Consumer Interactions</div></div><div class="dw-snap-item"><div class="dw-snap-val">318</div><div class="dw-snap-lbl">Samples Distributed</div></div><div class="dw-snap-item"><div class="dw-snap-val">91%</div><div class="dw-snap-lbl">Avg Exec Score</div></div><div class="dw-snap-item"><div class="dw-snap-val">$31.2K</div><div class="dw-snap-lbl">Total Spend</div></div></div></div></div>
 
@@ -3061,13 +3061,13 @@ body.dash-edit-mode .dw-normal-btns { display:none !important; }
     
       
       <!-- ═══ WAREHOUSE MANAGER WIDGETS ═══ -->
-      <div id="dwidget-kit-inventory" class="dash-widget" data-widget-id="kit-inventory" style="display:none"><div class="dw-header"><div><div class="dw-title">Kit Inventory Status</div><div class="dw-sub">Assembled kits by template</div></div><div class="dw-actions"><div class="dw-normal-btns"><span class="badge b-amber">2 Need Assembly</span></div><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('kit-inventory')">&#8644;</button><button class="dw-action-btn" onclick="hideDashWidget('kit-inventory')">&#10005;</button></div></div></div><div class="dw-body"><table class="dw-log-table"><thead><tr><th>Kit Template</th><th>Built</th><th>Avail</th><th>Transit</th><th>Field</th><th>Queue</th></tr></thead><tbody><tr><td class="dw-log-name">BACARDI Off-Premise Demo</td><td>12</td><td style="color:#16A34A;font-weight:700">8</td><td>2</td><td>2</td><td style="color:#6B7A8D">&#8212;</td></tr><tr><td class="dw-log-name">BACARDI Pool Party</td><td>4</td><td style="color:#D97706;font-weight:700">3</td><td>1</td><td>0</td><td><span class="badge b-amber" style="font-size:11px">2</span></td></tr><tr><td class="dw-log-name">PATRON On-Premise</td><td>6</td><td style="color:#D97706;font-weight:700">4</td><td>0</td><td>2</td><td><span class="badge b-amber" style="font-size:11px">4</span></td></tr><tr><td class="dw-log-name">Planogram Kit</td><td>3</td><td style="color:#16A34A;font-weight:700">3</td><td>0</td><td>0</td><td style="color:#6B7A8D">&#8212;</td></tr></tbody></table></div></div>
+      <div id="dwidget-kit-inventory" class="dash-widget" data-widget-id="kit-inventory" style="display:none"><div class="dw-header"><div><div class="dw-title">Kit Inventory Status</div><div class="dw-sub">Assembled kits by template</div></div><div class="dw-actions"><div class="dw-normal-btns"><span class="badge b-amber">2 Need Assembly</span></div><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('kit-inventory')">&#8644;</button><button class="dw-action-btn" onclick="hideDashWidget('kit-inventory')">&#10005;</button></div></div></div><div class="dw-body"><div style="padding:40px 20px;text-align:center;color:var(--slate);font-size:13px">No kit inventory yet</div></div></div>
 
-      <div id="dwidget-delivery-status" class="dash-widget" data-widget-id="delivery-status" style="display:none"><div class="dw-header"><div><div class="dw-title">Delivery Status Board</div><div class="dw-sub">All active deliveries</div></div><div class="dw-actions"><div class="dw-normal-btns"><div class="dw-tab-toggle"><button class="dw-tab active" onclick="deliveryTab('status',this)">Status</button><button class="dw-tab" onclick="deliveryTab('map',this)">Map</button></div></div><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('delivery-status')">&#8644;</button><button class="dw-action-btn" onclick="hideDashWidget('delivery-status')">&#10005;</button></div></div></div><div class="dw-body"><div id="delivery-status-tab"><div class="dw-delivery-item"><div class="dw-del-icon">&#9989;</div><div class="dw-del-info"><div class="dw-del-name">BACARDI Kit &#8594; Total Wine #1205 Boston</div><div class="dw-del-meta">Tanya Williams &#183; Delivered 9:45 AM</div></div><span class="badge" style="background:#DCFCE7;color:#166534;font-size:11px">Delivered</span></div><div class="dw-delivery-item dw-del-transit"><div class="dw-del-icon">&#128663;</div><div class="dw-del-info"><div class="dw-del-name">BACARDI Kit &#8594; Star Market #33 Brookline</div><div class="dw-del-meta">Tanya Williams &#183; ETA 2:00 PM</div></div><span class="badge" style="background:#EEF2FF;color:#1E4DB7;font-size:11px">In Transit</span></div><div class="dw-delivery-item"><div class="dw-del-icon">&#128230;</div><div class="dw-del-info"><div class="dw-del-name">PATRON Kit &#8594; BevMo! #312 Providence</div><div class="dw-del-meta">Unassigned &#183; Ship by Apr 5</div></div><span class="badge" style="background:#FEF3C7;color:#92610A;font-size:11px">Pending</span></div><div class="dw-delivery-item dw-del-damaged"><div class="dw-del-icon">&#9888;&#65039;</div><div class="dw-del-info"><div class="dw-del-name">Pool Party Kit &#8594; BevMo! #312 Providence</div><div class="dw-del-meta">Mar 29 &#183; Cooler cracked</div></div><span class="badge" style="background:#FEE2E2;color:#991B1B;font-size:11px">Damaged</span></div></div><div id="delivery-map-tab" style="display:none"><div style="font-size:11px;color:var(--slate);font-style:italic;margin-bottom:8px">Illustrative &#8212; Live tracking requires GPS integration</div><svg viewBox="0 0 500 220" style="width:100%;height:160px;border-radius:8px;background:#EBF8F8"><path d="M100,40 L200,20 L310,35 L370,65 L340,110 L280,130 L200,120 L130,100 Z" fill="#C8E8E9" stroke="#00767B" stroke-width="1.5" opacity=".8"/><path d="M310,35 L400,25 L450,55 L440,95 L390,115 L340,110 Z" fill="#C8E8E9" stroke="#00767B" stroke-width="1.5" opacity=".8"/><circle cx="330" cy="60" r="10" fill="#00767B" opacity=".9"/><text x="330" y="64" text-anchor="middle" font-size="9" fill="white" font-weight="bold">BOS</text><circle cx="315" cy="75" r="7" fill="#1E4DB7" opacity=".9"/><text x="315" y="79" text-anchor="middle" font-size="7" fill="white" font-weight="bold">BRK</text><circle cx="355" cy="90" r="8" fill="#D97706" opacity=".9"/><text x="355" y="94" text-anchor="middle" font-size="7" fill="white" font-weight="bold">PVD</text><line x1="322" y1="68" x2="315" y2="75" stroke="#1E4DB7" stroke-width="2.5" stroke-dasharray="5,3"/><circle cx="15" cy="15" r="5" fill="#00767B"/><text x="24" y="19" font-size="9" fill="#1A2B3C">Delivered</text><circle cx="90" cy="15" r="5" fill="#1E4DB7"/><text x="99" y="19" font-size="9" fill="#1A2B3C">In Transit</text><circle cx="170" cy="15" r="5" fill="#D97706"/><text x="179" y="19" font-size="9" fill="#1A2B3C">Pending</text></svg></div></div></div>
+      <div id="dwidget-delivery-status" class="dash-widget" data-widget-id="delivery-status" style="display:none"><div class="dw-header"><div><div class="dw-title">Delivery Status Board</div><div class="dw-sub">All active deliveries</div></div><div class="dw-actions"><div class="dw-normal-btns"><div class="dw-tab-toggle"><button class="dw-tab active" onclick="deliveryTab('status',this)">Status</button><button class="dw-tab" onclick="deliveryTab('map',this)">Map</button></div></div><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('delivery-status')">&#8644;</button><button class="dw-action-btn" onclick="hideDashWidget('delivery-status')">&#10005;</button></div></div></div><div class="dw-body"><div id="delivery-status-tab"><div style="padding:40px 20px;text-align:center;color:var(--slate);font-size:13px">No active deliveries</div></div><div id="delivery-map-tab" style="display:none"><div style="font-size:11px;color:var(--slate);font-style:italic;margin-bottom:8px">Illustrative &#8212; Live tracking requires GPS integration</div><svg viewBox="0 0 500 220" style="width:100%;height:160px;border-radius:8px;background:#EBF8F8"><path d="M100,40 L200,20 L310,35 L370,65 L340,110 L280,130 L200,120 L130,100 Z" fill="#C8E8E9" stroke="#00767B" stroke-width="1.5" opacity=".8"/><path d="M310,35 L400,25 L450,55 L440,95 L390,115 L340,110 Z" fill="#C8E8E9" stroke="#00767B" stroke-width="1.5" opacity=".8"/><circle cx="330" cy="60" r="10" fill="#00767B" opacity=".9"/><text x="330" y="64" text-anchor="middle" font-size="9" fill="white" font-weight="bold">BOS</text><circle cx="315" cy="75" r="7" fill="#1E4DB7" opacity=".9"/><text x="315" y="79" text-anchor="middle" font-size="7" fill="white" font-weight="bold">BRK</text><circle cx="355" cy="90" r="8" fill="#D97706" opacity=".9"/><text x="355" y="94" text-anchor="middle" font-size="7" fill="white" font-weight="bold">PVD</text><line x1="322" y1="68" x2="315" y2="75" stroke="#1E4DB7" stroke-width="2.5" stroke-dasharray="5,3"/><circle cx="15" cy="15" r="5" fill="#00767B"/><text x="24" y="19" font-size="9" fill="#1A2B3C">Delivered</text><circle cx="90" cy="15" r="5" fill="#1E4DB7"/><text x="99" y="19" font-size="9" fill="#1A2B3C">In Transit</text><circle cx="170" cy="15" r="5" fill="#D97706"/><text x="179" y="19" font-size="9" fill="#1A2B3C">Pending</text></svg></div></div></div>
 
       <div id="dwidget-asset-inventory" class="dash-widget" data-widget-id="asset-inventory" style="display:none"><div class="dw-header"><div><div class="dw-title">Asset Inventory</div><div class="dw-sub">Physical assets across all locations</div></div><div class="dw-actions"><div class="dw-normal-btns"><span class="badge b-amber">2 Low</span><span class="badge" style="background:#FEE2E2;color:#991B1B;font-size:11px;margin-left:4px">1 Critical</span></div><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('asset-inventory')">&#8644;</button><button class="dw-action-btn" onclick="hideDashWidget('asset-inventory')">&#10005;</button></div></div></div><div class="dw-body"><table class="dw-log-table"><thead><tr><th>Asset</th><th>Total</th><th>Avail</th><th>In Kits</th><th></th></tr></thead><tbody><tr><td class="dw-log-name">Table Cover (6ft)</td><td>18</td><td>12</td><td>6</td><td style="color:#16A34A;font-size:12px">&#10003;</td></tr><tr><td class="dw-log-name">Sample Cups (cs/500)</td><td>4</td><td>2</td><td>2</td><td><span class="badge b-amber" style="font-size:11px">Reorder</span></td></tr><tr><td class="dw-log-name">Ice Bucket</td><td>8</td><td>4</td><td>4</td><td style="color:#16A34A;font-size:12px">&#10003;</td></tr><tr><td class="dw-log-name">Bar Mat</td><td>6</td><td>2</td><td>4</td><td style="color:#16A34A;font-size:12px">&#10003;</td></tr><tr><td class="dw-log-name">Napkins (case)</td><td>3</td><td>1</td><td>2</td><td><span class="badge" style="background:#FEE2E2;color:#991B1B;font-size:11px">Critical</span></td></tr><tr><td class="dw-log-name">Shaker + Strainer</td><td>4</td><td>4</td><td>0</td><td style="color:#16A34A;font-size:12px">&#10003;</td></tr><tr><td class="dw-log-name">Coupe Glasses (x6)</td><td>3</td><td>1</td><td>2</td><td><span class="badge b-amber" style="font-size:11px">Reorder</span></td></tr></tbody></table><div style="padding-top:10px;text-align:right"><button class="dw-gap-btn" onclick="toast('Replenishment request submitted — inventory manager notified.')">+ Request Replenishment</button></div></div></div>
 
-      <div id="dwidget-kit-assembly" class="dash-widget" data-widget-id="kit-assembly" style="display:none"><div class="dw-header"><div><div class="dw-title">Kit Assembly Queue</div><div class="dw-sub">Kits to build before shipping</div></div><div class="dw-actions"><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('kit-assembly')">&#8644;</button><button class="dw-action-btn" onclick="hideDashWidget('kit-assembly')">&#10005;</button></div></div></div><div class="dw-body"><div class="dw-gap-item"><div class="dw-gap-info"><div class="dw-gap-name">BACARDI RTD Summer Kit x 2</div><div class="dw-gap-meta">Spec's #88 Houston &#183; Need by Apr 9</div></div><span class="badge" style="background:#DCFCE7;color:#166534;font-size:11px">Parts Ready</span><button class="dw-gap-btn" onclick="toast('Kit build queued — BACARDI RTD Summer Kit x2.')">Build</button></div><div class="dw-gap-item"><div class="dw-gap-info"><div class="dw-gap-name">PATRON On-Premise Kit x 1</div><div class="dw-gap-meta">Total Wine #604 Dallas &#183; Need by Apr 8</div></div><span class="badge b-amber" style="font-size:11px">Bar mat missing</span><button class="dw-gap-btn" onclick="toast('PATRON Kit — bar mat backordered. Substitute sourced.')">Review</button></div><div class="dw-gap-item"><div class="dw-gap-info"><div class="dw-gap-name">BACARDI Pool Party Kit x 1</div><div class="dw-gap-meta">BevMo! #312 Providence &#183; Need by Apr 12</div></div><span class="badge" style="background:#FEE2E2;color:#991B1B;font-size:11px">Cooler backordered</span><button class="dw-gap-btn" onclick="toast('Replacement cooler ordered — expedited shipping. ETA Apr 9.')">Order</button></div></div></div>
+      <div id="dwidget-kit-assembly" class="dash-widget" data-widget-id="kit-assembly" style="display:none"><div class="dw-header"><div><div class="dw-title">Kit Assembly Queue</div><div class="dw-sub">Kits to build before shipping</div></div><div class="dw-actions"><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('kit-assembly')">&#8644;</button><button class="dw-action-btn" onclick="hideDashWidget('kit-assembly')">&#10005;</button></div></div></div><div class="dw-body"><div style="padding:40px 20px;text-align:center;color:var(--slate);font-size:13px">No assembly gaps</div></div></div>
 
       <div id="dwidget-storage-locations" class="dash-widget" data-widget-id="storage-locations" style="display:none"><div class="dw-header"><div><div class="dw-title">Storage Locations</div><div class="dw-sub">Inventory by warehouse and locker</div></div><div class="dw-actions"><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('storage-locations')">&#8644;</button><button class="dw-action-btn" onclick="hideDashWidget('storage-locations')">&#10005;</button></div></div></div><div class="dw-body"><div class="dw-storage-item"><div class="dw-storage-icon">&#127981;</div><div class="dw-storage-info"><div class="dw-storage-name">Boston MA &#8212; Main Warehouse</div><div class="dw-storage-meta">8 kits &#183; 142 assets</div></div><div class="dw-storage-bar-wrap"><div class="dw-storage-bar" style="width:78%;background:#00767B"></div></div><span style="font-size:12px;color:#6B7A8D">78%</span></div><div class="dw-storage-item"><div class="dw-storage-icon">&#128274;</div><div class="dw-storage-info"><div class="dw-storage-name">Houston TX &#8212; Locker 3</div><div class="dw-storage-meta">2 kits &#183; 24 assets</div></div><div class="dw-storage-bar-wrap"><div class="dw-storage-bar" style="width:45%;background:#00767B"></div></div><span style="font-size:12px;color:#6B7A8D">45%</span></div><div class="dw-storage-item"><div class="dw-storage-icon">&#128274;</div><div class="dw-storage-info"><div class="dw-storage-name">Providence RI &#8212; Locker 1</div><div class="dw-storage-meta">1 kit &#183; 18 assets</div></div><div class="dw-storage-bar-wrap"><div class="dw-storage-bar" style="width:32%;background:#00767B"></div></div><span style="font-size:12px;color:#6B7A8D">32%</span></div></div></div>
 
@@ -3075,7 +3075,7 @@ body.dash-edit-mode .dw-normal-btns { display:none !important; }
 
       <div id="dwidget-delivery-trend" class="dash-widget dw-vp-tier" data-widget-id="delivery-trend" style="display:none"><div class="dw-header"><div><div class="dw-title">Delivery Performance Trend</div><div class="dw-sub">On-time rate &#183; 12 weeks &#183; target 95%</div></div><div class="dw-actions"><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('delivery-trend')">&#8644;</button><button class="dw-action-btn" onclick="hideDashWidget('delivery-trend')">&#10005;</button></div></div></div><div class="dw-body"><div style="display:flex;align-items:center;gap:24px;margin-bottom:10px"><div><div class="dw-snap-val" style="font-size:28px">94%</div><div class="dw-snap-lbl">Current</div></div><div><div class="dw-snap-val" style="font-size:22px;color:#D97706">-1%</div><div class="dw-snap-lbl">vs last month</div></div><div><div class="dw-snap-val" style="font-size:22px;color:#16A34A">100%</div><div class="dw-snap-lbl">Best Q1</div></div></div><svg viewBox="0 0 400 80" style="width:100%;height:80px"><line x1="0" y1="12" x2="400" y2="12" stroke="#D97706" stroke-width="1" stroke-dasharray="6,3" opacity=".6"/><text x="402" y="16" font-size="8" fill="#D97706">95%</text><polyline points="0,48 33,40 66,44 99,28 132,20 165,32 198,8 231,12 264,24 297,4 330,12 363,20" fill="none" stroke="#00767B" stroke-width="2.5" stroke-linejoin="round"/><circle cx="363" cy="20" r="4" fill="#00767B"/><text x="0" y="76" font-size="7" fill="#6B7A8D">Jan</text><text x="130" y="76" font-size="7" fill="#6B7A8D">Feb</text><text x="270" y="76" font-size="7" fill="#6B7A8D">Mar</text><text x="355" y="76" font-size="7" fill="#6B7A8D">Now</text></svg></div></div>
 
-      <div id="dwidget-kit-portfolio-health" class="dash-widget dw-vp-tier" data-widget-id="kit-portfolio-health" style="display:none"><div class="dw-header"><div><div class="dw-title">Kit Portfolio Health</div><div class="dw-sub">Availability rate per template</div></div><div class="dw-actions"><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('kit-portfolio-health')">&#8644;</button><button class="dw-action-btn" onclick="hideDashWidget('kit-portfolio-health')">&#10005;</button></div></div></div><div class="dw-body"><div class="dw-mkt-item" style="margin-bottom:8px"><div style="display:flex;justify-content:space-between"><span class="dw-mkt-market">BACARDI Off-Premise Demo</span><span class="dw-mkt-score">92%</span></div><div class="dw-mkt-bar"><div style="width:92%;background:#00767B;height:6px;border-radius:3px"></div></div></div><div class="dw-mkt-item" style="margin-bottom:8px"><div style="display:flex;justify-content:space-between"><span class="dw-mkt-market">BACARDI Pool Party</span><span class="dw-mkt-score" style="color:#D97706">71%</span></div><div class="dw-mkt-bar"><div style="width:71%;background:#D97706;height:6px;border-radius:3px"></div></div></div><div class="dw-mkt-item" style="margin-bottom:8px"><div style="display:flex;justify-content:space-between"><span class="dw-mkt-market">PATRON On-Premise</span><span class="dw-mkt-score" style="color:#D97706">67%</span></div><div class="dw-mkt-bar"><div style="width:67%;background:#D97706;height:6px;border-radius:3px"></div></div></div><div class="dw-mkt-item"><div style="display:flex;justify-content:space-between"><span class="dw-mkt-market">Planogram Kit</span><span class="dw-mkt-score">100%</span></div><div class="dw-mkt-bar"><div style="width:100%;background:#00767B;height:6px;border-radius:3px"></div></div></div></div></div>
+      <div id="dwidget-kit-portfolio-health" class="dash-widget dw-vp-tier" data-widget-id="kit-portfolio-health" style="display:none"><div class="dw-header"><div><div class="dw-title">Kit Portfolio Health</div><div class="dw-sub">Availability rate per template</div></div><div class="dw-actions"><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('kit-portfolio-health')">&#8644;</button><button class="dw-action-btn" onclick="hideDashWidget('kit-portfolio-health')">&#10005;</button></div></div></div><div class="dw-body"><div style="padding:40px 20px;text-align:center;color:var(--slate);font-size:13px">No portfolio health data yet</div></div></div>
 
       <div id="dwidget-cost-efficiency" class="dash-widget dw-vp-tier" data-widget-id="cost-efficiency" style="display:none"><div class="dw-header"><div><div class="dw-title">Cost Efficiency</div><div class="dw-sub">Cost per delivery by method</div></div><div class="dw-actions"><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('cost-efficiency')">&#8644;</button><button class="dw-action-btn" onclick="hideDashWidget('cost-efficiency')">&#10005;</button></div></div></div><div class="dw-body"><div style="display:flex;gap:12px;margin-bottom:14px"><div class="dw-snap-item"><div class="dw-snap-val">$34</div><div class="dw-snap-lbl">Avg / Delivery</div></div><div class="dw-snap-item"><div class="dw-snap-val">$4.2K</div><div class="dw-snap-lbl">Month Spend</div></div><div class="dw-snap-item"><div class="dw-snap-val" style="color:#16A34A">70%</div><div class="dw-snap-lbl">Budget Used</div></div></div><table class="dw-log-table"><thead><tr><th>Carrier</th><th>Deliveries</th><th>Cost/Del</th><th>Trend</th></tr></thead><tbody><tr><td class="dw-log-name">FyldRunner</td><td>8</td><td style="color:#16A34A;font-weight:700">$28</td><td style="color:#16A34A">&#8595; -$2</td></tr><tr><td class="dw-log-name">FedEx</td><td>3</td><td>$48</td><td style="color:#6B7A8D">&#8594; flat</td></tr><tr><td class="dw-log-name">UPS</td><td>1</td><td>$52</td><td style="color:#6B7A8D">&#8594; flat</td></tr></tbody></table><div style="margin-top:10px;padding:8px;background:var(--teal-xl,#E0F5F3);border-radius:6px;font-size:12px;color:var(--teal)">FyldRunners cost 41% less. Expand coverage in Apr to save ~$580.</div></div></div>
 
@@ -3085,24 +3085,24 @@ body.dash-edit-mode .dw-normal-btns { display:none !important; }
 
     <div id="dash-col-right" class="dash-col dash-col-right">
 
-      <div id="dwidget-approvals" class="dash-widget" data-widget-id="approvals"><div class="dw-header"><div><div class="dw-title">Approval Queue</div><div class="dw-sub">4 items awaiting review · sorted by SLA urgency</div></div><div class="dw-actions"><div class="dw-normal-btns"><span class="badge b-amber">4 Pending</span></div><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('approvals')">⇄</button><button class="dw-action-btn" onclick="hideDashWidget('approvals')">✕</button></div></div></div><div class="dw-body"><div class="dw-appr-item dw-appr-urgent"><div class="dw-appr-info"><div class="dw-appr-title">Event Recap — Total Wine #1205</div><div class="dw-appr-sub">BACARDÍ Rum · Mar 25 · Submitted by Maria S.</div></div><div class="dw-appr-meta"><div class="dw-appr-sla" style="color:#E5484D">SLA: 2h left</div></div><button class="dw-appr-btn" onclick="openDetailFromDash(1,'recap')">Review</button></div><div class="dw-appr-item"><div class="dw-appr-info"><div class="dw-appr-title">Worker Payment — Priya K.</div><div class="dw-appr-sub">PATRÓN On-Premise Elite · $88.00</div></div><div class="dw-appr-meta"><div class="dw-appr-sla">SLA: 18h left</div></div><button class="dw-appr-btn" onclick="switchModule('tasks');toast('Reviewing payment for Priya K. — $88.00')">Review</button></div><div class="dw-appr-item"><div class="dw-appr-info"><div class="dw-appr-title">Event Recap — Del Frisco's #101</div><div class="dw-appr-sub">PATRÓN · Mar 18 · Submitted by Isabella R.</div></div><div class="dw-appr-meta"><div class="dw-appr-sla">SLA: 24h left</div></div><button class="dw-appr-btn" onclick="openDetailFromDash(9,'recap')">Review</button></div><div class="dw-appr-item"><div class="dw-appr-info"><div class="dw-appr-title">Worker Approval — Tanya Williams</div><div class="dw-appr-sub">FyldRunner · Pending platform review</div></div><div class="dw-appr-meta"><div class="dw-appr-sla">No SLA</div></div><button class="dw-appr-btn" onclick="switchModule('workers')">Review</button></div><div class="dw-appr-footer"><a class="dw-link" onclick="switchModule('tasks')">View all tasks →</a></div></div></div>
+      <div id="dwidget-approvals" class="dash-widget" data-widget-id="approvals"><div class="dw-header"><div><div class="dw-title">Approval Queue</div><div class="dw-sub">4 items awaiting review · sorted by SLA urgency</div></div><div class="dw-actions"><div class="dw-normal-btns"><span class="badge b-amber">4 Pending</span></div><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('approvals')">⇄</button><button class="dw-action-btn" onclick="hideDashWidget('approvals')">✕</button></div></div></div><div class="dw-body"><div style="padding:40px 20px;text-align:center;color:var(--slate);font-size:13px">No pending approvals</div></div></div>
 
-      <div id="dwidget-today-events" class="dash-widget" data-widget-id="today-events"><div class="dw-header"><div><div class="dw-title">Today's Events</div><div class="dw-sub" id="dash-today-events-date">Live and upcoming · ...</div></div><div class="dw-actions"><div class="dw-normal-btns"><a class="dw-link" onclick="switchModule('events')">View all →</a></div><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('today-events')">⇄</button><button class="dw-action-btn" onclick="hideDashWidget('today-events')">✕</button></div></div></div><div class="dw-body"><div class="dw-event-item"><div class="dw-ev-dot live-dot"></div><div class="dw-ev-info"><div class="dw-ev-name">Total Wine &amp; More #1205 — Boston</div><div class="dw-ev-meta"><span class="badge" style="background:#00767B;color:#fff;font-size:11px">Activations</span> BACARDÍ Rum · Off-Premise · 2:00–6:00 PM</div></div><div class="dw-ev-workers"><div class="dw-wk-av sm" style="background:#E67E22">MS</div><div class="dw-wk-av sm" style="background:#2980B9">JT</div></div></div><div class="dw-event-item"><div class="dw-ev-dot conf-dot"></div><div class="dw-ev-info"><div class="dw-ev-name">BJ's Wholesale #45 — Framingham</div><div class="dw-ev-meta"><span class="badge" style="background:#7C3AED;color:#fff;font-size:11px">On-Demand</span> BACARDÍ RTD · Off-Premise · 9:00 AM–1:00 PM</div></div><div class="dw-ev-workers"><div class="dw-wk-av sm" style="background:#7C3AED">TW</div></div></div><div style="padding:12px 0;text-align:center;color:#6B7A8D;font-size:12px">No more events today</div></div></div>
+      <div id="dwidget-today-events" class="dash-widget" data-widget-id="today-events"><div class="dw-header"><div><div class="dw-title">Today's Events</div><div class="dw-sub" id="dash-today-events-date">Live and upcoming · ...</div></div><div class="dw-actions"><div class="dw-normal-btns"><a class="dw-link" onclick="switchModule('events')">View all →</a></div><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('today-events')">⇄</button><button class="dw-action-btn" onclick="hideDashWidget('today-events')">✕</button></div></div></div><div class="dw-body"><div class="dw-event-item"><div class="dw-ev-dot live-dot"></div><div class="dw-ev-info"><div class="dw-ev-name">Total Wine &amp; More #1205 — Boston</div><div class="dw-ev-meta"><span class="badge" style="background:#00767B;color:#fff;font-size:11px">Activations</span></div></div><div class="dw-ev-workers"><div class="dw-wk-av sm" style="background:#E67E22">MS</div><div class="dw-wk-av sm" style="background:#2980B9">JT</div></div></div><div class="dw-event-item"><div class="dw-ev-dot conf-dot"></div><div class="dw-ev-info"><div class="dw-ev-name">BJ's Wholesale #45 — Framingham</div><div class="dw-ev-meta"><span class="badge" style="background:#7C3AED;color:#fff;font-size:11px">On-Demand</span></div></div><div class="dw-ev-workers"><div class="dw-wk-av sm" style="background:#7C3AED">TW</div></div></div><div style="padding:12px 0;text-align:center;color:#6B7A8D;font-size:12px">No more events today</div></div></div>
 
-      <div id="dwidget-activity-feed" class="dash-widget" data-widget-id="activity-feed"><div class="dw-header"><div><div class="dw-title">Activity Feed</div><div class="dw-sub">Recent platform actions</div></div><div class="dw-actions"><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('activity-feed')">⇄</button><button class="dw-action-btn" onclick="hideDashWidget('activity-feed')">✕</button></div></div></div><div class="dw-body"><div class="dw-feed-item"><div class="dw-feed-dot" style="background:#00767B"></div><div class="dw-feed-text"><strong>Maria S.</strong> checked in at Total Wine #1205 · Boston</div><div class="dw-feed-time">2 min ago</div></div><div class="dw-feed-item"><div class="dw-feed-dot" style="background:#1E4DB7"></div><div class="dw-feed-text"><strong>Recap submitted</strong> — BevMo! #312 · PATRÓN On-Premise Elite</div><div class="dw-feed-time">18 min ago</div></div><div class="dw-feed-item"><div class="dw-feed-dot" style="background:#7C3AED"></div><div class="dw-feed-text"><strong>Tanya W.</strong> accepted On-Demand delivery — BJ's Wholesale #45</div><div class="dw-feed-time">1h ago</div></div><div class="dw-feed-item"><div class="dw-feed-dot" style="background:#00767B"></div><div class="dw-feed-text"><strong>Priya K.</strong> accepted invitation — PATRÓN On-Premise Elite · Providence</div><div class="dw-feed-time">2h ago</div></div><div class="dw-feed-item"><div class="dw-feed-dot" style="background:#E5484D"></div><div class="dw-feed-text"><strong>SLA Alert</strong> — Event recap pending approval · Total Wine #1205</div><div class="dw-feed-time">3h ago</div></div><div class="dw-feed-item"><div class="dw-feed-dot" style="background:#00767B"></div><div class="dw-feed-text"><strong>Event confirmed</strong> — Spec's #88 · Houston · BACARDÍ RTD</div><div class="dw-feed-time">Yesterday</div></div></div></div>
+      <div id="dwidget-activity-feed" class="dash-widget" data-widget-id="activity-feed"><div class="dw-header"><div><div class="dw-title">Activity Feed</div><div class="dw-sub">Recent platform actions</div></div><div class="dw-actions"><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('activity-feed')">⇄</button><button class="dw-action-btn" onclick="hideDashWidget('activity-feed')">✕</button></div></div></div><div class="dw-body"><div style="padding:40px 20px;text-align:center;color:var(--slate);font-size:13px">No recent activity</div></div></div>
 
-      <div id="dwidget-staffing-gaps" class="dash-widget" data-widget-id="staffing-gaps"><div class="dw-header"><div><div class="dw-title">Staffing Gaps</div><div class="dw-sub">Events that are open or understaffed</div></div><div class="dw-actions"><div class="dw-normal-btns"><span class="badge b-amber">3 Events</span></div><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('staffing-gaps')">⇄</button><button class="dw-action-btn" onclick="hideDashWidget('staffing-gaps')">✕</button></div></div></div><div class="dw-body"><div class="dw-gap-item"><div class="dw-gap-info"><div class="dw-gap-name">Spec's #88 — Houston</div><div class="dw-gap-meta">BACARDÍ RTD · Mar 27 · On-Demand</div></div><div class="dw-gap-status"><div class="dw-gap-count">0 / 1</div><div class="dw-gap-lbl">workers</div></div><button class="dw-gap-btn" onclick="openDetailFromDash(4,'workers')">Find Workers</button></div><div class="dw-gap-item"><div class="dw-gap-info"><div class="dw-gap-name">Kroger Marketplace #221 — Atlanta</div><div class="dw-gap-meta">BACARDÍ RTD · Mar 29 · Merchandising</div></div><div class="dw-gap-status"><div class="dw-gap-count">0 / 1</div><div class="dw-gap-lbl">workers</div></div><button class="dw-gap-btn" onclick="openDetailFromDash(7,'workers')">Find Workers</button></div><div class="dw-gap-item"><div class="dw-gap-info"><div class="dw-gap-name">BJ's Wholesale #45 — Framingham</div><div class="dw-gap-meta">BACARDÍ RTD · Mar 19 · On-Demand</div></div><div class="dw-gap-status"><div class="dw-gap-count">0 / 1</div><div class="dw-gap-lbl">workers</div></div><button class="dw-gap-btn" onclick="openDetailFromDash(13,'workers')">Find Workers</button></div></div></div>
+      <div id="dwidget-staffing-gaps" class="dash-widget" data-widget-id="staffing-gaps"><div class="dw-header"><div><div class="dw-title">Staffing Gaps</div><div class="dw-sub">Events that are open or understaffed</div></div><div class="dw-actions"><div class="dw-normal-btns"><span class="badge b-amber">3 Events</span></div><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('staffing-gaps')">⇄</button><button class="dw-action-btn" onclick="hideDashWidget('staffing-gaps')">✕</button></div></div></div><div class="dw-body"><div style="padding:40px 20px;text-align:center;color:var(--slate);font-size:13px">No staffing gaps</div></div></div>
 
       <div id="dwidget-governance" class="dash-widget" data-widget-id="governance"><div class="dw-header"><div><div class="dw-title">Governance &amp; Access</div><div class="dw-sub">Pending permissions, access expiry, audit events</div></div><div class="dw-actions"><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('governance')">⇄</button><button class="dw-action-btn" onclick="hideDashWidget('governance')">✕</button></div></div></div><div class="dw-body"><div class="dw-gov-row"><div class="dw-gov-icon" style="background:#FEF3C7;color:#92610A">2</div><div class="dw-gov-info"><div class="dw-gov-title">Pending Permission Changes</div><div class="dw-gov-sub">2 role modification requests awaiting approval</div></div><button class="dw-appr-btn" onclick="switchModule('settings');setTimeout(function(){showTab('access')},150)">Review</button></div><div class="dw-gov-row"><div class="dw-gov-icon" style="background:#FEE2E2;color:#991B1B">1</div><div class="dw-gov-info"><div class="dw-gov-title">Expiring External Access</div><div class="dw-gov-sub">1 Outside Partner access expires in 7 days</div></div><button class="dw-appr-btn" onclick="switchModule('settings');setTimeout(function(){showTab('access')},150)">Review</button></div><div class="dw-gov-row"><div class="dw-gov-icon" style="background:#EEF2FF;color:#1E4DB7">3</div><div class="dw-gov-info"><div class="dw-gov-title">Recent Audit Events</div><div class="dw-gov-sub">3 notable actions logged in last 24 hours</div></div><button class="dw-appr-btn" onclick="switchModule('settings');setTimeout(function(){showTab('security')},150)">View</button></div><div class="dw-gov-mfa"><span>MFA Compliance</span><div class="dw-gov-mfa-bar"><div style="width:90%;background:#00767B;height:6px;border-radius:3px"></div></div><span style="font-weight:700;color:#00767B">90%</span></div></div></div>
 
     
       
       <!-- ═══ RIGHT COL LOGISTICS ═══ -->
-      <div id="dwidget-kits-to-ship" class="dash-widget" data-widget-id="kits-to-ship" style="display:none"><div class="dw-header"><div><div class="dw-title">Kits to Ship</div><div class="dw-sub">Upcoming queue by ship-by date</div></div><div class="dw-actions"><div class="dw-normal-btns"><span class="badge b-amber">1 At Risk</span></div><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('kits-to-ship')">&#8644;</button><button class="dw-action-btn" onclick="hideDashWidget('kits-to-ship')">&#10005;</button></div></div></div><div class="dw-body"><div class="dw-ship-item"><div class="dw-del-icon">&#9989;</div><div class="dw-del-info"><div class="dw-del-name">BevMo! #312 &#8212; Providence</div><div class="dw-del-meta">PATRON Kit &#183; Ship by Apr 5</div></div><button class="dw-gap-btn" onclick="toast('Shipping initiated — PATRON Kit to BevMo! #312 Providence.')">Ship</button></div><div class="dw-ship-item"><div class="dw-del-icon">&#9989;</div><div class="dw-del-info"><div class="dw-del-name">Star Market #33 &#8212; Boston</div><div class="dw-del-meta">BACARDI Kit &#183; Ship by Apr 7</div></div><button class="dw-gap-btn" onclick="toast('Shipping initiated — BACARDI Kit to Star Market #33 Boston.')">Ship</button></div><div class="dw-ship-item dw-del-damaged"><div class="dw-del-icon">&#9888;&#65039;</div><div class="dw-del-info"><div class="dw-del-name">Total Wine #604 &#8212; Dallas</div><div class="dw-del-meta">BACARDI Kit &#183; Apr 8 &#183; Kit low</div></div><button class="dw-gap-btn" onclick="toast('Kit availability low — Total Wine #604 Dallas. Assembly queued.')">Review</button></div><div class="dw-ship-item"><div class="dw-del-icon">&#9989;</div><div class="dw-del-info"><div class="dw-del-name">Kroger #447 &#8212; Natick</div><div class="dw-del-meta">Planogram Kit &#183; Ship by Apr 8</div></div><button class="dw-gap-btn" onclick="toast('Shipping initiated — Planogram Kit to Kroger #447 Natick.')">Ship</button></div><div class="dw-ship-item dw-del-damaged"><div class="dw-del-icon">&#10060;</div><div class="dw-del-info"><div class="dw-del-name">Spec's #88 &#8212; Houston</div><div class="dw-del-meta">RTD Kit &#183; Apr 10 &#183; Not assembled</div></div><button class="dw-gap-btn" onclick="toast('Flagged — BACARDI RTD Kit needs assembly. Team notified.')">Flag</button></div></div></div>
+      <div id="dwidget-kits-to-ship" class="dash-widget" data-widget-id="kits-to-ship" style="display:none"><div class="dw-header"><div><div class="dw-title">Kits to Ship</div><div class="dw-sub">Upcoming queue by ship-by date</div></div><div class="dw-actions"><div class="dw-normal-btns"><span class="badge b-amber">1 At Risk</span></div><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('kits-to-ship')">&#8644;</button><button class="dw-action-btn" onclick="hideDashWidget('kits-to-ship')">&#10005;</button></div></div></div><div class="dw-body"><div style="padding:40px 20px;text-align:center;color:var(--slate);font-size:13px">No kits pending shipment</div></div></div>
 
-      <div id="dwidget-runner-activity" class="dash-widget" data-widget-id="runner-activity" style="display:none"><div class="dw-header"><div><div class="dw-title">FyldRunner Activity</div><div class="dw-sub">Runner assignments and credentials</div></div><div class="dw-actions"><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('runner-activity')">&#8644;</button><button class="dw-action-btn" onclick="hideDashWidget('runner-activity')">&#10005;</button></div></div></div><div class="dw-body"><div class="dw-log-runner-row"><div class="dw-wk-av" style="background:#7C3AED">TW</div><div class="dw-log-runner-info"><div class="dw-log-runner-name">Tanya Williams <span class="badge" style="background:#DCFCE7;color:#166534;font-size:11px;margin-left:4px">Active</span></div><div class="dw-log-runner-status">En route &#8594; Star Market #33 &#183; ETA 2:00 PM</div></div><div style="text-align:right;flex-shrink:0"><div style="font-size:13px;font-weight:700;color:#00767B">88%</div><div style="font-size:11px;color:#6B7A8D">Score</div></div></div><div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border)"><div style="font-size:12px;font-weight:600;color:#6B7A8D;margin-bottom:6px">Open delivery slots</div><div class="dw-gap-item" style="padding:6px 0;border-bottom:none"><div class="dw-gap-info"><div class="dw-gap-name">Providence &#8212; BevMo! #312</div><div class="dw-gap-meta">Apr 5 &#183; PATRON Kit &#183; Unassigned</div></div><button class="dw-gap-btn" onclick="switchModule('workers')">Find Runner</button></div></div><div style="margin-top:8px;padding-top:8px;border-top:1px solid var(--border)"><div style="font-size:12px;color:#D97706">&#9888;&#65039; Tanya Williams &#8212; Auto insurance expires Apr 15</div></div></div></div>
+      <div id="dwidget-runner-activity" class="dash-widget" data-widget-id="runner-activity" style="display:none"><div class="dw-header"><div><div class="dw-title">FyldRunner Activity</div><div class="dw-sub">Runner assignments and credentials</div></div><div class="dw-actions"><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('runner-activity')">&#8644;</button><button class="dw-action-btn" onclick="hideDashWidget('runner-activity')">&#10005;</button></div></div></div><div class="dw-body"><div style="padding:40px 20px;text-align:center;color:var(--slate);font-size:13px">No runner activity</div></div></div>
 
-      <div id="dwidget-replenishment-damage" class="dash-widget" data-widget-id="replenishment-damage" style="display:none"><div class="dw-header"><div><div class="dw-title">Replenishment &amp; Damage</div><div class="dw-sub">Reorder requests and damage reports</div></div><div class="dw-actions"><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('replenishment-damage')">&#8644;</button><button class="dw-action-btn" onclick="hideDashWidget('replenishment-damage')">&#10005;</button></div></div></div><div class="dw-body"><div style="font-size:11px;font-weight:700;color:#6B7A8D;text-transform:uppercase;letter-spacing:.4px;margin-bottom:8px">Replenishment (3)</div><div class="dw-appr-item"><div class="dw-appr-info"><div class="dw-appr-title">Sample Cups &#8212; 5 cases ordered</div><div class="dw-appr-sub">ETA Apr 3 &#183; Pending</div></div><button class="dw-appr-btn" onclick="toast('Replenishment approved — Sample Cups, 5 cases. ETA Apr 3.')">Approve</button></div><div class="dw-appr-item"><div class="dw-appr-info"><div class="dw-appr-title" style="color:#E5484D">Napkins &#8212; Critical &#183; 1 case left</div><div class="dw-appr-sub">Order immediately</div></div><button class="dw-appr-btn" style="background:var(--teal);color:#fff;border-color:var(--teal)" onclick="toast('Emergency order placed — Napkins, 3 cases. Arriving in 24–48h.')">Order Now</button></div><div class="dw-appr-item"><div class="dw-appr-info"><div class="dw-appr-title">PATRON Bar Mat x 4</div><div class="dw-appr-sub">PM requested</div></div><button class="dw-appr-btn" onclick="toast('PATRON Bar Mat replenishment sent for manager review.')">Review</button></div><div style="font-size:11px;font-weight:700;color:#6B7A8D;text-transform:uppercase;letter-spacing:.4px;margin:12px 0 8px">Damage (1)</div><div class="dw-appr-item dw-appr-urgent"><div class="dw-appr-info"><div class="dw-appr-title">Pool Party Kit &#183; BevMo! #312</div><div class="dw-appr-sub">Mar 29 &#183; Cooler cracked</div></div><div style="display:flex;gap:4px"><button class="dw-appr-btn" onclick="toast('Damage inspection initiated — Pool Party Kit, BevMo! #312.')">Inspect</button><button class="dw-appr-btn" onclick="toast('Insurance claim submitted for damaged cooler.')">Claim</button></div></div></div></div>
+      <div id="dwidget-replenishment-damage" class="dash-widget" data-widget-id="replenishment-damage" style="display:none"><div class="dw-header"><div><div class="dw-title">Replenishment &amp; Damage</div><div class="dw-sub">Reorder requests and damage reports</div></div><div class="dw-actions"><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('replenishment-damage')">&#8644;</button><button class="dw-action-btn" onclick="hideDashWidget('replenishment-damage')">&#10005;</button></div></div></div><div class="dw-body"><div style="padding:40px 20px;text-align:center;color:var(--slate);font-size:13px">No replenishment requests</div></div></div>
 
       <div id="dwidget-kit-returns" class="dash-widget" data-widget-id="kit-returns" style="display:none"><div class="dw-header"><div><div class="dw-title">Returns &amp; Kit Status</div><div class="dw-sub">Post-event recovery</div></div><div class="dw-actions"><div class="dw-normal-btns"><span class="badge b-amber">1 Overdue</span></div><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('kit-returns')">&#8644;</button><button class="dw-action-btn" onclick="hideDashWidget('kit-returns')">&#10005;</button></div></div></div><div class="dw-body"><div class="dw-ship-item"><div class="dw-del-icon">&#9989;</div><div class="dw-del-info"><div class="dw-del-name">Star Market #33 &#183; Mar 15</div><div class="dw-del-meta">Returned &#183; Good condition</div></div><span style="font-size:12px;color:#16A34A;font-weight:600">Ready</span></div><div class="dw-ship-item"><div class="dw-del-icon">&#9888;&#65039;</div><div class="dw-del-info"><div class="dw-del-name">Del Frisco's #101 &#183; Mar 18</div><div class="dw-del-meta">Returned &#183; Cups missing</div></div><button class="dw-gap-btn" style="font-size:11px">Order</button></div><div class="dw-ship-item"><div class="dw-del-icon">&#9203;</div><div class="dw-del-info"><div class="dw-del-name">BevMo! #312 &#183; Mar 26</div><div class="dw-del-meta">Expected &#183; Available Apr 2</div></div><span style="font-size:12px;color:#6B7A8D">Pending</span></div><div class="dw-ship-item dw-del-damaged"><div class="dw-del-icon">&#10060;</div><div class="dw-del-info"><div class="dw-del-name">Total Wine #1205 &#183; Mar 25</div><div class="dw-del-meta">Return overdue</div></div><button class="dw-gap-btn" style="font-size:11px">Flag</button></div></div></div>
 
@@ -3111,7 +3111,7 @@ body.dash-edit-mode .dw-normal-btns { display:none !important; }
       <!-- VP Tier Right -->
       <div id="dwidget-fulfillment-cycle" class="dash-widget dw-vp-tier" data-widget-id="fulfillment-cycle" style="display:none"><div class="dw-header"><div><div class="dw-title">Fulfillment Cycle Time</div><div class="dw-sub">Kit request &#8594; delivery timing</div></div><div class="dw-actions"><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('fulfillment-cycle')">&#8644;</button><button class="dw-action-btn" onclick="hideDashWidget('fulfillment-cycle')">&#10005;</button></div></div></div><div class="dw-body"><div style="margin-bottom:12px;display:flex;gap:8px;align-items:center"><div class="dw-snap-item" style="flex:1"><div class="dw-snap-val">2.9d</div><div class="dw-snap-lbl">Avg Total</div></div><div style="font-size:12px;color:#D97706;font-weight:600">Target: 2.5d &#183; Bottleneck: Assembly</div></div><div class="dw-cycle-row"><div class="dw-cycle-label">Request &#8594; Assembly</div><div class="dw-cycle-bar-wrap"><div class="dw-cycle-bar" style="width:56%;background:#D97706"></div></div><span class="dw-cycle-val" style="color:#D97706">1.4d</span></div><div class="dw-cycle-row"><div class="dw-cycle-label">Assembly &#8594; Shipped</div><div class="dw-cycle-bar-wrap"><div class="dw-cycle-bar" style="width:24%;background:#00767B"></div></div><span class="dw-cycle-val">0.6d</span></div><div class="dw-cycle-row"><div class="dw-cycle-label">Shipped &#8594; Delivered</div><div class="dw-cycle-bar-wrap"><div class="dw-cycle-bar" style="width:36%;background:#00767B"></div></div><span class="dw-cycle-val">0.9d</span></div></div></div>
 
-      <div id="dwidget-escalations-alerts" class="dash-widget dw-vp-tier" data-widget-id="escalations-alerts" style="display:none"><div class="dw-header"><div><div class="dw-title">Escalations &amp; Alerts</div><div class="dw-sub">Issues requiring decision</div></div><div class="dw-actions"><div class="dw-normal-btns"><span class="badge" style="background:#FEE2E2;color:#991B1B;font-size:11px">1 Critical</span></div><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('escalations-alerts')">&#8644;</button><button class="dw-action-btn" onclick="hideDashWidget('escalations-alerts')">&#10005;</button></div></div></div><div class="dw-body"><div class="dw-appr-item dw-appr-urgent"><div class="dw-appr-info"><div class="dw-appr-title" style="color:#E5484D">Pool Party Kit &#8212; Cooler backordered</div><div class="dw-appr-sub">Blocking Apr 12 &#183; BevMo! #312</div></div><button class="dw-appr-btn" onclick="toast('Escalation actioned — alternative supplier contacted for replacement cooler.')">Action</button></div><div class="dw-appr-item"><div class="dw-appr-info"><div class="dw-appr-title">Chicago delivery performance 82%</div><div class="dw-appr-sub">Below 90% target &#183; 2nd week</div></div><button class="dw-appr-btn" onclick="switchModule('events')">Review</button></div><div class="dw-appr-item"><div class="dw-appr-info"><div class="dw-appr-title">Napkins &#8212; Critical stock</div><div class="dw-appr-sub">Not yet approved &#183; 1 case left</div></div><button class="dw-appr-btn" onclick="toast('Napkins reorder approved — emergency order placed.')">Approve</button></div><div class="dw-appr-item"><div class="dw-appr-info"><div class="dw-appr-title">Apr 5 Providence &#8212; No runner</div><div class="dw-appr-sub">PATRON Kit &#183; 5 days out</div></div><button class="dw-appr-btn" onclick="switchModule('workers')">Assign</button></div></div></div>
+      <div id="dwidget-escalations-alerts" class="dash-widget dw-vp-tier" data-widget-id="escalations-alerts" style="display:none"><div class="dw-header"><div><div class="dw-title">Escalations &amp; Alerts</div><div class="dw-sub">Issues requiring decision</div></div><div class="dw-actions"><div class="dw-normal-btns"><span class="badge" style="background:#FEE2E2;color:#991B1B;font-size:11px">1 Critical</span></div><div class="dw-edit-btns"><button class="dw-action-btn" onclick="moveDashWidget('escalations-alerts')">&#8644;</button><button class="dw-action-btn" onclick="hideDashWidget('escalations-alerts')">&#10005;</button></div></div></div><div class="dw-body"><div style="padding:40px 20px;text-align:center;color:var(--slate);font-size:13px">No escalations</div></div></div>
 
     </div>
   </div>
@@ -3133,7 +3133,7 @@ body.dash-edit-mode .dw-normal-btns { display:none !important; }
 <!-- ═══ MAIN ═══ -->
 <div class="main">
   <div class="top-bar">
-    <div class="hdr-l"><h1>Events</h1><span class="sub" id="headerSub">All field events across Bacardí USA · 13 total this month</span></div>
+    <div class="hdr-l"><h1>Events</h1><span class="sub" id="headerSub">All field events across your company</span></div>
     <div class="hdr-r">
       <button class="btn btn-outline rg-create" id="ev-upload-btn" onclick="showUpload()"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>Upload</button>
       <button class="btn btn-outline" id="ev-export-btn" onclick="toast(&#39;Export started&#39;)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"></path></svg>Export</button>
@@ -3180,11 +3180,11 @@ body.dash-edit-mode .dw-normal-btns { display:none !important; }
           <span id="mflt-brand-label">All Brands</span>
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
-        <div class="mflt-panel" id="mflt-brand-panel"><label class="mflt-item"><input type="checkbox" value="BACARDÍ Rum" onchange="toggleFltBrand(this)"> BACARDÍ Rum</label><label class="mflt-item"><input type="checkbox" value="BACARDÍ RTD" onchange="toggleFltBrand(this)"> BACARDÍ RTD</label><label class="mflt-item"><input type="checkbox" value="PATRÓN" onchange="toggleFltBrand(this)"> PATRÓN</label><div class="mflt-divider"></div><button class="mflt-clear" onclick="clearFltBrand()">Clear</button></div>
+        <div class="mflt-panel" id="mflt-brand-panel"></div>
       </div>
       <div class="vtog" id="viewTog"></div>
     </div>
-    <div id="viewArea"><table><thead><tr><th class="th-sort" onclick="thSort(&#39;venue&#39;)">Venue / Location<span class="sort-icon">⇅</span></th><th class="th-sort" onclick="thSort(&#39;brand&#39;)">Brand<span class="sort-icon">⇅</span></th><th class="th-sort" onclick="thSort(&#39;program&#39;)">Program<span class="sort-icon">⇅</span></th><th class="th-sort" onclick="thSort(&#39;hub&#39;)">Hub<span class="sort-icon">⇅</span></th><th class="th-sort" onclick="thSort(&#39;channel&#39;)">Channel<span class="sort-icon">⇅</span></th><th class="th-sort active" onclick="thSort(&#39;date&#39;)">Date / Time<span class="sort-icon">▲</span></th><th class="th-sort" onclick="thSort(&#39;status&#39;)">Status<span class="sort-icon">⇅</span></th><th class="th-sort" onclick="thSort(&#39;products&#39;)">Products<span class="sort-icon">⇅</span></th><th class="th-sort" onclick="thSort(&#39;workers&#39;)">Workers<span class="sort-icon">⇅</span></th><th>Actions</th></tr></thead><tbody><tr onclick="openDetail(10)"><td><div class="vn" style="color:var(--slate);font-style:italic;font-size:12px">Venue not set</div><div class="vl" style="color:var(--slate);font-size:12px">Draft — location pending</div></td><td style="font-size:12px">BACARDÍ Rum</td><td style="font-size:12px">BACARDÍ Rum Off-Premise 2026</td><td><span class="b-hub" style="background:#00767B">Activations</span></td><td style="font-size:12px">Off-Premise</td><td style="font-size:12px;white-space:nowrap">—<br><span style="color:var(--slate)"></span></td><td><span class="badge b-draft has-tip" data-tip="Being built — not yet submitted or visible to workers.">Draft</span></td><td><span style="color:var(--slate);font-size:12px">—</span></td><td><div class="wdots"><span style="font-size:12px;color:var(--slate)">—</span></div></td><td class="ac" onclick="event.stopPropagation()"><button class="ab" onclick="event.stopPropagation();this.nextElementSibling.classList.toggle(&#39;show&#39;)">⋯</button><div class="am"><button onclick="closeAllM();editEvent(10)">Edit</button><button onclick="closeAllM();duplicateEvent(10)">Duplicate</button><button onclick="closeAllM();_tplSourceEvent=EV.find(function(ev){return ev.id===10});el(&#39;tplOv&#39;).classList.add(&#39;show&#39;)">Save as Template</button><button onclick="closeAllM();archiveEvent(10)">Archive</button></div></td></tr><tr onclick="openDetail(11)"><td><div class="vn" style="color:var(--slate);font-style:italic;font-size:12px">Venue not set</div><div class="vl" style="color:var(--slate);font-size:12px">Draft — location pending</div></td><td style="font-size:12px"></td><td style="font-size:12px"></td><td><span class="b-hub" style="background:#00767B">Activations</span></td><td style="font-size:12px"></td><td style="font-size:12px;white-space:nowrap">—<br><span style="color:var(--slate)"></span></td><td><span class="badge b-draft has-tip" data-tip="Being built — not yet submitted or visible to workers.">Draft</span></td><td><span style="color:var(--slate);font-size:12px">—</span></td><td><div class="wdots"><span style="font-size:12px;color:var(--slate)">—</span></div></td><td class="ac" onclick="event.stopPropagation()"><button class="ab" onclick="event.stopPropagation();this.nextElementSibling.classList.toggle(&#39;show&#39;)">⋯</button><div class="am"><button onclick="closeAllM();editEvent(11)">Edit</button><button onclick="closeAllM();duplicateEvent(11)">Duplicate</button><button onclick="closeAllM();_tplSourceEvent=EV.find(function(ev){return ev.id===11});el(&#39;tplOv&#39;).classList.add(&#39;show&#39;)">Save as Template</button><button onclick="closeAllM();archiveEvent(11)">Archive</button></div></td></tr><tr onclick="openDetail(12)"><td><div class="vn">Whole Foods <span style="color:var(--slate);font-weight:500">#220</span></div><div class="vl">340 River St, Cambridge, MA 02139</div></td><td style="font-size:12px">BACARDÍ Rum</td><td style="font-size:12px">Off-Premise 2026</td><td><span class="b-hub" style="background:#00767B">Activations</span></td><td style="font-size:12px">Off-Premise</td><td style="font-size:12px;white-space:nowrap">Mar 12, 2026<br><span style="color:var(--slate)">11:00 AM–3:00 PM</span></td><td><span class="badge b-conf has-tip" data-tip="Fully staffed. All worker slots filled.">Confirmed</span></td><td><span class="has-tip" data-tip="Superior 750mL · Black 750mL" style="font-size:13px;font-weight:600;color:var(--dark);cursor:default">2</span></td><td><div class="wdots"><div class="wdot" style="background:#E8536D">MS</div></div></td><td class="ac" onclick="event.stopPropagation()"><button class="ab" onclick="event.stopPropagation();this.nextElementSibling.classList.toggle(&#39;show&#39;)">⋯</button><div class="am"><button onclick="closeAllM();editEvent(12)">Edit</button><button onclick="closeAllM();duplicateEvent(12)">Duplicate</button><button onclick="closeAllM();_tplSourceEvent=EV.find(function(ev){return ev.id===12});el(&#39;tplOv&#39;).classList.add(&#39;show&#39;)">Save as Template</button><button onclick="closeAllM();archiveEvent(12)">Archive</button></div></td></tr><tr onclick="openDetail(15)"><td><div class="vn">Star Market <span style="color:var(--slate);font-weight:500">#33</span></div><div class="vl">1717 Beacon St, Brookline, MA 02445</div></td><td style="font-size:12px">BACARDÍ Rum</td><td style="font-size:12px">Off-Premise 2026</td><td><span class="b-hub" style="background:#00767B">Activations</span></td><td style="font-size:12px">Off-Premise</td><td style="font-size:12px;white-space:nowrap">Mar 15, 2026<br><span style="color:var(--slate)">12:00–4:00 PM</span></td><td><span class="badge b-conf has-tip" data-tip="Fully staffed. All worker slots filled.">Confirmed</span></td><td><span class="has-tip" data-tip="Superior 750mL · Gold 1.75L" style="font-size:13px;font-weight:600;color:var(--dark);cursor:default">2</span></td><td><div class="wdots"><div class="wdot" style="background:#5B8DEF">JT</div></div></td><td class="ac" onclick="event.stopPropagation()"><button class="ab" onclick="event.stopPropagation();this.nextElementSibling.classList.toggle(&#39;show&#39;)">⋯</button><div class="am"><button onclick="closeAllM();editEvent(15)">Edit</button><button onclick="closeAllM();duplicateEvent(15)">Duplicate</button><button onclick="closeAllM();_tplSourceEvent=EV.find(function(ev){return ev.id===15});el(&#39;tplOv&#39;).classList.add(&#39;show&#39;)">Save as Template</button><button onclick="closeAllM();archiveEvent(15)">Archive</button></div></td></tr><tr onclick="openDetail(9)"><td><div class="vn">Del Frisco's <span style="color:var(--slate);font-weight:500">#101</span></div><div class="vl">1221 6th Ave, New York, NY 10020</div></td><td style="font-size:12px">PATRÓN</td><td style="font-size:12px">On-Premise Elite</td><td><span class="b-hub" style="background:#00767B">Activations</span></td><td style="font-size:12px">On-Premise</td><td style="font-size:12px;white-space:nowrap">Mar 18, 2026<br><span style="color:var(--slate)">7:00–11:00 PM</span></td><td><span class="badge b-conf has-tip" data-tip="Fully staffed. All worker slots filled.">Confirmed</span></td><td><span class="has-tip" data-tip="Añejo 750mL" style="font-size:13px;font-weight:600;color:var(--dark);cursor:default">1</span></td><td><div class="wdots"><div class="wdot" style="background:#6C5CE7">IR</div></div></td><td class="ac" onclick="event.stopPropagation()"><button class="ab" onclick="event.stopPropagation();this.nextElementSibling.classList.toggle(&#39;show&#39;)">⋯</button><div class="am"><button onclick="closeAllM();editEvent(9)">Edit</button><button onclick="closeAllM();duplicateEvent(9)">Duplicate</button><button onclick="closeAllM();_tplSourceEvent=EV.find(function(ev){return ev.id===9});el(&#39;tplOv&#39;).classList.add(&#39;show&#39;)">Save as Template</button><button onclick="closeAllM();archiveEvent(9)">Archive</button></div></td></tr><tr onclick="openDetail(13)"><td><div class="vn">BJ's Wholesale <span style="color:var(--slate);font-weight:500">#45</span></div><div class="vl">1 Worcester Rd, Framingham, MA 01702</div></td><td style="font-size:12px">BACARDÍ RTD</td><td style="font-size:12px">RTD Summer Push</td><td><span class="b-hub" style="background:#7C3AED">On-Demand</span></td><td style="font-size:12px">Off-Premise</td><td style="font-size:12px;white-space:nowrap">Mar 19, 2026<br><span style="color:var(--slate)">9:00 AM–1:00 PM</span></td><td><span class="badge b-open has-tip" data-tip="Published and accepting workers. Spots still available.">Open</span></td><td><span class="has-tip" data-tip="Sunset 355mL · Limón 355mL" style="font-size:13px;font-weight:600;color:var(--dark);cursor:default">2</span></td><td><div class="wdots"><span style="font-size:12px;color:var(--slate)">—</span></div></td><td class="ac" onclick="event.stopPropagation()"><button class="ab" onclick="event.stopPropagation();this.nextElementSibling.classList.toggle(&#39;show&#39;)">⋯</button><div class="am"><button onclick="closeAllM();editEvent(13)">Edit</button><button onclick="closeAllM();duplicateEvent(13)">Duplicate</button><button onclick="closeAllM();_tplSourceEvent=EV.find(function(ev){return ev.id===13});el(&#39;tplOv&#39;).classList.add(&#39;show&#39;)">Save as Template</button><button onclick="closeAllM();archiveEvent(13)">Archive</button></div></td></tr><tr onclick="openDetail(8)"><td><div class="vn">Total Wine &amp; More <span style="color:var(--slate);font-weight:500">#604</span></div><div class="vl">7850 Spring Valley Rd, Dallas, TX 75254</div></td><td style="font-size:12px">PATRÓN</td><td style="font-size:12px">On-Premise Elite</td><td><span class="b-hub" style="background:#00767B">Activations</span></td><td style="font-size:12px">Special</td><td style="font-size:12px;white-space:nowrap">Mar 22, 2026<br><span style="color:var(--slate)">4:00–8:00 PM</span></td><td><span class="badge b-closed has-tip" data-tip="Fully complete. Payment confirmed.">Closed</span></td><td><span class="has-tip" data-tip="Silver 750mL · Reposado 750mL · Añejo 750mL" style="font-size:13px;font-weight:600;color:var(--dark);cursor:default">3</span></td><td><div class="wdots"><div class="wdot" style="background:#27AE60">CB</div><div class="wdot" style="background:#5B8DEF">JT</div><div class="wdot" style="background:#E67E22">DR</div></div></td><td class="ac" onclick="event.stopPropagation()"><button class="ab" onclick="event.stopPropagation();this.nextElementSibling.classList.toggle(&#39;show&#39;)">⋯</button><div class="am"><button onclick="closeAllM();editEvent(8)">Edit</button><button onclick="closeAllM();duplicateEvent(8)">Duplicate</button><button onclick="closeAllM();_tplSourceEvent=EV.find(function(ev){return ev.id===8});el(&#39;tplOv&#39;).classList.add(&#39;show&#39;)">Save as Template</button><button onclick="closeAllM();archiveEvent(8)">Archive</button></div></td></tr><tr onclick="openDetail(1)"><td><div class="vn">Total Wine &amp; More <span style="color:var(--slate);font-weight:500">#1205</span></div><div class="vl">119 Brookline Ave, Boston, MA 02215</div></td><td style="font-size:12px">BACARDÍ Rum</td><td style="font-size:12px">Off-Premise 2026</td><td><span class="b-hub" style="background:#00767B">Activations</span></td><td style="font-size:12px">Off-Premise</td><td style="font-size:12px;white-space:nowrap">Mar 25, 2026<br><span style="color:var(--slate)">2:00–6:00 PM</span></td><td><span class="badge b-live has-tip" data-tip="Event is happening right now.">Live</span></td><td><span class="has-tip" data-tip="Superior 750mL · Gold 1.75L" style="font-size:13px;font-weight:600;color:var(--dark);cursor:default">2</span></td><td><div class="wdots"><div class="wdot" style="background:#E8536D">MS</div><div class="wdot" style="background:#5B8DEF">JT</div></div></td><td class="ac" onclick="event.stopPropagation()"><button class="ab" onclick="event.stopPropagation();this.nextElementSibling.classList.toggle(&#39;show&#39;)">⋯</button><div class="am"><button onclick="closeAllM();editEvent(1)">Edit</button><button onclick="closeAllM();duplicateEvent(1)">Duplicate</button><button onclick="closeAllM();_tplSourceEvent=EV.find(function(ev){return ev.id===1});el(&#39;tplOv&#39;).classList.add(&#39;show&#39;)">Save as Template</button><button onclick="closeAllM();archiveEvent(1)">Archive</button></div></td></tr><tr onclick="openDetail(2)"><td><div class="vn">BevMo! <span style="color:var(--slate);font-weight:500">#312</span></div><div class="vl">800 Reservoir Ave, Providence, RI 02907</div></td><td style="font-size:12px">PATRÓN</td><td style="font-size:12px">On-Premise Elite</td><td><span class="b-hub" style="background:#00767B">Activations</span></td><td style="font-size:12px">On-Premise</td><td style="font-size:12px;white-space:nowrap">Mar 26, 2026<br><span style="color:var(--slate)">5:00–9:00 PM</span></td><td><span class="badge b-conf has-tip" data-tip="Fully staffed. All worker slots filled.">Confirmed</span></td><td><span class="has-tip" data-tip="Silver 750mL · Reposado 750mL" style="font-size:13px;font-weight:600;color:var(--dark);cursor:default">2</span></td><td><div class="wdots"><div class="wdot" style="background:#9B59B6">PK</div></div></td><td class="ac" onclick="event.stopPropagation()"><button class="ab" onclick="event.stopPropagation();this.nextElementSibling.classList.toggle(&#39;show&#39;)">⋯</button><div class="am"><button onclick="closeAllM();editEvent(2)">Edit</button><button onclick="closeAllM();duplicateEvent(2)">Duplicate</button><button onclick="closeAllM();_tplSourceEvent=EV.find(function(ev){return ev.id===2});el(&#39;tplOv&#39;).classList.add(&#39;show&#39;)">Save as Template</button><button onclick="closeAllM();archiveEvent(2)">Archive</button></div></td></tr><tr onclick="openDetail(3)"><td><div class="vn">Kroger Marketplace <span style="color:var(--slate);font-weight:500">#447</span></div><div class="vl">1197 Worcester St, Natick, MA 01760</div></td><td style="font-size:12px">BACARDÍ Rum</td><td style="font-size:12px">Off-Premise 2026</td><td><span class="b-hub" style="background:#1E4DB7">Merchandising</span></td><td style="font-size:12px">Off-Premise</td><td style="font-size:12px;white-space:nowrap">Mar 26, 2026<br><span style="color:var(--slate)">8:00 AM–12:00 PM</span></td><td><span class="badge b-conf has-tip" data-tip="Fully staffed. All worker slots filled.">Confirmed</span></td><td><span class="has-tip" data-tip="Superior 750mL" style="font-size:13px;font-weight:600;color:var(--dark);cursor:default">1</span></td><td><div class="wdots"><div class="wdot" style="background:#27AE60">CB</div><div class="wdot" style="background:#E67E22">DR</div></div></td><td class="ac" onclick="event.stopPropagation()"><button class="ab" onclick="event.stopPropagation();this.nextElementSibling.classList.toggle(&#39;show&#39;)">⋯</button><div class="am"><button onclick="closeAllM();editEvent(3)">Edit</button><button onclick="closeAllM();duplicateEvent(3)">Duplicate</button><button onclick="closeAllM();_tplSourceEvent=EV.find(function(ev){return ev.id===3});el(&#39;tplOv&#39;).classList.add(&#39;show&#39;)">Save as Template</button><button onclick="closeAllM();archiveEvent(3)">Archive</button></div></td></tr><tr onclick="openDetail(4)"><td><div class="vn">Spec's <span style="color:var(--slate);font-weight:500">#88</span></div><div class="vl">2410 Smith St, Houston, TX 77006</div></td><td style="font-size:12px">BACARDÍ RTD</td><td style="font-size:12px">RTD Summer Push</td><td><span class="b-hub" style="background:#7C3AED">On-Demand</span></td><td style="font-size:12px">Off-Premise</td><td style="font-size:12px;white-space:nowrap">Mar 27, 2026<br><span style="color:var(--slate)">10:00 AM–2:00 PM</span></td><td><span class="badge b-open has-tip" data-tip="Published and accepting workers. Spots still available.">Open</span></td><td><span class="has-tip" data-tip="Sunset 355mL · Limón 355mL" style="font-size:13px;font-weight:600;color:var(--dark);cursor:default">2</span></td><td><div class="wdots"><span style="font-size:12px;color:var(--slate)">—</span></div></td><td class="ac" onclick="event.stopPropagation()"><button class="ab" onclick="event.stopPropagation();this.nextElementSibling.classList.toggle(&#39;show&#39;)">⋯</button><div class="am"><button onclick="closeAllM();editEvent(4)">Edit</button><button onclick="closeAllM();duplicateEvent(4)">Duplicate</button><button onclick="closeAllM();_tplSourceEvent=EV.find(function(ev){return ev.id===4});el(&#39;tplOv&#39;).classList.add(&#39;show&#39;)">Save as Template</button><button onclick="closeAllM();archiveEvent(4)">Archive</button></div></td></tr><tr onclick="openDetail(5)"><td><div class="vn">Binny's <span style="color:var(--slate);font-weight:500">#14</span></div><div class="vl">1720 N Marcey St, Chicago, IL 60614</div></td><td style="font-size:12px">PATRÓN</td><td style="font-size:12px">On-Premise Elite</td><td><span class="b-hub" style="background:#00767B">Activations</span></td><td style="font-size:12px">On-Premise</td><td style="font-size:12px;white-space:nowrap">Mar 28, 2026<br><span style="color:var(--slate)">6:00–10:00 PM</span></td><td><span class="badge b-draft has-tip" data-tip="Being built — not yet submitted or visible to workers.">Draft</span></td><td><span class="has-tip" data-tip="Silver 750mL" style="font-size:13px;font-weight:600;color:var(--dark);cursor:default">1</span></td><td><div class="wdots"><span style="font-size:12px;color:var(--slate)">—</span></div></td><td class="ac" onclick="event.stopPropagation()"><button class="ab" onclick="event.stopPropagation();this.nextElementSibling.classList.toggle(&#39;show&#39;)">⋯</button><div class="am"><button onclick="closeAllM();editEvent(5)">Edit</button><button onclick="closeAllM();duplicateEvent(5)">Duplicate</button><button onclick="closeAllM();_tplSourceEvent=EV.find(function(ev){return ev.id===5});el(&#39;tplOv&#39;).classList.add(&#39;show&#39;)">Save as Template</button><button onclick="closeAllM();archiveEvent(5)">Archive</button></div></td></tr><tr onclick="openDetail(6)"><td><div class="vn">Total Wine &amp; More <span style="color:var(--slate);font-weight:500">#892</span></div><div class="vl">4622 W Boy Scout Blvd, Tampa, FL 33607</div></td><td style="font-size:12px">BACARDÍ Rum</td><td style="font-size:12px">Off-Premise 2026</td><td><span class="b-hub" style="background:#00767B">Activations</span></td><td style="font-size:12px">Off-Premise</td><td style="font-size:12px;white-space:nowrap">Mar 28, 2026<br><span style="color:var(--slate)">1:00–5:00 PM</span></td><td><span class="badge b-conf has-tip" data-tip="Fully staffed. All worker slots filled.">Confirmed</span></td><td><span class="has-tip" data-tip="Coconut 750mL · Spiced 750mL" style="font-size:13px;font-weight:600;color:var(--dark);cursor:default">2</span> <span style="font-size:11px;color:var(--amber)">+1 bkp</span></td><td><div class="wdots"><div class="wdot" style="background:#E8536D">MS</div><div class="wdot" style="background:#9B59B6">PK</div></div></td><td class="ac" onclick="event.stopPropagation()"><button class="ab" onclick="event.stopPropagation();this.nextElementSibling.classList.toggle(&#39;show&#39;)">⋯</button><div class="am"><button onclick="closeAllM();editEvent(6)">Edit</button><button onclick="closeAllM();duplicateEvent(6)">Duplicate</button><button onclick="closeAllM();_tplSourceEvent=EV.find(function(ev){return ev.id===6});el(&#39;tplOv&#39;).classList.add(&#39;show&#39;)">Save as Template</button><button onclick="closeAllM();archiveEvent(6)">Archive</button></div></td></tr><tr onclick="openDetail(7)"><td><div class="vn">Kroger Marketplace <span style="color:var(--slate);font-weight:500">#221</span></div><div class="vl">725 Ponce De Leon Ave NE, Atlanta, GA 30306</div></td><td style="font-size:12px">BACARDÍ RTD</td><td style="font-size:12px">RTD Summer Push</td><td><span class="b-hub" style="background:#1E4DB7">Merchandising</span></td><td style="font-size:12px">Off-Premise</td><td style="font-size:12px;white-space:nowrap">Mar 29, 2026<br><span style="color:var(--slate)">9:00 AM–1:00 PM</span></td><td><span class="badge b-open has-tip" data-tip="Published and accepting workers. Spots still available.">Open</span></td><td><span class="has-tip" data-tip="Sunset 355mL" style="font-size:13px;font-weight:600;color:var(--dark);cursor:default">1</span></td><td><div class="wdots"><span style="font-size:12px;color:var(--slate)">—</span></div></td><td class="ac" onclick="event.stopPropagation()"><button class="ab" onclick="event.stopPropagation();this.nextElementSibling.classList.toggle(&#39;show&#39;)">⋯</button><div class="am"><button onclick="closeAllM();editEvent(7)">Edit</button><button onclick="closeAllM();duplicateEvent(7)">Duplicate</button><button onclick="closeAllM();_tplSourceEvent=EV.find(function(ev){return ev.id===7});el(&#39;tplOv&#39;).classList.add(&#39;show&#39;)">Save as Template</button><button onclick="closeAllM();archiveEvent(7)">Archive</button></div></td></tr><tr onclick="openDetail(14)"><td><div class="vn">Wegmans <span style="color:var(--slate);font-weight:500">#78</span></div><div class="vl">53 Third Ave, Burlington, MA 01803</div></td><td style="font-size:12px">PATRÓN</td><td style="font-size:12px">On-Premise Elite</td><td><span class="b-hub" style="background:#1E4DB7">Merchandising</span></td><td style="font-size:12px">Off-Premise</td><td style="font-size:12px;white-space:nowrap">Mar 30, 2026<br><span style="color:var(--slate)">10:00 AM–2:00 PM</span></td><td><span class="badge b-conf has-tip" data-tip="Fully staffed. All worker slots filled.">Confirmed</span></td><td><span class="has-tip" data-tip="Silver 750mL · Reposado 750mL" style="font-size:13px;font-weight:600;color:var(--dark);cursor:default">2</span></td><td><div class="wdots"><div class="wdot" style="background:#9B59B6">PK</div><div class="wdot" style="background:#27AE60">CB</div></div></td><td class="ac" onclick="event.stopPropagation()"><button class="ab" onclick="event.stopPropagation();this.nextElementSibling.classList.toggle(&#39;show&#39;)">⋯</button><div class="am"><button onclick="closeAllM();editEvent(14)">Edit</button><button onclick="closeAllM();duplicateEvent(14)">Duplicate</button><button onclick="closeAllM();_tplSourceEvent=EV.find(function(ev){return ev.id===14});el(&#39;tplOv&#39;).classList.add(&#39;show&#39;)">Save as Template</button><button onclick="closeAllM();archiveEvent(14)">Archive</button></div></td></tr></tbody></table></div>
+    <div id="viewArea"><table><thead><tr><th class="th-sort" onclick="thSort(&#39;venue&#39;)">Venue / Location<span class="sort-icon">⇅</span></th><th class="th-sort" onclick="thSort(&#39;brand&#39;)">Brand<span class="sort-icon">⇅</span></th><th class="th-sort" onclick="thSort(&#39;program&#39;)">Program<span class="sort-icon">⇅</span></th><th class="th-sort" onclick="thSort(&#39;hub&#39;)">Hub<span class="sort-icon">⇅</span></th><th class="th-sort" onclick="thSort(&#39;channel&#39;)">Channel<span class="sort-icon">⇅</span></th><th class="th-sort active" onclick="thSort(&#39;date&#39;)">Date / Time<span class="sort-icon">▲</span></th><th class="th-sort" onclick="thSort(&#39;status&#39;)">Status<span class="sort-icon">⇅</span></th><th class="th-sort" onclick="thSort(&#39;products&#39;)">Products<span class="sort-icon">⇅</span></th><th class="th-sort" onclick="thSort(&#39;workers&#39;)">Workers<span class="sort-icon">⇅</span></th><th>Actions</th></tr></thead><tbody><tr><td colspan="8" style="padding:32px 20px;text-align:center;color:var(--slate);font-size:13px">No events yet</td></tr></tbody></table></div>
   </div>
 </div>
 </div>
@@ -3204,12 +3204,7 @@ body.dash-edit-mode .dw-normal-btns { display:none !important; }
   <div id="upS1"><p style="margin-bottom:10px;font-size:13px">Bulk create events from a spreadsheet.</p><p style="margin-bottom:14px"><a href="#" style="color:var(--teal);font-weight:500;font-size:13px" onclick="event.preventDefault();toast(&#39;Template downloaded&#39;)">Download CSV template →</a></p>
     <div class="dropz" onclick="simUp()"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-bottom:4px"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg><p style="font-weight:500;font-size:12px">Drop file here or click to browse</p></div></div>
   <div id="upS2" style="display:none"><p style="font-weight:600;font-size:13px;margin-bottom:3px">Preview</p><p style="font-size:12px;color:var(--slate);margin-bottom:10px">4 rows found · <span style="color:var(--red)">1 error</span></p>
-    <div class="upload-prev"><table><thead><tr><th>Hub</th><th>Brand</th><th>Venue</th><th>Store#</th><th>Date</th><th>Time</th><th>Workers</th><th>Status</th></tr></thead><tbody>
-      <tr><td>Activations</td><td>BACARDÍ Rum</td><td>Total Wine</td><td>#1205</td><td>Apr 1</td><td>2–6PM</td><td>2</td><td><span class="badge b-conf">Ready</span></td></tr>
-      <tr><td>Activations</td><td>PATRÓN</td><td>BevMo!</td><td>#312</td><td>Apr 2</td><td>3–7PM</td><td>1</td><td><span class="badge b-conf">Ready</span></td></tr>
-      <tr class="error-row"><td>Merch</td><td>—</td><td>Kroger</td><td>#447</td><td>Apr 3</td><td>—</td><td>1</td><td><span class="badge" style="background:var(--red-l);color:var(--red)">Missing</span></td></tr>
-      <tr><td>On-Demand</td><td>BACARDÍ RTD</td><td>Spec's</td><td>#88</td><td>Apr 4</td><td>10–2PM</td><td>2</td><td><span class="badge b-conf">Ready</span></td></tr>
-    </tbody></table></div>
+    <div class="upload-prev"><table><thead><tr><th>Hub</th><th>Brand</th><th>Venue</th><th>Store#</th><th>Date</th><th>Time</th><th>Workers</th><th>Status</th></tr></thead><tbody><tr><td colspan="7" style="padding:32px 20px;text-align:center;color:var(--slate);font-size:13px">No items yet</td></tr></tbody></table></div>
     <div style="margin-top:14px;text-align:right"><button class="btn btn-primary" onclick="closeUpload();toast(&#39;3 events created as drafts&#39;)">Create 3 Events as Draft</button></div></div>
 </div></div></div>
 
@@ -3220,7 +3215,7 @@ body.dash-edit-mode .dw-normal-btns { display:none !important; }
 
 <!-- ═══ RECIPE MODAL ═══ -->
 <div class="ov" id="recOv"><div class="modal" style="width:500px"><div class="mh"><h2>Add New Recipe</h2><button class="xb" onclick="closeModal(&#39;recOv&#39;)">×</button></div>
-  <div class="mb"><div class="fg"><label>Recipe Name</label><input type="text" placeholder="e.g., BACARDÍ Mojito Classic" id="nrName"></div><div class="fg"><label>Description</label><input type="text" placeholder="A refreshing Cuban classic..."></div><div class="fg"><label>Ingredients</label><div id="ingRows"><div class="fr" style="margin-bottom:5px"><div class="fg" style="margin-bottom:0"><input type="text" value="BACARDÍ Superior"></div><div class="fg" style="margin-bottom:0;flex:.4"><input type="text" value="2 oz"></div></div></div><button class="btn btn-ghost btn-sm" onclick="addIngRow()">+ Add Ingredient</button></div><div class="fg"><label>Instructions</label><textarea>Muddle mint leaves with sugar and lime juice. Add BACARDÍ Superior, fill with ice, top with club soda.</textarea></div></div>
+  <div class="mb"><div class="fg"><label>Recipe Name</label><input type="text" placeholder="" id="nrName"></div><div class="fg"><label>Description</label><input type="text" placeholder="A refreshing Cuban classic..."></div><div class="fg"><label>Ingredients</label><div id="ingRows"><div class="fr" style="margin-bottom:5px"><div class="fg" style="margin-bottom:0"><input type="text" value=""></div><div class="fg" style="margin-bottom:0;flex:.4"><input type="text" value="2 oz"></div></div></div><button class="btn btn-ghost btn-sm" onclick="addIngRow()">+ Add Ingredient</button></div><div class="fg"><label>Instructions</label><textarea></textarea></div></div>
   <div class="mf"><button class="btn btn-outline" onclick="closeModal(&#39;recOv&#39;)">Cancel</button><button class="btn btn-primary" onclick="saveRec()">Save Recipe</button></div></div></div>
 
 <!-- ═══ REQUIREMENTS MODAL ═══ -->
@@ -3545,7 +3540,7 @@ body.dash-edit-mode .dw-normal-btns { display:none !important; }
     <div class="req-row"><span class="toggle" id="rLang" onclick="togReq(this,&#39;rLangD&#39;)"></span><label style="font-size:12px;font-weight:500">Language</label></div>
     <div class="req-det" id="rLangD"><select id="langSel" style="padding:7px 10px;border:1px solid var(--border);border-radius:6px;width:220px;font-size:12px" onchange="addLang(this.value)"><option value="">Select language...</option><option>English</option><option>Spanish</option><option>French</option><option>Portuguese</option><option>Mandarin</option><option>Cantonese</option><option>Korean</option><option>Vietnamese</option><option>Tagalog</option><option>Arabic</option><option>Hindi</option><option>Russian</option><option>Polish</option><option>Italian</option><option>German</option><option>Japanese</option><option>Haitian Creole</option><option>Amharic</option></select><div id="langPills" style="margin-top:5px"></div></div>
     <div class="req-row" style="border-bottom:none"><span class="toggle" id="rBK" onclick="togReq(this,&#39;rBKD&#39;)"></span><label style="font-size:12px;font-weight:500">Brand Knowledge Required</label></div>
-    <div class="req-det" id="rBKD"><p style="font-size:12px;color:var(--slate)">Worker must have completed brand training for <strong id="rBN">BACARDÍ Rum</strong></p></div>
+    <div class="req-det" id="rBKD"><p style="font-size:12px;color:var(--slate)">Worker must have completed brand training for <strong id="rBN">this brand</strong></p></div>
   </div>
   <div class="mf" style="position:sticky;bottom:0;background:var(--white)"><button class="btn btn-outline" onclick="closeModal(&#39;reqOv&#39;)">Skip — No Requirements</button><button class="btn btn-primary" onclick="saveReq()">Save Requirements →</button></div>
 </div></div>
@@ -4391,12 +4386,7 @@ body.dash-edit-mode .dw-normal-btns { display:none !important; }
     <div class="tw">
       <table>
         <thead><tr><th>Program</th><th>Brand(s)</th><th>Channel</th><th>Period</th><th>Budget</th><th>Owner</th><th>Status</th><th></th></tr></thead>
-        <tbody>
-          <tr><td><div class="fw">Kroger Summer Demo Series</div><div class="ts tsl">Off-premise retail, national Kroger stores</div></td><td><span class="badge b-teal">Off-Premise</span></td><td class="ts">Jun–Aug 2026</td><td class="fw">$40,000</td><td><div class="flex ic g2"><div class="avs">JL</div>Jordan L.</div></td><td><span class="badge b-green">Active</span></td><td><div class="flex g1"><button class="btn btn-ghost btn-sm" onclick="openEditProgram(&#39;Kroger Summer Demo Series&#39;,&#39;Off-premise retail, national Kroger stores&#39;,&#39;off&#39;,&#39;Jun–Aug 2026&#39;,&#39;40000&#39;,&#39;Jordan L.&#39;)">Edit</button><button class="btn btn-ghost btn-sm" onclick="openCopyProgram(&#39;Kroger Summer Demo Series&#39;,&#39;Off-premise retail, national Kroger stores&#39;,&#39;off&#39;,&#39;Jun–Aug 2026&#39;,&#39;40000&#39;,&#39;Jordan L.&#39;)">Copy</button></div></td></tr>
-          <tr><td><div class="fw">PATRÓN On-Premise Spring Push</div><div class="ts tsl">Bar &amp; restaurant activations</div></td><td><span class="badge b-amber">On-Premise</span></td><td class="ts">Apr–Jun 2026</td><td class="fw">$35,000</td><td><div class="flex ic g2"><div class="avs" style="background:#8B5CF6">RP</div>Riley P.</div></td><td><span class="badge b-green">Active</span></td><td><div class="flex g1"><button class="btn btn-ghost btn-sm" onclick="openEditProgram(&#39;PATRÓN On-Premise Spring Push&#39;,&#39;Bar &amp; restaurant activations&#39;,&#39;on&#39;,&#39;Apr–Jun 2026&#39;,&#39;35000&#39;,&#39;Riley P.&#39;)">Edit</button><button class="btn btn-ghost btn-sm" onclick="openCopyProgram(&#39;PATRÓN On-Premise Spring Push&#39;,&#39;Bar &amp; restaurant activations&#39;,&#39;on&#39;,&#39;Apr–Jun 2026&#39;,&#39;35000&#39;,&#39;Riley P.&#39;)">Copy</button></div></td></tr>
-          <tr><td><div class="fw">BACARDÍ Pool Party Season 2026</div><div class="ts tsl">Hotel, resort and outdoor venue activations</div></td><td><div class="flex g1"><span class="chip">BACARDÍ Rum</span><span class="chip">BACARDÍ RTD</span></div></td><td><span class="badge b-gray">Special</span></td><td class="ts">May–Sep 2026</td><td class="fw">$28,000</td><td><div class="flex ic g2"><div class="avs" style="background:var(--teal)">AM</div>Alex M.</div></td><td><span class="badge b-green">Active</span></td><td><div class="flex g1"><button class="btn btn-ghost btn-sm" onclick="openEditProgram(&#39;BACARDÍ Pool Party Season 2026&#39;,&#39;Hotel, resort and outdoor venue activations&#39;,&#39;special&#39;,&#39;May–Sep 2026&#39;,&#39;28000&#39;,&#39;Alex M.&#39;)">Edit</button><button class="btn btn-ghost btn-sm" onclick="openCopyProgram(&#39;BACARDÍ Pool Party Season 2026&#39;,&#39;Hotel, resort and outdoor venue activations&#39;,&#39;special&#39;,&#39;May–Sep 2026&#39;,&#39;28000&#39;,&#39;Alex M.&#39;)">Copy</button></div></td></tr>
-          <tr><td><div class="fw">Total Wine National Demo Program</div><div class="ts tsl">All Total Wine &amp; More locations</div></td><td><div class="flex g1"><span class="chip">BACARDÍ Rum</span><span class="chip">PATRÓN</span></div></td><td><span class="badge b-teal">Off-Premise</span></td><td class="ts">Q2 2026</td><td class="fw">$32,000</td><td><div class="flex ic g2"><div class="avs">JL</div>Jordan L.</div></td><td><span class="badge b-green">Active</span></td><td><div class="flex g1"><button class="btn btn-ghost btn-sm" onclick="openEditProgram(&#39;Total Wine National Demo Program&#39;,&#39;All Total Wine &amp; More locations&#39;,&#39;off&#39;,&#39;Q2 2026&#39;,&#39;32000&#39;,&#39;Jordan L.&#39;)">Edit</button><button class="btn btn-ghost btn-sm" onclick="openCopyProgram(&#39;Total Wine National Demo Program&#39;,&#39;All Total Wine &amp; More locations&#39;,&#39;off&#39;,&#39;Q2 2026&#39;,&#39;32000&#39;,&#39;Jordan L.&#39;)">Copy</button></div></td></tr>
-        </tbody>
+        <tbody><tr><td colspan="8" style="padding:32px 20px;text-align:center;color:var(--slate);font-size:13px">No programs yet</td></tr></tbody>
       </table>
     </div>
   </div>
@@ -4448,7 +4438,7 @@ body.dash-edit-mode .dw-normal-btns { display:none !important; }
       <div class="card" style="padding:14px;margin:0;text-align:center">
         <div class="ts tsl">Total Configured</div>
         <div style="font-size:22px;font-weight:700;color:var(--dark);margin:4px 0">$1,235,000</div>
-        <div class="ts tsl">across 3 brands · 2026</div>
+        <div class="ts tsl">your 2026 budgets</div>
       </div>
       <div class="card" style="padding:14px;margin:0;text-align:center">
         <div class="ts tsl">Budget Pools</div>
@@ -4469,117 +4459,8 @@ body.dash-edit-mode .dw-normal-btns { display:none !important; }
         <button class="btn btn-ghost btn-sm" id="expandAllBtn" onclick="toggleExpandAll()">Expand All</button>
       </div>
       <div style="padding:16px 20px">
-
-        <!-- BACARDÍ Rum ─────────── -->
-        <div class="broot" style="margin-bottom:12px">
-          <div class="broot-h" style="background:var(--dark)" onclick="toggleBudget(&#39;bb&#39;)">
-            <div class="flex ic g2">
-              <svg id="ba-bb" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="transition:.2s"><path d="M6 9l6 6 6-6"></path></svg>
-              <div class="avs" style="width:20px;height:20px;font-size:9px;background:rgba(255,255,255,.2)">B</div>
-              <span style="font-weight:600">BACARDÍ Rum</span>
-              <span style="font-size:11px;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px">Brand Activation</span>
-              <span style="font-size:11px;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px">2026 Annual</span>
-            </div>
-            <div class="flex ic g2">
-              <span style="font-size:12px;color:rgba(255,255,255,.8);font-weight:600">$500,000</span>
-              <button class="btn btn-ghost btn-sm" style="color:#fff;border-color:rgba(255,255,255,.3);font-size:12px" onclick="event.stopPropagation();openEditBudgetPool(&#39;BACARDÍ Rum&#39;,&#39;Brand Activation&#39;,&#39;500000&#39;)">Edit</button>
-            </div>
-          </div>
-          <div class="bchildren" id="bb">
-            <!-- Pool rows: Name · Scope chips · Owner · Amount · actions -->
-            <div class="bchild" style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px">
-              <div class="flex ic g2" style="flex:1;min-width:0">
-                <span class="fw-n" style="font-size:13px">Off-Premise National</span>
-                <span class="chip" style="font-size:11px">National</span>
-                <span class="chip" style="font-size:11px">Off-Premise</span>
-                <span class="ts tsl">Jordan L.</span>
-              </div>
-              <div class="flex ic g2">
-                <span class="fw" style="font-size:13px;color:var(--dark)">$300,000</span>
-                <button class="btn btn-ghost btn-sm" style="font-size:12px" onclick="event.stopPropagation();openEditBudgetPool(&#39;Off-Premise National&#39;,&#39;Off-Premise · National&#39;,&#39;300000&#39;)">Edit</button>
-                <button class="btn btn-ghost btn-sm" style="font-size:12px;color:var(--teal)" onclick="event.stopPropagation();openCreateBudget()">+ Sub-Pool</button>
-              </div>
-            </div>
-            <div style="padding:0 16px 8px 36px;display:flex;flex-direction:column;gap:4px">
-              <div style="display:flex;align-items:center;justify-content:space-between;padding:7px 12px;background:var(--lgray);border-radius:5px;font-size:12px">
-                <div class="flex ic g2"><span class="fw-n">Kroger Summer Demo Series</span><span class="badge b-teal" style="font-size:12px">Program</span><span class="chip chip-gray" style="font-size:12px">Off-Premise</span></div>
-                <div class="flex ic g1"><span class="fw" style="color:var(--dark)">$40,000</span><button class="btn btn-ghost btn-sm" style="font-size:12px">Edit</button></div>
-              </div>
-              <div style="display:flex;align-items:center;justify-content:space-between;padding:7px 12px;background:var(--lgray);border-radius:5px;font-size:12px">
-                <div class="flex ic g2"><span class="fw-n">Total Wine National Demo</span><span class="badge b-teal" style="font-size:12px">Program</span><span class="chip chip-gray" style="font-size:12px">Off-Premise</span></div>
-                <div class="flex ic g1"><span class="fw" style="color:var(--dark)">$32,000</span><button class="btn btn-ghost btn-sm" style="font-size:12px">Edit</button></div>
-              </div>
-              <div style="display:flex;align-items:center;justify-content:space-between;padding:7px 12px;background:var(--lgray);border-radius:5px;font-size:12px">
-                <div class="flex ic g2"><span class="fw-n">General Off-Premise Pool</span><span class="ts tsl">Unallocated</span></div>
-                <div class="flex ic g1"><span class="fw" style="color:var(--dark)">$228,000</span><button class="btn btn-ghost btn-sm" style="font-size:12px">Edit</button></div>
-              </div>
-              <div style="padding:4px 0"><button style="font-size:12px;color:var(--teal);background:none;border:1px dashed var(--teal);border-radius:5px;padding:5px 12px;cursor:pointer;width:100%;text-align:center">+ Add Sub-Pool</button></div>
-            </div>
-            <div class="bchild" style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px">
-              <div class="flex ic g2"><span class="fw-n" style="font-size:13px">On-Premise National</span><span class="chip" style="font-size:11px">National</span><span class="chip chip-amber" style="font-size:12px">On-Premise</span><span class="ts tsl">Riley P.</span></div>
-              <div class="flex ic g2"><span class="fw" style="font-size:13px;color:var(--dark)">$120,000</span><button class="btn btn-ghost btn-sm" style="font-size:12px" onclick="openEditBudgetPool(&#39;On-Premise National&#39;,&#39;On-Premise · National&#39;,&#39;120000&#39;)">Edit</button><button class="btn btn-ghost btn-sm" style="font-size:12px;color:var(--teal)" onclick="openCreateBudget()">+ Sub-Pool</button></div>
-            </div>
-            <div class="bchild" style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px">
-              <div class="flex ic g2"><span class="fw-n" style="font-size:13px">Special Events National</span><span class="chip" style="font-size:11px">National</span><span class="chip chip-purple" style="font-size:11px">Special</span><span class="ts tsl">Alex Morgan</span></div>
-              <div class="flex ic g2"><span class="fw" style="font-size:13px;color:var(--dark)">$80,000</span><button class="btn btn-ghost btn-sm" style="font-size:12px" onclick="openEditBudgetPool(&#39;Special Events National&#39;,&#39;Special · National&#39;,&#39;80000&#39;)">Edit</button><button class="btn btn-ghost btn-sm" style="font-size:12px;color:var(--teal)" onclick="openCreateBudget()">+ Sub-Pool</button></div>
-            </div>
-            <div style="padding:8px 16px"><button style="font-size:12px;color:var(--teal);background:none;border:1px dashed var(--teal);border-radius:5px;padding:5px 12px;cursor:pointer;width:100%;text-align:center" onclick="openCreateBudget(&#39;bacrm&#39;)">+ Add Pool</button></div>
-          </div>
-        </div>
-
-        <!-- PATRÓN ─────────────── -->
-        <div class="broot" style="margin-bottom:12px">
-          <div class="broot-h" style="background:#145523" onclick="toggleBudget(&#39;bp&#39;)">
-            <div class="flex ic g2">
-              <svg id="ba-bp" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="transition:.2s"><path d="M6 9l6 6 6-6"></path></svg>
-              <div class="avs" style="width:20px;height:20px;font-size:9px;background:rgba(255,255,255,.2)">PT</div>
-              <span style="font-weight:600">PATRÓN</span>
-              <span style="font-size:11px;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px">Brand Activation</span>
-              <span style="font-size:11px;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px">2026 Annual</span>
-            </div>
-            <div class="flex ic g2">
-              <span style="font-size:12px;color:rgba(255,255,255,.8);font-weight:600">$425,000</span>
-              <button class="btn btn-ghost btn-sm" style="color:#fff;border-color:rgba(255,255,255,.3);font-size:12px" onclick="event.stopPropagation();openEditBudgetPool(&#39;PATRÓN&#39;,&#39;Brand Activation&#39;,&#39;425000&#39;)">Edit</button>
-            </div>
-          </div>
-          <div class="bchildren" id="bp">
-            <div class="bchild" style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px">
-              <div class="flex ic g2"><span class="fw-n" style="font-size:13px">Off-Premise National</span><span class="chip" style="font-size:11px">National</span><span class="chip" style="font-size:11px">Off-Premise</span><span class="ts tsl">Jordan L.</span></div>
-              <div class="flex ic g2"><span class="fw" style="font-size:13px;color:var(--dark)">$200,000</span><button class="btn btn-ghost btn-sm" style="font-size:12px" onclick="openEditBudgetPool(&#39;Off-Premise National (PATRÓN)&#39;,&#39;Off-Premise · National&#39;,&#39;200000&#39;)">Edit</button><button class="btn btn-ghost btn-sm" style="font-size:12px;color:var(--teal)" onclick="openCreateBudget()">+ Sub-Pool</button></div>
-            </div>
-            <div class="bchild" style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px">
-              <div class="flex ic g2"><span class="fw-n" style="font-size:13px">On-Premise Spring Push</span><span class="chip chip-amber" style="font-size:12px">On-Premise</span><span class="badge b-teal" style="font-size:12px">Program</span><span class="ts tsl">Riley P.</span></div>
-              <div class="flex ic g2"><span class="fw" style="font-size:13px;color:var(--dark)">$35,000</span><button class="btn btn-ghost btn-sm" style="font-size:12px" onclick="openEditBudgetPool(&#39;On-Premise Spring Push&#39;,&#39;On-Premise · Program&#39;,&#39;35000&#39;)">Edit</button><button class="btn btn-ghost btn-sm" style="font-size:12px;color:var(--teal)" onclick="openCreateBudget()">+ Sub-Pool</button></div>
-            </div>
-            <div style="padding:8px 16px"><button style="font-size:12px;color:var(--teal);background:none;border:1px dashed var(--teal);border-radius:5px;padding:5px 12px;cursor:pointer;width:100%;text-align:center" onclick="openCreateBudget(&#39;patron&#39;)">+ Add Pool</button></div>
-          </div>
-        </div>
-
-        <!-- BACARDÍ RTD ─────────── -->
-        <div class="broot" style="margin-bottom:12px">
-          <div class="broot-h" style="background:#C8980A" onclick="toggleBudget(&#39;brtd&#39;)">
-            <div class="flex ic g2">
-              <svg id="ba-brtd" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="transition:.2s"><path d="M6 9l6 6 6-6"></path></svg>
-              <div class="avs" style="width:20px;height:20px;font-size:9px;background:rgba(255,255,255,.2)">RTD</div>
-              <span style="font-weight:600">BACARDÍ RTD</span>
-              <span style="font-size:11px;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px">Brand Activation</span>
-              <span style="font-size:11px;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px">2026 Annual</span>
-            </div>
-            <div class="flex ic g2">
-              <span style="font-size:12px;color:rgba(255,255,255,.8);font-weight:600">$310,000</span>
-              <button class="btn btn-ghost btn-sm" style="color:#fff;border-color:rgba(255,255,255,.3);font-size:12px" onclick="event.stopPropagation();openEditBudgetPool(&#39;BACARDÍ RTD&#39;,&#39;Brand Activation&#39;,&#39;310000&#39;)">Edit</button>
-            </div>
-          </div>
-          <div class="bchildren" id="brtd" style="display:none">
-            <div class="bchild" style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px">
-              <div class="flex ic g2"><span class="fw-n" style="font-size:13px">Off-Premise Summer Push</span><span class="chip" style="font-size:11px">National</span><span class="chip" style="font-size:11px">Off-Premise</span><span class="ts tsl">Kim M.</span></div>
-              <div class="flex ic g2"><span class="fw" style="font-size:13px;color:var(--dark)">$310,000</span><button class="btn btn-ghost btn-sm" style="font-size:12px" onclick="openEditBudgetPool(&#39;Off-Premise Summer Push&#39;,&#39;Off-Premise · National&#39;,&#39;310000&#39;)">Edit</button><button class="btn btn-ghost btn-sm" style="font-size:12px;color:var(--teal)" onclick="openCreateBudget()">+ Sub-Pool</button></div>
-            </div>
-            <div style="padding:8px 16px"><button style="font-size:12px;color:var(--teal);background:none;border:1px dashed var(--teal);border-radius:5px;padding:5px 12px;cursor:pointer;width:100%;text-align:center" onclick="openCreateBudget()">+ Add Pool</button></div>
-          </div>
-        </div>
-
-      </div>
+<div style="padding:40px 20px;text-align:center;color:var(--slate);font-size:13px">No budget pools configured yet</div>
+</div>
     </div>
     <div id="budgets-list" style="margin-top:20px"></div>
     <div id="comped-settings-wrap" data-marker="compedSettings" style="margin-top:20px"></div>
@@ -10191,7 +10072,7 @@ body.dash-edit-mode .dw-normal-btns { display:none !important; }
         </div>
       </div>
 
-      <!-- MVP: empty state replaces seed BACARDÍ tree -->
+      
       <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:48px 24px;text-align:center;color:var(--slate)">
         <div style="font-size:15px;font-weight:600;color:var(--dark);margin-bottom:6px">No hierarchy configured yet</div>
         <div style="font-size:13px;margin-bottom:16px">Add your first tier node to build out your org tree. The tier labels above define visibility roll-up rules.</div>
@@ -11319,53 +11200,7 @@ Thank you for your continued partnership.
             </div>
             <button class="btn btn-ghost btn-sm" onclick="event.stopPropagation();openAddContact(&#39;distributor&#39;,&#39;Southern Glazers&#39;)">+ Add Contact</button>
           </div>
-          <div class="contact-org-body" id="body-sg">
-            <div class="contact-card">
-              <div class="contact-card-left">
-                <div class="avs" style="background:var(--teal)">MR</div>
-                <div>
-                  <div class="contact-name">Marcus Rivera</div>
-                  <div class="contact-role">Florida Territory Manager</div>
-                  <div class="contact-territory"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> FL — Miami-Dade, Broward, Palm Beach</div>
-                </div>
-              </div>
-              <div class="contact-card-right">
-                <a href="#" class="contact-link"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> <span class="__cf_email__" data-cfemail="ed80c39f849b889f8cad9e8a9a9ec38e8280">[email&nbsp;protected]</span></a>
-                <a href="tel:+13055551234" class="contact-link"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 8.85a19.79 19.79 0 01-3.07-8.63A2 2 0 013 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14z"></path></svg> (305) 555-1234</a>
-                <div class="contact-tags"><span class="badge" style="font-size:11px;background:var(--teal-xl);color:var(--teal)">BACARDÍ Rum</span><span class="badge" style="font-size:11px;background:var(--teal-xl);color:var(--teal)">PATRÓN</span></div>
-              </div>
-            </div>
-            <div class="contact-card">
-              <div class="contact-card-left">
-                <div class="avs" style="background:#8B5CF6">TN</div>
-                <div>
-                  <div class="contact-name">Tina Nguyen</div>
-                  <div class="contact-role">California Key Accounts Manager</div>
-                  <div class="contact-territory"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> CA — Los Angeles, San Diego, Bay Area</div>
-                </div>
-              </div>
-              <div class="contact-card-right">
-                <a href="#" class="contact-link"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> <span class="__cf_email__" data-cfemail="7703591910020e121937041000045914181a">[email&nbsp;protected]</span></a>
-                <a href="tel:+13105559876" class="contact-link"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 8.85a19.79 19.79 0 01-3.07-8.63A2 2 0 013 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14z"></path></svg> (310) 555-9876</a>
-                <div class="contact-tags"><span class="badge" style="font-size:11px;background:var(--teal-xl);color:var(--teal)">BACARDÍ Rum</span></div>
-              </div>
-            </div>
-            <div class="contact-card" style="border-bottom:none">
-              <div class="contact-card-left">
-                <div class="avs">DW</div>
-                <div>
-                  <div class="contact-name">Derek Walsh</div>
-                  <div class="contact-role">Logistics &amp; Delivery Coordinator</div>
-                  <div class="contact-territory"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> National — Kit delivery coordination</div>
-                </div>
-              </div>
-              <div class="contact-card-right">
-                <a href="#" class="contact-link"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> <span class="__cf_email__" data-cfemail="98fcb6eff9f4ebf0d8ebffefebb6fbf7f5">[email&nbsp;protected]</span></a>
-                <a href="tel:+18005550001" class="contact-link"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 8.85a19.79 19.79 0 01-3.07-8.63A2 2 0 013 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14z"></path></svg> (800) 555-0001</a>
-                <div class="contact-tags"><span class="badge" style="font-size:11px;background:var(--lgray);color:var(--slate)">All Brands</span></div>
-              </div>
-            </div>
-          </div>
+          <div class="contact-org-body" id="body-sg"><div style="padding:24px;text-align:center;color:var(--slate);font-size:13px">No contacts yet</div></div>
         </div>
 
         <!-- Republic National -->
@@ -11381,23 +11216,7 @@ Thank you for your continued partnership.
             </div>
             <button class="btn btn-ghost btn-sm" onclick="event.stopPropagation();openAddContact(&#39;distributor&#39;,&#39;RNDC&#39;)">+ Add Contact</button>
           </div>
-          <div class="contact-org-body" id="body-rndc" style="display:none">
-            <div class="contact-card" style="border-bottom:none">
-              <div class="contact-card-left">
-                <div class="avs" style="background:#D97706">KJ</div>
-                <div>
-                  <div class="contact-name">Karen Jimenez</div>
-                  <div class="contact-role">Texas &amp; Southeast Regional Manager</div>
-                  <div class="contact-territory"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> TX, LA, MS, AL, GA</div>
-                </div>
-              </div>
-              <div class="contact-card-right">
-                <a href="#" class="contact-link"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> <span class="__cf_email__" data-cfemail="cea5e0a4a7a3aba0abb48ebca0aaade0ada1a3">[email&nbsp;protected]</span></a>
-                <a href="tel:+17135554567" class="contact-link"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 8.85a19.79 19.79 0 01-3.07-8.63A2 2 0 013 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14z"></path></svg> (713) 555-4567</a>
-                <div class="contact-tags"><span class="badge" style="font-size:11px;background:var(--teal-xl);color:var(--teal)">BACARDÍ Rum</span><span class="badge" style="font-size:11px;background:var(--teal-xl);color:var(--teal)">PATRÓN</span></div>
-              </div>
-            </div>
-          </div>
+          <div class="contact-org-body" id="body-rndc" style="display:none"><div style="padding:24px;text-align:center;color:var(--slate);font-size:13px">No contacts yet</div></div>
         </div>
 
       </div><!-- /contact-tree -->
@@ -11473,22 +11292,7 @@ Thank you for your continued partnership.
             </div>
             <button class="btn btn-ghost btn-sm" onclick="event.stopPropagation();openAddContact(&#39;retail&#39;,&#39;Total Wine&#39;)">+ Add Contact</button>
           </div>
-          <div class="contact-org-body" id="body-totalwine" style="display:none">
-            <div class="contact-card" style="border-bottom:none">
-              <div class="contact-card-left">
-                <div class="avs" style="background:#7C3AED">SL</div>
-                <div>
-                  <div class="contact-name">Sandra Lee</div>
-                  <div class="contact-role">Spirits Category Manager</div>
-                  <div class="contact-territory"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> National — All Total Wine locations</div>
-                </div>
-              </div>
-              <div class="contact-card-right">
-                <a href="#" class="contact-link"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> <span class="__cf_email__" data-cfemail="86f5a8eae3e3c6f2e9f2e7eaf1efe8e3a8e5e9eb">[email&nbsp;protected]</span></a>
-                <div class="contact-tags"><span class="badge" style="font-size:11px;background:#D4EDDA;color:#145523">Category Manager</span><span class="badge" style="font-size:11px;background:var(--teal-xl);color:var(--teal)">BACARDÍ Rum</span><span class="badge" style="font-size:11px;background:var(--teal-xl);color:var(--teal)">PATRÓN</span></div>
-              </div>
-            </div>
-          </div>
+          <div class="contact-org-body" id="body-totalwine" style="display:none"><div style="padding:24px;text-align:center;color:var(--slate);font-size:13px">No contacts yet</div></div>
         </div>
 
       </div>
@@ -11511,38 +11315,7 @@ Thank you for your continued partnership.
             </div>
             <button class="btn btn-ghost btn-sm" onclick="event.stopPropagation();openAddContact(&#39;agency&#39;,&#39;Mosaic&#39;)">+ Add Contact</button>
           </div>
-          <div class="contact-org-body" id="body-mosaic">
-            <div class="contact-card">
-              <div class="contact-card-left">
-                <div class="avs" style="background:#D97706">LF</div>
-                <div>
-                  <div class="contact-name">Lisa Ford</div>
-                  <div class="contact-role">Account Director — BACARDÍ</div>
-                  <div class="contact-territory"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> National account management</div>
-                </div>
-              </div>
-              <div class="contact-card-right">
-                <a href="#" class="contact-link"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> <span class="__cf_email__" data-cfemail="462a6820293422062b2935272f256825292b">[email&nbsp;protected]</span></a>
-                <a href="tel:+12125559988" class="contact-link"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 8.85a19.79 19.79 0 01-3.07-8.63A2 2 0 013 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14z"></path></svg> (212) 555-9988</a>
-                <div class="contact-tags"><span class="badge" style="font-size:11px;background:var(--teal-xl);color:var(--teal)">BACARDÍ Rum</span><span class="badge" style="font-size:11px;background:var(--teal-xl);color:var(--teal)">BACARDÍ RTD</span></div>
-              </div>
-            </div>
-            <div class="contact-card" style="border-bottom:none">
-              <div class="contact-card-left">
-                <div class="avs" style="background:#92600A">RC</div>
-                <div>
-                  <div class="contact-name">Ron Chen</div>
-                  <div class="contact-role">Staffing Lead — Southeast</div>
-                  <div class="contact-territory"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> FL, GA, SC — Worker scheduling &amp; escalations</div>
-                </div>
-              </div>
-              <div class="contact-card-right">
-                <a href="#" class="contact-link"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> <span class="__cf_email__" data-cfemail="8cfea2efe4e9e2cce1e3ffede5efa2efe3e1">[email&nbsp;protected]</span></a>
-                <a href="tel:+13055554433" class="contact-link"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 8.85a19.79 19.79 0 01-3.07-8.63A2 2 0 013 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14z"></path></svg> (305) 555-4433</a>
-                <div class="contact-tags"><span class="badge" style="font-size:11px;background:var(--lgray);color:var(--slate)">Staffing Escalations</span></div>
-              </div>
-            </div>
-          </div>
+          <div class="contact-org-body" id="body-mosaic"><div style="padding:24px;text-align:center;color:var(--slate);font-size:13px">No contacts yet</div></div>
         </div>
       </div>
       <button class="btn btn-outline btn-sm mt3" onclick="openAddContact(&#39;agency&#39;)">+ Add Agency</button>
@@ -11733,9 +11506,6 @@ Tier 3"></textarea>
       </div>
       <div class="form-group"><label class="form-label">Brands</label>
         <div class="prog-evtcat-pills">
-          <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> BACARDÍ Rum</label>
-          <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> BACARDÍ RTD</label>
-          <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> PATRÓN</label>
           <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> All Brands</label>
         </div>
       </div>
@@ -11814,7 +11584,7 @@ Tier 3"></textarea>
     </div>
     <div class="modal-body">
       <div class="form-row">
-        <div class="form-group"><label class="form-label">Resource Name <span style="color:#842029">*</span></label><input class="form-control" placeholder="e.g. BACARDÍ Off-Premise Demo Kit" type="text"></div>
+        <div class="form-group"><label class="form-label">Resource Name <span style="color:#842029">*</span></label><input class="form-control" placeholder="" type="text"></div>
         <div class="form-group"><label class="form-label">Resource Type <span style="color:#842029">*</span></label>
           <select class="form-control" id="res-type-select" onchange="toggleResTypeFields()">
             <option value="">Select type</option>
@@ -11876,8 +11646,6 @@ Tier 3"></textarea>
             <input class="form-control" value="1" type="number" min="1" style="font-size:12px">
             <select class="form-control" style="font-size:12px">
               <option value="">Custom (not in assets)</option>
-              <option>BACARDÍ Branded Table Cover</option>
-              <option>BACARDÍ Branded Ice Bucket</option>
               <option>2oz Sample Cups</option>
               <option>Cocktail Napkins</option>
               <option>Product Info Cards</option>
@@ -11892,8 +11660,6 @@ Tier 3"></textarea>
             <input class="form-control" value="50" type="number" min="1" style="font-size:12px">
             <select class="form-control" style="font-size:12px">
               <option value="">Custom (not in assets)</option>
-              <option>BACARDÍ Branded Table Cover</option>
-              <option>BACARDÍ Branded Ice Bucket</option>
               <option selected="">2oz Sample Cups</option>
               <option>Cocktail Napkins</option>
               <option>Product Info Cards</option>
@@ -12306,129 +12072,7 @@ Tier 3"></textarea>
       <!-- ═══════════════════════════════════════
            STEP 2 — SCOPE & BUDGET
       ═══════════════════════════════════════ -->
-      <div id="psec-2" class="wiz-section">
-        <div class="wiz-sec-title">Scope &amp; Budget</div>
-
-        <!-- Brands -->
-        <div class="wiz-field-label">Brands</div>
-        <div class="flex g2 mb3" style="flex-wrap:wrap">
-          <label class="prog-brand-pill selected" onclick="toggleBrandPill(this)" style="display:flex;align-items:center;gap:8px;padding:8px 14px;border:2px solid var(--teal);background:var(--teal-xl);border-radius:var(--radius);cursor:pointer;font-size:13px;font-weight:500;user-select:none">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> BACARDÍ Rum
-          </label>
-          <label class="prog-brand-pill" onclick="toggleBrandPill(this)" style="display:flex;align-items:center;gap:8px;padding:8px 14px;border:2px solid var(--border);border-radius:var(--radius);cursor:pointer;font-size:13px;font-weight:500;user-select:none">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity:.3"><polyline points="20 6 9 17 4 12"></polyline></svg> BACARDÍ RTD
-          </label>
-          <label class="prog-brand-pill" onclick="toggleBrandPill(this)" style="display:flex;align-items:center;gap:8px;padding:8px 14px;border:2px solid var(--border);border-radius:var(--radius);cursor:pointer;font-size:13px;font-weight:500;user-select:none">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity:.3"><polyline points="20 6 9 17 4 12"></polyline></svg> PATRÓN
-          </label>
-        </div>
-
-        <!-- Location Scope -->
-        <div class="wiz-field-label">Location Scope</div>
-        <div class="ts tsl mb2">How broadly does this program run? National, regional, or specific markets.</div>
-        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px">
-          <div class="scope-pill active" onclick="setProgScope(&#39;national&#39;,this)">🌐 National</div>
-          <div class="scope-pill" onclick="setProgScope(&#39;region&#39;,this)">Region(s)</div>
-          <div class="scope-pill" onclick="setProgScope(&#39;territory&#39;,this)">Territory(s)</div>
-          <div class="scope-pill" onclick="setProgScope(&#39;market&#39;,this)">Market(s)</div>
-          <div class="scope-pill" onclick="setProgScope(&#39;custom&#39;,this)">Custom mix</div>
-        </div>
-        <div id="scope-national-msg" style="font-size:13px;color:var(--slate);margin-bottom:16px">
-          National programs apply to all locations. No further location selection required.
-        </div>
-        <div id="scope-region-sel" style="display:none;margin-bottom:16px">
-          <div class="ts tsl mb1">Select Region(s)</div>
-          <div class="prog-evtcat-pills">
-            <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> Northeast</label>
-            <label class="prog-evtcat-pill selected" onclick="toggleEvtCat(this)"><input type="checkbox" checked="" style="display:none"> Southeast</label>
-            <label class="prog-evtcat-pill selected" onclick="toggleEvtCat(this)"><input type="checkbox" checked="" style="display:none"> West Coast</label>
-            <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> Central</label>
-          </div>
-        </div>
-        <div id="scope-territory-sel" style="display:none;margin-bottom:16px">
-          <div class="ts tsl mb1">Select Territory(s)</div>
-          <div class="prog-evtcat-pills">
-            <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> New England</label>
-            <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> Mid-Atlantic</label>
-            <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> Florida</label>
-            <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> Southern California</label>
-            <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> Northern California</label>
-            <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> Pacific Northwest</label>
-          </div>
-        </div>
-        <div id="scope-market-sel" style="display:none;margin-bottom:16px">
-          <div class="ts tsl mb1">Select Market(s)</div>
-          <input class="form-control" placeholder="Search markets..." type="text" style="max-width:300px;margin-bottom:8px">
-          <div class="prog-evtcat-pills">
-            <label class="prog-evtcat-pill selected" onclick="toggleEvtCat(this)"><input type="checkbox" checked="" style="display:none"> Miami-Dade</label>
-            <label class="prog-evtcat-pill selected" onclick="toggleEvtCat(this)"><input type="checkbox" checked="" style="display:none"> Greater Atlanta</label>
-            <label class="prog-evtcat-pill selected" onclick="toggleEvtCat(this)"><input type="checkbox" checked="" style="display:none"> Los Angeles</label>
-            <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> San Francisco Bay Area</label>
-            <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> New York City</label>
-            <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> Chicago</label>
-            <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> Houston</label>
-          </div>
-        </div>
-
-        <!-- Budget Pool -->
-        <div class="wiz-field-label" style="margin-top:8px">Budget Pool</div>
-        <div class="ts tsl mb2">Link this program to an existing budget pool. Events created under this program draw from the pool balance.</div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px">
-          <div class="prog-pool-card selected" onclick="selectPool(this)">
-            <div class="prog-pool-name">BACARDÍ Off-Premise National</div>
-            <div class="prog-pool-balance">$228,000 available</div>
-            <div class="prog-pool-meta">Off-Premise · National · 2026</div>
-          </div>
-          <div class="prog-pool-card" onclick="selectPool(this)">
-            <div class="prog-pool-name">BACARDÍ RTD Summer Push</div>
-            <div class="prog-pool-balance">$84,000 available</div>
-            <div class="prog-pool-meta">Multi-Channel · National · 2026</div>
-          </div>
-          <div class="prog-pool-card" onclick="selectPool(this)">
-            <div class="prog-pool-name">PATRÓN On-Premise Q2</div>
-            <div class="prog-pool-balance">$112,500 available</div>
-            <div class="prog-pool-meta">On-Premise · National · 2026</div>
-          </div>
-          <div class="prog-pool-card prog-pool-card-new" onclick="openCreateBudget()">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"></path></svg>
-            <div style="font-size:12px;font-weight:600;margin-top:4px">Create new pool</div>
-          </div>
-        </div>
-
-        <!-- Program budget allocation within pool -->
-        <div class="form-row" style="max-width:480px;margin-top:16px">
-          <div class="form-group">
-            <label class="form-label">Program Allocation from Pool <span style="color:#842029">*</span></label>
-            <div style="display:flex;align-items:center;border:1.5px solid var(--border);border-radius:6px;background:#fff;padding:6px 10px;width:180px">
-              <span style="color:var(--slate);font-size:14px;margin-right:4px">$</span>
-              <input type="number" value="40000" step="1000" style="border:none;outline:none;font-size:16px;font-weight:700;color:var(--dark);width:100px;background:transparent;font-family:var(--font)">
-            </div>
-            <div class="ts tsl mt1">Of $228,000 available in selected pool</div>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Contingency Reserve</label>
-            <div style="display:flex;align-items:center;border:1.5px solid var(--border);border-radius:6px;background:#fff;padding:6px 10px;width:140px">
-              <input type="number" value="10" step="1" style="border:none;outline:none;font-size:16px;font-weight:700;color:var(--dark);width:50px;background:transparent;font-family:var(--font)">
-              <span style="color:var(--slate);font-size:14px;margin-left:2px">%</span>
-            </div>
-            <div class="ts tsl mt1">Held back as unspent buffer</div>
-          </div>
-        </div>
-
-        <!-- Budget alert -->
-        <div class="form-group" style="max-width:400px">
-          <label class="form-label">Overspend Alert Threshold</label>
-          <div class="flex ic g2">
-            <select class="form-control" style="width:180px">
-              <option>Alert at 80% spent</option>
-              <option selected="">Alert at 90% spent</option>
-              <option>Alert at 95% spent</option>
-              <option>No alert</option>
-            </select>
-            <span class="ts tsl">Notifies Finance Lead</span>
-          </div>
-        </div>
-      </div><!-- /psec-2 -->
+      <div id="psec-2" class="wiz-section"><div style="padding:16px;color:var(--slate);font-size:12px;font-style:italic">No selections yet</div></div><!-- /psec-2 -->
 
 
       <!-- ═══════════════════════════════════════
@@ -12450,12 +12094,7 @@ Tier 3"></textarea>
             </div>
           </div>
           <div class="flex ic g2" style="margin-top:10px;flex-wrap:wrap">
-            <select class="form-control" id="prog-kit-sel" style="max-width:380px">
-              <option value="">No kit attached</option>
-              <option selected="">BACARDÍ Off-Premise Demo Kit (Branded table cover, cups, napkins...)</option>
-              <option>BACARDÍ Pool Party Kit</option>
-              <option>PATRÓN On-Premise Kit</option>
-            </select>
+            <select class="form-control" id="prog-kit-sel" style="max-width:380px"><div style="padding:16px;color:var(--slate);font-size:12px;font-style:italic">No selections yet</div></select>
             <button class="wiz-create-link" onclick="openSubModal(&#39;kit&#39;)">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"></path></svg>
               Create new kit
@@ -12474,17 +12113,7 @@ Tier 3"></textarea>
               <div class="ts tsl">Logos, brand guidelines, approved photography. Workers access these in the mobile app.</div>
             </div>
           </div>
-          <div id="prog-assets-pills" class="prog-evtcat-pills" style="margin-top:10px">
-            <label class="prog-evtcat-pill selected" onclick="toggleEvtCat(this)"><input type="checkbox" checked="" style="display:none"> BACARDÍ Brand Logo Pack</label>
-            <label class="prog-evtcat-pill selected" onclick="toggleEvtCat(this)"><input type="checkbox" checked="" style="display:none"> Brand Guidelines 2026</label>
-            <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> Off-Premise Photography Toolkit</label>
-            <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> Consumer-Facing Sell Sheets</label>
-            <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> BACARDÍ Brand Story &amp; History</label>
-            <button class="wiz-create-link" onclick="openSubModal(&#39;asset&#39;)">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"></path></svg>
-              Upload / add asset
-            </button>
-          </div>
+          <div id="prog-assets-pills" class="prog-evtcat-pills" style="margin-top:10px"><div style="padding:16px;color:var(--slate);font-size:12px;font-style:italic">No selections yet</div></div>
         </div>
 
         <!-- ── EVENT INSTRUCTIONS ──────────────────────────── -->
@@ -12499,11 +12128,7 @@ Tier 3"></textarea>
             </div>
           </div>
           <div class="flex ic g2" style="margin-top:10px;flex-wrap:wrap">
-            <select class="form-control" id="prog-instr-sel" style="max-width:380px">
-              <option value="">No instructions attached</option>
-              <option selected="">BACARDÍ Off-Premise Demo — General Instructions</option>
-              <option>PATRÓN On-Premise Activation Instructions</option>
-            </select>
+            <select class="form-control" id="prog-instr-sel" style="max-width:380px"><div style="padding:16px;color:var(--slate);font-size:12px;font-style:italic">No selections yet</div></select>
             <button class="wiz-create-link" onclick="openSubModal(&#39;instructions&#39;)">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"></path></svg>
               Create new
@@ -12522,15 +12147,7 @@ Tier 3"></textarea>
               <div class="ts tsl">Cocktail recipes workers present to consumers. Multiple can be attached.</div>
             </div>
           </div>
-          <div id="prog-recipe-pills" class="prog-evtcat-pills" style="margin-top:10px">
-            <label class="prog-evtcat-pill selected" onclick="toggleEvtCat(this)"><input type="checkbox" checked="" style="display:none"> Classic BACARDÍ Mojito</label>
-            <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> PATRÓN Silver Margarita</label>
-            <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> BACARDÍ Gold Rush</label>
-            <button class="wiz-create-link" onclick="openSubModal(&#39;recipe&#39;)">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"></path></svg>
-              Create recipe
-            </button>
-          </div>
+          <div id="prog-recipe-pills" class="prog-evtcat-pills" style="margin-top:10px"><div style="padding:16px;color:var(--slate);font-size:12px;font-style:italic">No selections yet</div></div>
         </div>
 
         <!-- ── ATTIRE GUIDE ────────────────────────────────── -->
@@ -12545,11 +12162,7 @@ Tier 3"></textarea>
             </div>
           </div>
           <div class="flex ic g2" style="margin-top:10px;flex-wrap:wrap">
-            <select class="form-control" id="prog-attire-sel" style="max-width:380px">
-              <option value="" selected="">No attire guide attached</option>
-              <option>BACARDÍ Pool Party Attire Guide</option>
-              <option>Standard Off-Premise Attire Guide</option>
-            </select>
+            <select class="form-control" id="prog-attire-sel" style="max-width:380px"><div style="padding:16px;color:var(--slate);font-size:12px;font-style:italic">No selections yet</div></select>
             <button class="wiz-create-link" onclick="openSubModal(&#39;attire&#39;)">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"></path></svg>
               Create new
@@ -12590,88 +12203,12 @@ Tier 3"></textarea>
               <div class="ts tsl">Workers must complete these modules before accepting events under this program.</div>
             </div>
           </div>
-          <div id="prog-training-pills" class="prog-evtcat-pills" style="margin-top:10px">
-            <label class="prog-evtcat-pill selected" onclick="toggleEvtCat(this)"><input type="checkbox" checked="" style="display:none"> BACARDÍ Brand Certification</label>
-            <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> Responsible Service Training</label>
-            <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> Off-Premise Demo Fundamentals</label>
-            <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> On-Premise Bar Skills</label>
-            <button class="wiz-create-link" onclick="openSubModal(&#39;training&#39;)">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"></path></svg>
-              Create module
-            </button>
-          </div>
+          <div id="prog-training-pills" class="prog-evtcat-pills" style="margin-top:10px"><div style="padding:16px;color:var(--slate);font-size:12px;font-style:italic">No selections yet</div></div>
         </div>
 
       </div><!-- /psec-3 -->
 
-      <div id="psec-4" class="wiz-section">
-        <div class="wiz-sec-title">Worker Requirements</div>
-        <div class="ts tsl mb3">Set minimum standards for workers who can apply to events under this program. These override global defaults and can be tightened further at the individual event level.</div>
-
-        <!-- Min tier -->
-        <div class="form-group" style="max-width:480px">
-          <label class="form-label">Minimum Worker Tier</label>
-          <div class="ts tsl mb2">Workers below this tier cannot see or apply for events under this program.</div>
-          <div style="display:flex;gap:8px;flex-wrap:wrap">
-            <div class="prog-req-pill" onclick="selectReqPill(this,&#39;tier&#39;)">Any Tier</div>
-            <div class="prog-req-pill active" onclick="selectReqPill(this,&#39;tier&#39;)">Tier 1+ (Standard)</div>
-            <div class="prog-req-pill" onclick="selectReqPill(this,&#39;tier&#39;)">Tier 2+ (Elevated)</div>
-            <div class="prog-req-pill" onclick="selectReqPill(this,&#39;tier&#39;)">Tier 3 Only (Specialty)</div>
-          </div>
-        </div>
-
-        <!-- Certifications -->
-        <div class="form-group" style="max-width:600px">
-          <label class="form-label">Required Certifications</label>
-          <div class="ts tsl mb2">Workers must hold all selected certifications to be eligible. FyldHub verifies credentials during worker onboarding.</div>
-          <div class="prog-evtcat-pills">
-            <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> WSET Level 2</label>
-            <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> WSET Level 3</label>
-            <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> TIPS Certified</label>
-            <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> ServSafe Alcohol</label>
-            <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> BACARDÍ Brand Ambassador Certified</label>
-            <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> PATRÓN Ambassador Certified</label>
-            <label class="prog-evtcat-pill" onclick="toggleEvtCat(this)"><input type="checkbox" style="display:none"> State Bartender License</label>
-          </div>
-        </div>
-
-        <!-- Minimum rating -->
-        <div class="form-group" style="max-width:400px">
-          <label class="form-label">Minimum Worker Rating</label>
-          <div class="ts tsl mb2">Only workers at or above this rating can apply. Ratings are based on completed event reviews.</div>
-          <div style="display:flex;gap:8px;flex-wrap:wrap">
-            <div class="prog-req-pill active" onclick="selectReqPill(this,&#39;rating&#39;)">No minimum</div>
-            <div class="prog-req-pill" onclick="selectReqPill(this,&#39;rating&#39;)">3.0+ ★</div>
-            <div class="prog-req-pill" onclick="selectReqPill(this,&#39;rating&#39;)">3.5+ ★</div>
-            <div class="prog-req-pill" onclick="selectReqPill(this,&#39;rating&#39;)">4.0+ ★</div>
-            <div class="prog-req-pill" onclick="selectReqPill(this,&#39;rating&#39;)">4.5+ ★</div>
-          </div>
-        </div>
-
-        <!-- Preferred worker pool -->
-        <div class="form-group" style="max-width:560px">
-          <label class="form-label">Preferred Worker Pool</label>
-          <div class="ts tsl mb2">Optionally restrict this program to a curated list of pre-approved workers. Events will show only to workers in the selected pool before opening to the general marketplace.</div>
-          <select class="form-control" style="max-width:360px">
-            <option selected="">Open to all eligible workers</option>
-            <option>BACARDÍ Preferred Promoters (34 workers)</option>
-            <option>PATRÓN Certified Ambassadors (18 workers)</option>
-            <option>Top Rated — 4.5+ only (112 workers)</option>
-            <option>+ Create new worker pool</option>
-          </select>
-          <div class="ts tsl mt1">Preferred pool gets a 48-hour exclusive window before events open to all eligible workers.</div>
-        </div>
-
-        <!-- Max events per worker -->
-        <div class="form-group" style="max-width:400px">
-          <label class="form-label">Max Events per Worker <span class="ts tsl" style="font-weight:400">(optional)</span></label>
-          <div class="ts tsl mb2">Limits how many events a single worker can accept under this program. Useful for spreading work across a larger pool.</div>
-          <div class="flex ic g2">
-            <input type="number" class="form-control" value="" placeholder="No limit" style="width:130px">
-            <span class="ts tsl">events per worker</span>
-          </div>
-        </div>
-      </div><!-- /psec-4 -->
+      <div id="psec-4" class="wiz-section"><div style="padding:16px;color:var(--slate);font-size:12px;font-style:italic">No selections yet</div></div><!-- /psec-4 -->
 
 
       <!-- ═══════════════════════════════════════
@@ -12825,98 +12362,7 @@ Tier 3"></textarea>
       <!-- ═══════════════════════════════════════
            STEP 7 — REVIEW
       ═══════════════════════════════════════ -->
-      <div id="psec-7" class="wiz-section">
-        <div class="wiz-sec-title">Review &amp; Create</div>
-
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px">
-
-          <!-- Details -->
-          <div class="prog-review-card">
-            <div class="prog-review-card-hd">
-              <span>1</span> Details
-              <button onclick="goProgramStep(1)" class="prog-review-edit">Edit</button>
-            </div>
-            <div class="prog-review-row"><span>Name</span><span>Kroger Summer Demo Series</span></div>
-            <div class="prog-review-row"><span>Type</span><span>Fixed term</span></div>
-            <div class="prog-review-row"><span>Channel</span><span>Off-Premise</span></div>
-            <div class="prog-review-row"><span>Period</span><span>Jun 1 – Aug 31, 2026</span></div>
-            <div class="prog-review-row"><span>Owner</span><span>Jordan L.</span></div>
-            <div class="prog-review-row"><span>Categories</span><span>Retail Pop-Up, In-Store Tasting</span></div>
-            <div class="prog-review-row"><span>Approval</span><span>No approval required</span></div>
-          </div>
-
-          <!-- Scope & Budget -->
-          <div class="prog-review-card">
-            <div class="prog-review-card-hd">
-              <span>2</span> Scope &amp; Budget
-              <button onclick="goProgramStep(2)" class="prog-review-edit">Edit</button>
-            </div>
-            <div class="prog-review-row"><span>Brand(s)</span><span>BACARDÍ Rum</span></div>
-            <div class="prog-review-row"><span>Scope</span><span>National</span></div>
-            <div class="prog-review-row"><span>Budget Pool</span><span>BACARDÍ Off-Premise National</span></div>
-            <div class="prog-review-row"><span>Allocation</span><span>$40,000</span></div>
-            <div class="prog-review-row"><span>Contingency</span><span>10%</span></div>
-            <div class="prog-review-row"><span>Overspend Alert</span><span>At 90%</span></div>
-          </div>
-
-          <!-- Assets & Resources -->
-          <div class="prog-review-card">
-            <div class="prog-review-card-hd">
-              <span>3</span> Assets &amp; Resources
-              <button onclick="goProgramStep(3)" class="prog-review-edit">Edit</button>
-            </div>
-            <div class="prog-review-row"><span>Kit</span><span>Off-Premise Demo Kit</span></div>
-            <div class="prog-review-row"><span>Digital Assets</span><span>Logo Pack, Brand Guidelines</span></div>
-            <div class="prog-review-row"><span>Instructions</span><span>Off-Premise Demo Instructions</span></div>
-            <div class="prog-review-row"><span>Recipes</span><span>Classic BACARDÍ Mojito</span></div>
-            <div class="prog-review-row"><span>Compliance</span><span>Responsible Service Checklist</span></div>
-            <div class="prog-review-row"><span>Training</span><span>BACARDÍ Brand Certification</span></div>
-          </div>
-
-          <!-- Worker Requirements -->
-          <div class="prog-review-card">
-            <div class="prog-review-card-hd">
-              <span>4</span> Worker Requirements
-              <button onclick="goProgramStep(4)" class="prog-review-edit">Edit</button>
-            </div>
-            <div class="prog-review-row"><span>Min Tier</span><span>Tier 1+ (Standard)</span></div>
-            <div class="prog-review-row"><span>Certifications</span><span>None required</span></div>
-            <div class="prog-review-row"><span>Min Rating</span><span>No minimum</span></div>
-            <div class="prog-review-row"><span>Worker Pool</span><span>Open to all eligible</span></div>
-            <div class="prog-review-row"><span>Max per Worker</span><span>No limit</span></div>
-          </div>
-
-          <!-- FyldCard & Payments -->
-          <div class="prog-review-card">
-            <div class="prog-review-card-hd">
-              <span>5</span> FyldCard &amp; Payments
-              <button onclick="goProgramStep(5)" class="prog-review-edit">Edit</button>
-            </div>
-            <div class="prog-review-row"><span>FyldCard</span><span class="badge b-green" style="font-size:12px">Enabled</span></div>
-            <div class="prog-review-row"><span>Retail Pop-Up load</span><span>$150 default / $400 max</span></div>
-            <div class="prog-review-row"><span>Payment</span><span>Supplier Pay</span></div>
-            <div class="prog-review-row"><span>Rate</span><span>Global rate card</span></div>
-          </div>
-
-          <!-- Reporting -->
-          <div class="prog-review-card">
-            <div class="prog-review-card-hd">
-              <span>6</span> Reporting
-              <button onclick="goProgramStep(6)" class="prog-review-edit">Edit</button>
-            </div>
-            <div class="prog-review-row"><span>Recipients</span><span>Alex M., Jordan L.</span></div>
-            <div class="prog-review-row"><span>Frequency</span><span>Weekly summary</span></div>
-            <div class="prog-review-row"><span>KPIs</span><span>Engagements, Units, Completion, Compliance</span></div>
-            <div class="prog-review-row"><span>External</span><span>Agency contacts only</span></div>
-          </div>
-
-        </div>
-
-        <div class="info-box" style="max-width:600px">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-          <span>Events created under this program inherit all settings above. Any setting can be overridden at the individual event level. The program will be created as <strong>Active</strong> and can be archived at any time.</span>
-        </div>
-      </div><!-- /psec-7 -->
+      <div id="psec-7" class="wiz-section"><div style="padding:16px;color:var(--slate);font-size:12px;font-style:italic">No selections yet</div></div><!-- /psec-7 -->
 
     </div><!-- /scroll area -->
 
@@ -12951,7 +12397,7 @@ Tier 3"></textarea>
       </div>
       <div class="sub-modal-content">
         <div class="form-group"><label class="form-label">Kit Name <span style="color:#842029">*</span></label>
-          <input class="form-control" id="smod-kit-name" placeholder="e.g. BACARDÍ Summer Demo Kit" type="text" style="max-width:420px">
+          <input class="form-control" id="smod-kit-name" placeholder="" type="text" style="max-width:420px">
         </div>
         <div class="form-row" style="max-width:480px">
           <div class="form-group"><label class="form-label">Brand</label>
@@ -12976,9 +12422,6 @@ Tier 3"></textarea>
               <input class="form-control" value="1" type="number" min="1" style="font-size:12px">
               <select class="form-control" style="font-size:12px">
                 <option value="">Custom item</option>
-                <option>BACARDÍ Branded Table Cover</option>
-                <option>BACARDÍ Branded Ice Bucket</option>
-                <option>PATRÓN Branded Bar Mat</option>
                 <option>2oz Sample Cups (case of 500)</option>
                 <option>Cocktail Napkins (pack of 100)</option>
                 <option>Cocktail Shaker Set</option>
@@ -13006,7 +12449,7 @@ Tier 3"></textarea>
       </div>
       <div class="sub-modal-content">
         <div class="form-group"><label class="form-label">Asset Name <span style="color:#842029">*</span></label>
-          <input class="form-control" id="smod-asset-name" placeholder="e.g. PATRÓN Brand Logo Pack 2026" type="text" style="max-width:420px">
+          <input class="form-control" id="smod-asset-name" placeholder="" type="text" style="max-width:420px">
         </div>
         <div class="form-row" style="max-width:480px">
           <div class="form-group"><label class="form-label">Brand</label>
@@ -13058,7 +12501,7 @@ Tier 3"></textarea>
       </div>
       <div class="sub-modal-content">
         <div class="form-group"><label class="form-label">Title <span style="color:#842029">*</span></label>
-          <input class="form-control" id="smod-instructions-name" placeholder="e.g. PATRÓN On-Premise Bar Activation Instructions" type="text" style="max-width:460px">
+          <input class="form-control" id="smod-instructions-name" placeholder="" type="text" style="max-width:460px">
         </div>
         <div class="form-row" style="max-width:480px">
           <div class="form-group"><label class="form-label">Brand</label>
@@ -13100,7 +12543,7 @@ Tier 3"></textarea>
       </div>
       <div class="sub-modal-content">
         <div class="form-group"><label class="form-label">Recipe Name <span style="color:#842029">*</span></label>
-          <input class="form-control" id="smod-recipe-name" placeholder="e.g. PATRÓN Paloma" type="text" style="max-width:380px">
+          <input class="form-control" id="smod-recipe-name" placeholder="" type="text" style="max-width:380px">
         </div>
         <div class="form-row" style="max-width:480px">
           <div class="form-group"><label class="form-label">Brand</label>
@@ -13113,7 +12556,7 @@ Tier 3"></textarea>
         <div class="form-group"><label class="form-label">Ingredients <span style="color:#842029">*</span></label>
           <div id="smod-recipe-rows" style="display:flex;flex-direction:column;gap:6px">
             <div class="flex ic g2">
-              <input class="form-control" placeholder="e.g. 2 oz PATRÓN Silver" type="text" style="flex:1;font-size:12px">
+              <input class="form-control" placeholder="" type="text" style="flex:1;font-size:12px">
               <button onclick="this.closest(&#39;.flex&#39;).remove()" style="background:none;border:none;cursor:pointer;color:var(--slate);font-size:18px;padding:0">×</button>
             </div>
             <div class="flex ic g2">
@@ -13144,7 +12587,7 @@ Tier 3"></textarea>
       </div>
       <div class="sub-modal-content">
         <div class="form-group"><label class="form-label">Guide Name <span style="color:#842029">*</span></label>
-          <input class="form-control" id="smod-attire-name" placeholder="e.g. BACARDÍ On-Premise Attire Guide" type="text" style="max-width:420px">
+          <input class="form-control" id="smod-attire-name" placeholder="" type="text" style="max-width:420px">
         </div>
         <div class="form-row" style="max-width:480px">
           <div class="form-group"><label class="form-label">Brand</label>
@@ -13231,7 +12674,7 @@ Tier 3"></textarea>
       </div>
       <div class="sub-modal-content">
         <div class="form-group"><label class="form-label">Module Name <span style="color:#842029">*</span></label>
-          <input class="form-control" id="smod-training-name" placeholder="e.g. PATRÓN Brand Ambassador Certification" type="text" style="max-width:420px">
+          <input class="form-control" id="smod-training-name" placeholder="" type="text" style="max-width:420px">
         </div>
         <div class="form-row" style="max-width:480px">
           <div class="form-group"><label class="form-label">Brand</label>
@@ -13317,52 +12760,7 @@ Tier 3"></textarea>
           </div>
           <button class="btn btn-ghost btn-sm" onclick="event.stopPropagation();openAddContact(&#39;distributor&#39;,&#39;Southern Glazers&#39;)">+ Add Contact</button>
         </div>
-        <div class="contact-org-body" id="body-sg3">
-          <div class="contact-card">
-            <div class="contact-card-left">
-              <div class="avs" style="background:var(--teal)">MR</div>
-              <div>
-                <div class="contact-name">Marcus Rivera</div>
-                <div class="contact-role">Florida Territory Manager</div>
-                <div class="contact-territory"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> FL — Miami-Dade, Broward, Palm Beach</div>
-              </div>
-            </div>
-            <div class="contact-card-right">
-              <a href="#" class="contact-link"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> <span class="__cf_email__" data-cfemail="c4a9eab6adb2a1b6a584b7a3b3b7eaa7aba9">[email&nbsp;protected]</span></a>
-              <a href="tel:+13055551234" class="contact-link"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 8.85a19.79 19.79 0 01-3.07-8.63A2 2 0 013 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14z"></path></svg> (305) 555-1234</a>
-              <div class="contact-tags"><span class="badge" style="font-size:11px;background:var(--teal-xl);color:var(--teal)">BACARDÍ Rum</span><span class="badge" style="font-size:11px;background:var(--teal-xl);color:var(--teal)">PATRÓN</span></div>
-            </div>
-          </div>
-          <div class="contact-card">
-            <div class="contact-card-left">
-              <div class="avs" style="background:#8B5CF6">TN</div>
-              <div>
-                <div class="contact-name">Tina Nguyen</div>
-                <div class="contact-role">California Key Accounts Manager</div>
-                <div class="contact-territory"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> CA — Los Angeles, San Diego, Bay Area</div>
-              </div>
-            </div>
-            <div class="contact-card-right">
-              <a href="#" class="contact-link"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> <span class="__cf_email__" data-cfemail="22560c4c45575b474c62514555510c414d4f">[email&nbsp;protected]</span></a>
-              <a href="tel:+13105559876" class="contact-link"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 8.85a19.79 19.79 0 01-3.07-8.63A2 2 0 013 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14z"></path></svg> (310) 555-9876</a>
-              <div class="contact-tags"><span class="badge" style="font-size:11px;background:var(--teal-xl);color:var(--teal)">BACARDÍ Rum</span></div>
-            </div>
-          </div>
-          <div class="contact-card" style="border-bottom:none">
-            <div class="contact-card-left">
-              <div class="avs">DW</div>
-              <div>
-                <div class="contact-name">Derek Walsh</div>
-                <div class="contact-role">Logistics &amp; Delivery Coordinator</div>
-                <div class="contact-territory"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> National — Kit delivery coordination</div>
-              </div>
-            </div>
-            <div class="contact-card-right">
-              <a href="#" class="contact-link"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> <span class="__cf_email__" data-cfemail="e88cc69f89849b80a89b8f9f9bc68b8785">[email&nbsp;protected]</span></a>
-              <div class="contact-tags"><span class="badge" style="font-size:11px;background:var(--lgray);color:var(--slate)">All Brands</span></div>
-            </div>
-          </div>
-        </div>
+        <div class="contact-org-body" id="body-sg3"><div style="padding:24px;text-align:center;color:var(--slate);font-size:13px">No contacts yet</div></div>
       </div>
 
       <div class="contact-org">
@@ -13377,23 +12775,7 @@ Tier 3"></textarea>
           </div>
           <button class="btn btn-ghost btn-sm" onclick="event.stopPropagation();openAddContact(&#39;distributor&#39;,&#39;RNDC&#39;)">+ Add Contact</button>
         </div>
-        <div class="contact-org-body" id="body-rndc3" style="display:none">
-          <div class="contact-card" style="border-bottom:none">
-            <div class="contact-card-left">
-              <div class="avs" style="background:#D97706">KJ</div>
-              <div>
-                <div class="contact-name">Karen Jimenez</div>
-                <div class="contact-role">Texas &amp; Southeast Regional Manager</div>
-                <div class="contact-territory"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> TX, LA, MS, AL, GA</div>
-              </div>
-            </div>
-            <div class="contact-card-right">
-              <a href="#" class="contact-link"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> <span class="__cf_email__" data-cfemail="f992d79390949c979c83b98b979d9ad79a9694">[email&nbsp;protected]</span></a>
-              <a href="tel:+17135554567" class="contact-link"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 8.85a19.79 19.79 0 01-3.07-8.63A2 2 0 013 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14z"></path></svg> (713) 555-4567</a>
-              <div class="contact-tags"><span class="badge" style="font-size:11px;background:var(--teal-xl);color:var(--teal)">BACARDÍ Rum</span><span class="badge" style="font-size:11px;background:var(--teal-xl);color:var(--teal)">PATRÓN</span></div>
-            </div>
-          </div>
-        </div>
+        <div class="contact-org-body" id="body-rndc3" style="display:none"><div style="padding:24px;text-align:center;color:var(--slate);font-size:13px">No contacts yet</div></div>
       </div>
     </div>
     <button class="btn btn-outline btn-sm mt3" onclick="openAddContact(&#39;distributor&#39;)">+ Add Distributor</button>
@@ -13471,37 +12853,7 @@ Tier 3"></textarea>
           </div>
           <button class="btn btn-ghost btn-sm" onclick="event.stopPropagation();openAddContact(&#39;agency&#39;,&#39;Mosaic&#39;)">+ Add Contact</button>
         </div>
-        <div class="contact-org-body" id="body-mosaic3">
-          <div class="contact-card">
-            <div class="contact-card-left">
-              <div class="avs" style="background:#D97706">LF</div>
-              <div>
-                <div class="contact-name">Lisa Ford</div>
-                <div class="contact-role">Account Director — BACARDÍ</div>
-                <div class="contact-territory"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> National account management</div>
-              </div>
-            </div>
-            <div class="contact-card-right">
-              <a href="#" class="contact-link"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> <span class="__cf_email__" data-cfemail="274b0941485543674a4854464e440944484a">[email&nbsp;protected]</span></a>
-              <a href="tel:+12125559988" class="contact-link"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 8.85a19.79 19.79 0 01-3.07-8.63A2 2 0 013 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14z"></path></svg> (212) 555-9988</a>
-              <div class="contact-tags"><span class="badge" style="font-size:11px;background:var(--teal-xl);color:var(--teal)">BACARDÍ Rum</span></div>
-            </div>
-          </div>
-          <div class="contact-card" style="border-bottom:none">
-            <div class="contact-card-left">
-              <div class="avs" style="background:#92600A">RC</div>
-              <div>
-                <div class="contact-name">Ron Chen</div>
-                <div class="contact-role">Staffing Lead — Southeast</div>
-                <div class="contact-territory"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> FL, GA, SC — Escalation: staffing &amp; scheduling</div>
-              </div>
-            </div>
-            <div class="contact-card-right">
-              <a href="#" class="contact-link"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> <span class="__cf_email__" data-cfemail="deacf0bdb6bbb09eb3b1adbfb7bdf0bdb1b3">[email&nbsp;protected]</span></a>
-              <div class="contact-tags"><span class="badge" style="font-size:11px;background:var(--lgray);color:var(--slate)">Staffing Escalations</span></div>
-            </div>
-          </div>
-        </div>
+        <div class="contact-org-body" id="body-mosaic3"><div style="padding:24px;text-align:center;color:var(--slate);font-size:13px">No contacts yet</div></div>
       </div>
     </div>
     <button class="btn btn-outline btn-sm mt3" onclick="openAddContact(&#39;agency&#39;)">+ Add Agency</button>
@@ -13698,7 +13050,7 @@ Tier 3"></textarea>
       <div style="font-size:22px;font-weight:800;color:var(--dark)">Enterprise</div>
       <div style="font-size:15px;font-weight:700;color:var(--teal)">$12,500<span style="font-size:13px;font-weight:500;color:var(--slate)">/month</span></div>
     </div>
-    <div class="ts tsl mb3" style="font-size:12px">Bacardí USA · Billed monthly · Next billing: Apr 1, 2026</div>
+    <div class="ts tsl mb3" style="font-size:12px">Your Company · Billed monthly</div>
 
     <!-- Hub access grid -->
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px">
@@ -13960,7 +13312,7 @@ Tier 3"></textarea>
       </div>
       <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border)">
         <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--slate);margin-bottom:4px">Billing Address</div>
-        <div style="font-size:12px;color:var(--body);line-height:1.7">Bacardí USA LLC<br>2701 Le Jeune Rd<br>Coral Gables, FL 33134</div>
+        <div style="font-size:12px;color:var(--body);line-height:1.7">Your Company<br>Address line 1<br>City, ST 00000</div>
       </div>
     </div>
 
@@ -14038,15 +13390,15 @@ Tier 3"></textarea>
         <div class="ts tsl" style="font-size:12px">246 events completed · 34 pending</div>
         <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border)">
           <div class="flex ic jb" style="margin-bottom:4px">
-            <div style="font-size:12px;color:var(--slate)">BACARDÍ Rum</div>
+            <div style="font-size:12px;color:var(--slate)">—</div>
             <div style="font-size:12px;color:var(--dark);font-weight:600">188 events</div>
           </div>
           <div class="flex ic jb" style="margin-bottom:4px">
-            <div style="font-size:12px;color:var(--slate)">BACARDÍ RTD</div>
+            <div style="font-size:12px;color:var(--slate)">—</div>
             <div style="font-size:12px;color:var(--dark);font-weight:600">42 events</div>
           </div>
           <div class="flex ic jb">
-            <div style="font-size:12px;color:var(--slate)">PATRÓN</div>
+            <div style="font-size:12px;color:var(--slate)">—</div>
             <div style="font-size:12px;color:var(--dark);font-weight:600">16 events</div>
           </div>
         </div>
@@ -14073,11 +13425,11 @@ Tier 3"></textarea>
         <div class="ts tsl" style="font-size:12px">Audits: 248 · Resets: 91 · Installs: 37</div>
         <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border)">
           <div class="flex ic jb" style="margin-bottom:4px">
-            <div style="font-size:12px;color:var(--slate)">BACARDÍ Rum</div>
+            <div style="font-size:12px;color:var(--slate)">—</div>
             <div style="font-size:12px;color:var(--dark);font-weight:600">291 tasks</div>
           </div>
           <div class="flex ic jb">
-            <div style="font-size:12px;color:var(--slate)">PATRÓN</div>
+            <div style="font-size:12px;color:var(--slate)">—</div>
             <div style="font-size:12px;color:var(--dark);font-weight:600">85 tasks</div>
           </div>
         </div>
@@ -14104,11 +13456,11 @@ Tier 3"></textarea>
         <div class="ts tsl" style="font-size:12px">Kit deliveries: 89 · Event logistics: 53</div>
         <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border)">
           <div class="flex ic jb" style="margin-bottom:4px">
-            <div style="font-size:12px;color:var(--slate)">BACARDÍ Rum</div>
+            <div style="font-size:12px;color:var(--slate)">—</div>
             <div style="font-size:12px;color:var(--dark);font-weight:600">108 tasks</div>
           </div>
           <div class="flex ic jb">
-            <div style="font-size:12px;color:var(--slate)">PATRÓN</div>
+            <div style="font-size:12px;color:var(--slate)">—</div>
             <div style="font-size:12px;color:var(--dark);font-weight:600">34 tasks</div>
           </div>
         </div>
@@ -14658,11 +14010,11 @@ Tier 3"></textarea>
           <label class="form-label">Link to Budget Pool <span style="font-weight:400;color:var(--slate)">(optional)</span></label>
           <select class="form-control">
             <option value="">None — log as standalone</option>
-            <option>Off-Premise National — BACARDÍ Rum</option>
-            <option>On-Premise National — BACARDÍ Rum</option>
-            <option>Special Events National — BACARDÍ Rum</option>
-            <option>Off-Premise National — PATRÓN</option>
-            <option>On-Premise Spring Push — PATRÓN</option>
+            
+            
+            
+            
+            
           </select>
         </div>
       </div>
@@ -14951,10 +14303,7 @@ Tier 3"></textarea>
           <div class="form-group">
             <label class="form-label">Assigned Brands <span style="color:#e53e3e">*</span></label>
             <div class="click-multiselect">
-              <div class="cms-option cms-selected" onclick="toggleCms(this)">BACARDÍ Rum</div>
-              <div class="cms-option" onclick="toggleCms(this)">BACARDÍ RTD</div>
-              <div class="cms-option" onclick="toggleCms(this)">PATRÓN</div>
-            </div>
+              </div>
           </div>
 
           <div class="form-group">
@@ -15282,47 +14631,7 @@ Tier 3"></textarea>
           </div>
         </div>
         <!-- STEP 4: Review -->
-        <div class="step-panel" id="ap-sec-4">
-          <div style="font-size:15px;font-weight:700;color:var(--dark);margin-bottom:16px">Review &amp; Invite</div>
-
-          <div class="card mb3" style="padding:16px">
-            <div class="ts fw-n tdk mb3">Partner Details</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;font-size:13px">
-              <div><div class="fl mb1">Company</div><div class="fv">—</div></div>
-              <div><div class="fl mb1">Type</div><div class="fv">—</div></div>
-              <div><div class="fl mb1">Primary Contact</div><div class="fv">—</div></div>
-              <div><div class="fl mb1">Email</div><div class="fv">—</div></div>
-            </div>
-          </div>
-
-          <div class="card mb3" style="padding:16px">
-            <div class="ts fw-n tdk mb3">Access Scope</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;font-size:13px">
-              <div><div class="fl mb1">Brands</div><div class="fv">BACARDÍ Rum</div></div>
-              <div><div class="fl mb1">Locations</div><div class="fv">National</div></div>
-              <div><div class="fl mb1">Channels</div><div class="fv">Off-Premise</div></div>
-              <div><div class="fl mb1">Financials Visible</div><div class="fv"><span class="badge b-red" style="font-size:12px">No</span></div></div>
-            </div>
-          </div>
-
-          <div class="card mb3" style="padding:16px">
-            <div class="ts fw-n tdk mb2">Financial Terms</div>
-            <div style="font-size:13px;color:var(--slate)">Monthly retainer · $6,000/month · Billed to BACARDÍ Rum</div>
-          </div>
-
-          <div class="warn-box">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-            An invitation email will be sent to the primary contact. They must accept before accessing any account data.
-          </div>
-
-          <div class="step-footer">
-            <button class="btn btn-ghost" onclick="goPartnerStep(3)">Back</button>
-            <div class="flex g2">
-              <button class="btn btn-outline" onclick="closeAddPartner()">Save as Draft</button>
-              <button class="btn btn-primary" onclick="closeAddPartner()">Add Partner &amp; Send Invite</button>
-            </div>
-          </div>
-        </div>
+        <div class="step-panel" id="ap-sec-4"><div style="padding:16px;color:var(--slate);font-size:12px;font-style:italic">No selections yet</div></div>
 
       </div><!-- end slide-content -->
     </div><!-- end slide-body -->
@@ -15402,7 +14711,7 @@ Tier 3"></textarea>
           </div>
           <div class="form-group">
             <label class="form-label">ERP Reference <span style="font-weight:400;color:var(--slate)">(optional)</span></label>
-            <input class="form-control" type="text" placeholder="e.g. GL-4220-BACARDI-2026">
+            <input class="form-control" type="text" placeholder="">
           </div>
         </div>
         <div class="form-group">
@@ -15631,7 +14940,7 @@ Tier 3"></textarea>
       <div class="wiz-section active" id="ob-sec-1">
         <div class="info-box mb3">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-          You were invited by <strong>Alex Morgan</strong> at Bacardi Limited. Your email <strong><a href="#" class="__cf_email__" data-cfemail="bfd5d0cddbded1ffdddedcdecddbd691dcd0d2">[email&nbsp;protected]</a></strong> is already verified.
+          You were invited by <strong>Alex Morgan</strong> at your company. Your email <strong><a href="#" class="__cf_email__" data-cfemail="bfd5d0cddbded1ffdddedcdecddbd691dcd0d2">[email&nbsp;protected]</a></strong> is already verified.
         </div>
         <div class="form-group" style="margin-bottom:20px">
           <label class="form-label" style="font-size:12px;text-transform:uppercase;letter-spacing:.4px;color:var(--slate)">Creating password for</label>
@@ -15757,7 +15066,7 @@ Tier 3"></textarea>
           </div>
           <div class="card" style="padding:14px;margin:0">
             <div class="ts tsl mb1">Brand Access</div>
-            <div style="font-weight:700;color:var(--dark)">BACARDÍ Rum · PATRÓN</div>
+            <div style="font-weight:700;color:var(--dark)">Your assigned brands</div>
             <div class="ts tsl mt1">Assigned by your account admin.</div>
           </div>
           <div class="card" style="padding:14px;margin:0">
@@ -39807,7 +39116,7 @@ function toggleBrandProdRow(rowId) {
     <div class="page-hd">
       <div class="page-hd-left">
         <div class="page-title">Workers</div>
-        <div class="page-sub">FyldPromoters, FyldCheckers, and FyldRunners on the Bacardí USA account</div>
+        <div class="page-sub">FyldPromoters, FyldCheckers, and FyldRunners on your account</div>
       </div>
       <div class="page-hd-right">
         <button class="btn btn-outline btn-sm" onclick="toast('Downloading roster')">
@@ -40015,7 +39324,7 @@ function toggleBrandProdRow(rowId) {
     <div class="page-hd">
       <div class="page-hd-left">
         <div class="page-title">My Tasks</div>
-        <div class="page-sub">Action items assigned to you · Bacardí USA · Alex M.</div>
+        <div class="page-sub">Action items assigned to you · your company · Alex M.</div>
       </div>
       <div class="page-hd-right">
         <button class="btn btn-ghost btn-sm" onclick="showToast('Marking all as read')">
@@ -40090,12 +39399,7 @@ function toggleBrandProdRow(rowId) {
         </optgroup>
       </select>
       <select class="filter-select" id="tk-filter-program" onchange="tkRenderTasks()">
-        <option value="">All Programs</option>
-        <option value="BACARDÍ Rum Off-Premise 2026">BACARDÍ Off-Premise 2026</option>
-        <option value="BACARDÍ RTD Summer Push">BACARDÍ RTD Summer Push</option>
-        <option value="PATRÓN On-Premise Elite">PATRÓN On-Premise Elite</option>
-        <option value="Seasonal Display Push — Q1">Seasonal Display Q1</option>
-      </select>
+        <option value="">All Programs</option></select>
       <select class="filter-select" id="tk-filter-assigned" onchange="tkRenderTasks()">
         <option value="">All Assigned To</option>
         <option value="Alex M.">Alex M. — VP Field Marketing</option>
