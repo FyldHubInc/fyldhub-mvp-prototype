@@ -16573,11 +16573,7 @@ function brandImportFileSelected(input) {
   var preview = document.getElementById('brand-import-preview');
   var rows = document.getElementById('brand-import-rows');
   if (preview && rows) {
-    rows.innerHTML = [
-      ['BACARDÍ Rum', 'Spirits', 'Rum'],
-      ['Grey Goose', 'Spirits', 'Vodka'],
-      ['Bombay Sapphire', 'Spirits', 'Gin']
-    ].map(function(r) {
+    rows.innerHTML = [].map(function(r) {
       return '<div style="padding:8px 12px;font-size:14px;border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;color:var(--dark)">' +
         '<span>' + r[0] + '</span><span>' + r[1] + '</span><span>' + r[2] + '</span></div>';
     }).join('') + '<div style="padding:6px 12px;font-size:14px;color:var(--slate);font-style:italic">Preview shows first 3 rows</div>';
@@ -16588,7 +16584,7 @@ function brandImportFileSelected(input) {
 }
 function brandImportSubmit() {
   closeBrandImport();
-  toast('3 brands imported successfully.');
+  toast('Brands imported.');
 }
 /* ═══ SHARED TOAST ═══ */
 function fieldError(elementOrId, message) {
@@ -17047,10 +17043,7 @@ function renderEvInfo(e) {
   var contEl = document.getElementById('ev-contact-card');
   if (contEl) {
     var contacts = {
-      'BACARDÍ Rum':   {name:'Jordan L.',  role:'Program Manager',    email:'jordan@bacardi.com',   phone:'617-555-0142'},
-      'BACARDÍ RTD':   {name:'Riley P.',   role:'Program Manager',    email:'riley@bacardi.com',    phone:'617-555-0188'},
-      'PATRÓN':        {name:'Casey T.',   role:'Field Team Lead',    email:'casey@bacardi.com',    phone:'212-555-0193'},
-      'default':       {name:'Sam Rivera', role:'Brand Manager',      email:'sam@bacardi.com',      phone:'617-555-0100'}
+      'default':       {name:'', role:'', email:'', phone:''}
     };
     var c = contacts[e.brand] || contacts['default'];
     contEl.innerHTML =
@@ -18692,7 +18685,7 @@ function rS1(b){
         mb.products.map(function(p,pi){var pd=mbProds.find(function(x){return x.n===p.n;});return '<div class="pr" style="margin-bottom:4px"><select onchange="D.multiBrand['+mbi+'].products['+pi+'].n=this.value;D.multiBrand['+mbi+'].products['+pi+'].sz=\'\';rS1(el(\'wizBody\'))"><option value="">Product...</option>'+mbProds.map(function(x){return '<option '+(p.n===x.n?'selected':'')+'>'+x.n+'</option>';}).join('')+'</select><select onchange="D.multiBrand['+mbi+'].products['+pi+'].sz=this.value"><option value="">Size...</option>'+(pd?pd.sz:[]).map(function(s){return '<option '+(p.sz===s.s?'selected':'')+'>'+s.s+'</option>';}).join('')+'</select>'+(isAct?'<select onchange="D.multiBrand['+mbi+'].products['+pi+'].pk=this.value"><option value="">Pack...</option>'+(pd?pd.pk:[]).map(function(k){return '<option '+(p.pk===k?'selected':'')+'>'+k+'</option>';}).join('')+'</select>':'')+'<button class="rb" onclick="D.multiBrand['+mbi+'].products.splice('+pi+',1);rS1(el(\'wizBody\'))">\u00d7</button></div>';}).join('')+
         '<button class="btn btn-ghost btn-sm" style="margin-top:2px" onclick="D.multiBrand['+mbi+'].products.push({n:\'\',sz:\'\',pk:\'\',p:\'\'});rS1(el(\'wizBody\'))">+ Add Product</button></div>';
     }).join('')+
-    '<button class="btn btn-outline btn-sm" onclick="D.multiBrand.push({brand:\'BACARDÍ Rum\',products:[]});rS1(el(\'wizBody\'))">+ Add Another Brand</button>'+
+    '<button class="btn btn-outline btn-sm" onclick="D.multiBrand.push({brand:\'\',products:[]});rS1(el(\'wizBody\'))">+ Add Another Brand</button>'+
     (isMerch?'<div style="margin-top:14px"><div class="stitle" style="font-size:13px;margin-bottom:4px">Audit Scope</div><div class="ssub" style="font-size:14px;margin-bottom:8px">Select what the FyldChecker will audit at each stop.</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">'+[['shelf','Shelf Presence'],['pricing','Pricing & Tags'],['planogram','Planogram Compliance'],['expiration','Expiration Dates'],['display','Display & POS'],['backbar','Back Bar'],['menu','Menu Placement']].map(function(s){return '<label style="display:flex;align-items:center;gap:7px;font-size:14px;padding:6px 10px;border:1px solid var(--border);border-radius:6px;cursor:pointer;background:var(--white)"><input type="checkbox" '+(D.auditScope[s[0]]?'checked':'')+' onchange="D.auditScope.'+s[0]+'=this.checked" style="accent-color:var(--teal)"> '+s[1]+'</label>';}).join('')+'</div></div>':'')+
     (isOD?'<div style="margin-top:14px"><div class="stitle" style="font-size:13px;margin-bottom:4px">Delivery Scale</div><div class="ssub" style="font-size:14px;margin-bottom:8px">How large is this delivery operation?</div><div class="oc">'+[{k:1,l:'Scale 1',d:'Single stop'},{k:2,l:'Scale 2',d:'Multi-stop route'},{k:3,l:'Scale 3',d:'Festival / trade show'}].map(function(s){return '<div class="ocd '+(D.odScale===s.k?'sel':'')+'" onclick="D.odScale='+s.k+';rS1(el(\'wizBody\'))" style="flex:1"><div class="ct">'+s.l+'</div><div class="cd">'+s.d+'</div></div>';}).join('')+'</div><div class="fr" style="margin-top:10px"><div class="fg"><label>Kit Template <span style="color:var(--slate);font-weight:400">(optional)</span></label><select onchange="D.odKitTpl=this.value"><option value="">None / runner supplies own kit</option>'+APP_DATA.kitTemplates.filter(function(k){return k.active;}).map(function(k){return '<option value="'+k.id+'"'+(D.odKitTpl===k.id?' selected':'')+'>'+k.name+'</option>';}).join('')+'</select></div><div class="fg"><label>Pickup Location</label><select onchange="D.odPickupLoc=this.value"><option value="">Select...</option><option value="warehouse"'+(D.odPickupLoc==="warehouse"?' selected':'')+'>Warehouse</option><option value="locker"'+(D.odPickupLoc==="locker"?' selected':'')+'>Locker / hub</option><option value="direct"'+(D.odPickupLoc==="direct"?' selected':'')+'>Direct from supplier</option></select></div></div></div>':'')+
     (isAct?'<div style="margin-top:14px"><div class="stitle" style="font-size:13px">Recipes</div><div class="ssub" style="font-size:14px">Attach recipes workers will reference during sampling.</div><div class="fg"><select onchange="addRec(this.value)"><option value="">Select recipe...</option>'+RECS.filter(function(r){return D.rec.indexOf(r)===-1}).map(function(r){return '<option>'+r+'</option>'}).join('')+'<option value="__new">+ Add New Recipe...</option></select></div><div>'+D.rec.map(function(r){return '<span class="pill">🍹 '+r+' <span class="px" onclick="rmRec(\''+r.replace(/'/g,"\\'")+'\')">×</span></span>'}).join('')+'</div></div><div style="margin-top:14px"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px"><div class="stitle" style="font-size:13px">Supplies</div><span style="font-size:14px;color:var(--slate);cursor:pointer" onclick="D.showSup=!D.showSup;rS1(el(\'wizBody\'))">'+(D.showSup?'▲ Hide':'▼ Show')+'</span></div><div style="font-size:14px;color:var(--slate);margin-bottom:8px">Items the worker needs to purchase from their own resources at the event — not from the kit. Enter what to buy, where to get it, and the spend limit.</div><div class="cb '+(D.showSup?'show':'')+'" style="display:'+(D.showSup?'block':'none')+'">'+D.sup.map(function(s,i){return '<div class="pr" style="flex-wrap:wrap;gap:5px;margin-bottom:4px"><input type="text" placeholder="Item (e.g. limes, napkins)" value="'+(s.item||'')+'" style="flex:2;min-width:120px;padding:6px 7px;border:1px solid var(--border);border-radius:6px;font-size:14px" onchange="D.sup['+i+'].item=this.value"><select style="flex:1;min-width:100px;padding:6px 7px;border:1px solid var(--border);border-radius:6px;font-size:14px" onchange="D.sup['+i+'].src=this.value"><option value="">Source...</option><option '+(s.src==="Grocery store"?'selected':'')+'>Grocery store</option><option '+(s.src==="Liquor store"?'selected':'')+'>Liquor store</option><option '+(s.src==="Convenience store"?'selected':'')+'>Convenience store</option><option '+(s.src==="Pharmacy"?'selected':'')+'>Pharmacy</option><option '+(s.src==="Online"?'selected':'')+'>Online</option><option '+(s.src==="Other"?'selected':'')+'>Other</option></select><input type="text" placeholder="Max $" value="'+(s.max||'$15.00')+'" style="width:72px;padding:6px 7px;border:1px solid var(--border);border-radius:6px;font-size:14px" onchange="D.sup['+i+'].max=this.value"><button class="rb" onclick="D.sup.splice('+i+',1);rS1(el(\'wizBody\'))">×</button></div>'}).join('')+'<button class="btn btn-outline btn-sm" style="margin-top:4px" onclick="D.sup.push({item:\'\',src:\'\',max:\'$15.00\',rcpt:true});D.showSup=true;rS1(el(\'wizBody\'))">+ Add More</button></div></div>':'');
@@ -29606,9 +29599,7 @@ function renderVPBuilder() {
   if (!container) return;
   var available = [];
   _sessionProducts.forEach(function(p) { available.push({ id: p.id, label: p.name + (p.pkg ? ' \u00b7 ' + p.pkg : '') }); });
-  if (available.length === 0) {
-    available = [{id:'demo1',label:'BACARDÍ White Rum \u00b7 Bottle'},{id:'demo2',label:'BACARDÍ Gold Rum \u00b7 Bottle'},{id:'demo3',label:'BACARDÍ Dark Rum \u00b7 Bottle'},{id:'demo4',label:'BACARDÍ Spiced Rum \u00b7 Bottle'},{id:'demo5',label:'BACARDÍ Limón \u00b7 Bottle'}];
-  }
+  /* fallback stripped for MVP */
   var totalUnits = _vpContents.reduce(function(sum, row) { return sum + (parseInt(row.qty) || 0); }, 0);
   var rowsHtml = _vpContents.map(function(row, i) {
     return '<div class="vp-product-row"><div class="vp-product-name">' + row.label + '</div><input type="number" class="vp-qty-input" value="' + row.qty + '" min="1" onchange="_vpContents[' + i + '].qty=Math.max(1,parseInt(this.value)||1);renderVPBuilder()" onclick="this.select()"><button class="vp-remove-btn" onclick="_vpContents.splice(' + i + ',1);renderVPBuilder()">\u00d7</button></div>';
@@ -33226,20 +33217,7 @@ function showImportStep(step) {
       '<div style="margin-top:8px;padding:10px 12px;background:var(--teal-xl);border:1px solid var(--teal-l);border-radius:6px;font-size:14px;color:var(--teal)"><strong>8 of 8 columns mapped.</strong> You can adjust any mapping before continuing.</div>';
     ft.innerHTML = '<button class="btn btn-ghost" onclick="showImportStep(1)">\u2190 Back</button><div style="display:flex;gap:8px"><button class="btn btn-ghost" onclick="closeImportModal()">Cancel</button><button class="btn btn-primary" onclick="showImportStep(3)">Preview Import \u2192</button></div>';
   } else if (step === 3) {
-    var mockRows = [
-      {brand:'BACARDÍ Rum',product:'BACARDÍ Superior White Rum',category:'Spirits \u00b7 White / Silver',size:'750 mL',pkg:'Bottle',upc:'080432400074',price:'$14.99',abv:'40%',status:'new'},
-      {brand:'BACARDÍ Rum',product:'BACARDÍ Superior White Rum',category:'Spirits \u00b7 White / Silver',size:'1 L',pkg:'Bottle',upc:'080432400081',price:'$19.99',abv:'40%',status:'new'},
-      {brand:'BACARDÍ Rum',product:'BACARDÍ Superior White Rum',category:'Spirits \u00b7 White / Silver',size:'1.75 L',pkg:'Bottle',upc:'080432400098',price:'$24.99',abv:'40%',status:'new'},
-      {brand:'BACARDÍ Rum',product:'BACARDÍ Gold Rum',category:'Spirits \u00b7 Gold',size:'750 mL',pkg:'Bottle',upc:'080432100074',price:'$14.99',abv:'40%',status:'new'},
-      {brand:'BACARDÍ Rum',product:'BACARDÍ Gold Rum',category:'Spirits \u00b7 Gold',size:'1.75 L',pkg:'Bottle',upc:'080432100098',price:'$24.99',abv:'40%',status:'new'},
-      {brand:'BACARDÍ Rum',product:'BACARDÍ Dark Rum',category:'Spirits \u00b7 Dark',size:'750 mL',pkg:'Bottle',upc:'080432200074',price:'$14.99',abv:'40%',status:'new'},
-      {brand:'BACARDÍ Rum',product:'BACARDÍ Limón',category:'Spirits \u00b7 Flavored',size:'750 mL',pkg:'Bottle',upc:'080432300074',price:'$14.99',abv:'35%',status:'new'},
-      {brand:'BACARDÍ Rum',product:'BACARDÍ Spiced Rum',category:'Spirits \u00b7 Spiced',size:'750 mL',pkg:'Bottle',upc:'080432500074',price:'$14.99',abv:'35%',status:'new'},
-      {brand:'BACARDÍ RTD',product:'BACARDÍ Rum Punch',category:'RTD \u00b7 Spirits-Based',size:'355 mL',pkg:'Can',upc:'080433100012',price:'$2.99',abv:'5.9%',status:'new'},
-      {brand:'BACARDÍ RTD',product:'BACARDÍ Rum Punch',category:'RTD \u00b7 Spirits-Based',size:'355 mL \u00b7 4 PK',pkg:'Can',upc:'080433100029',price:'$10.99',abv:'5.9%',status:'new'},
-      {brand:'PATRÓN',product:'PATRÓN Silver',category:'Spirits \u00b7 Tequila \u00b7 Blanco',size:'750 mL',pkg:'Bottle',upc:'721733000020',price:'$49.99',abv:'40%',status:'matched'},
-      {brand:'PATRÓN',product:'PATRÓN Reposado',category:'Spirits \u00b7 Tequila \u00b7 Reposado',size:'750 mL',pkg:'Bottle',upc:'721733000037',price:'$54.99',abv:'40%',status:'matched'}
-    ];
+    var mockRows = [];
     var sc = {new:0,matched:0,review:0}; mockRows.forEach(function(r){ sc[r.status]++; });
     body.innerHTML = stepsHtml +
       '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px"><div><div style="font-size:14px;font-weight:700;color:var(--dark)">Review Detected Products</div><div style="font-size:14px;color:var(--slate);margin-top:2px">' + mockRows.length + ' SKUs detected across 3 brands</div></div><div style="display:flex;gap:8px"><span class="parse-badge new">' + sc.new + ' New</span><span class="parse-badge matched">' + sc.matched + ' Matched</span></div></div>' +
@@ -33364,7 +33342,7 @@ function addKitItemRow() {
   var c = document.getElementById('kit-item-rows');
   var d = document.createElement('div');
   d.className = 'kit-item-row';
-  d.innerHTML = '<input class="form-control" placeholder="Item name" type="text" style="font-size:14px"><input class="form-control" value="1" type="number" min="1" style="font-size:14px"><select class="form-control" style="font-size:14px"><option value="">Custom (not in assets)</option><option>BACARDÍ Branded Table Cover</option><option>BACARDÍ Branded Ice Bucket</option><option>2oz Sample Cups</option><option>Cocktail Napkins</option><option>Product Info Cards</option><option>Branded Cooler</option><option>Cocktail Shaker</option><option>Jigger</option></select><button onclick="this.closest(\'.kit-item-row\').remove()" style="background:none;border:none;cursor:pointer;font-size:18px;color:var(--slate);line-height:1">×</button>';
+  d.innerHTML = '<input class="form-control" placeholder="Item name" type="text" style="font-size:14px"><input class="form-control" value="1" type="number" min="1" style="font-size:14px"><select class="form-control" style="font-size:14px"><option value="">Custom (not in assets)</option><option>2oz Sample Cups</option><option>Cocktail Napkins</option><option>Product Info Cards</option><option>Branded Cooler</option><option>Cocktail Shaker</option><option>Jigger</option></select><button onclick="this.closest(\'.kit-item-row\').remove()" style="background:none;border:none;cursor:pointer;font-size:18px;color:var(--slate);line-height:1">×</button>';
   c.appendChild(d);
 }
 var BRAND_PRODUCTS={};
@@ -33511,7 +33489,7 @@ function saveCreateProgram() {
   var chEl = document.getElementById('prog-channel-sel');
   var ch = chEl ? chEl.value : '';
   var chLabel = {off:'Off-Premise',on:'On-Premise',special:'Special Events',multi:'Multi-Channel'}[ch] || ch || 'Off-Premise';
-  var brand = APP_DATA.brands.length ? APP_DATA.brands[0].name : 'BACARDÍ Rum';
+  var brand = APP_DATA.brands.length ? APP_DATA.brands[0].name : '';
   APP_DATA.programs.push({ id: 'prog-' + Date.now(), name: name, brand: brand, channel: chLabel, active: true });
   closeCreateProgram();
   toast('Program \u201c'+name+'\u201d created.');
@@ -35379,11 +35357,11 @@ function sendInvite() {
 
 // ── EDIT USER DRAWER ─────────────────────────────────────────────
 var _userData = {
-  alex:   { name:'Alex Morgan',  email:'alex [at] bacardi.com',   initials:'AM', color:'#1A2B3C', role:'Account Owner',        org:'T1 — Executive', brand:'All Brands', loc:'National',            channel:'All', status:'Active', hubs:{ba:true,me:true,od:true}  },
-  jordan: { name:'Jordan L.',    email:'jordan [at] bacardi.com', initials:'JL', color:'#00767B', role:'Program Manager',       org:'T2 — Director',  brand:'BACARDÍ Rum, PATRÓN', loc:'West Coast, Northeast', channel:'All', status:'Active', hubs:{ba:true,me:false,od:false} },
-  riley:  { name:'Riley P.',     email:'riley [at] bacardi.com',  initials:'RP', color:'#8B5CF6', role:'Workforce Coordinator', org:'T3 — Manager',   brand:'All Brands', loc:'West Coast',          channel:'All', status:'Active', hubs:{ba:true,me:false,od:true}  },
-  kim:    { name:'Kim M.',       email:'kim [at] bacardi.com',    initials:'KM', color:'#D97706', role:'Finance Manager',       org:'T2 — Director',  brand:'All Brands', loc:'National',            channel:'All', status:'Active', hubs:{ba:true,me:true,od:true}  },
-  dana:   { name:'Dana P.',      email:'dana [at] bacardi.com',   initials:'DP', color:'#DB2777', role:'Ops Manager',           org:'T3 — Manager',   brand:'BACARDÍ Rum', loc:'West Coast',          channel:'Off-Premise', status:'Active', hubs:{ba:false,me:true,od:false} },
+  alex:   { name:'Alex Morgan',  email:'alex [at] example.com',   initials:'AM', color:'#1A2B3C', role:'Account Owner',        org:'T1 — Executive', brand:'All Brands', loc:'National',            channel:'All', status:'Active', hubs:{ba:true,me:true,od:true}  },
+  jordan: { name:'Jordan L.',    email:'jordan [at] example.com', initials:'JL', color:'#00767B', role:'Program Manager',       org:'T2 — Director',  brand:'All Brands', loc:'West Coast, Northeast', channel:'All', status:'Active', hubs:{ba:true,me:false,od:false} },
+  riley:  { name:'Riley P.',     email:'riley [at] example.com',  initials:'RP', color:'#8B5CF6', role:'Workforce Coordinator', org:'T3 — Manager',   brand:'All Brands', loc:'West Coast',          channel:'All', status:'Active', hubs:{ba:true,me:false,od:true}  },
+  kim:    { name:'Kim M.',       email:'kim [at] example.com',    initials:'KM', color:'#D97706', role:'Finance Manager',       org:'T2 — Director',  brand:'All Brands', loc:'National',            channel:'All', status:'Active', hubs:{ba:true,me:true,od:true}  },
+  dana:   { name:'Dana P.',      email:'dana [at] example.com',   initials:'DP', color:'#DB2777', role:'Ops Manager',           org:'T3 — Manager',   brand:'All Brands', loc:'West Coast',          channel:'Off-Premise', status:'Active', hubs:{ba:false,me:true,od:false} },
 };
 
 function openEditUser(uid) {
@@ -35598,7 +35576,7 @@ function addSubKitRow() {
   var c = document.getElementById('smod-kit-rows');
   var d = document.createElement('div');
   d.className = 'kit-item-row';
-  d.innerHTML = `<input class="form-control" placeholder="Item name" type="text" style="font-size:14px"><input class="form-control" value="1" type="number" min="1" style="font-size:14px"><select class="form-control" style="font-size:14px"><option value="">Custom item</option><option>BACARDÍ Branded Table Cover</option><option>BACARDÍ Branded Ice Bucket</option><option>PATRÓN Branded Bar Mat</option><option>2oz Sample Cups (case of 500)</option><option>Cocktail Napkins (pack of 100)</option><option>Cocktail Shaker Set</option></select><button onclick="this.closest('.kit-item-row').remove()" style="background:none;border:none;cursor:pointer;color:var(--slate);font-size:18px;line-height:1;padding:0">&times;</button>`;
+  d.innerHTML = `<input class="form-control" placeholder="Item name" type="text" style="font-size:14px"><input class="form-control" value="1" type="number" min="1" style="font-size:14px"><select class="form-control" style="font-size:14px"><option value="">Custom item</option><option>2oz Sample Cups (case of 500)</option><option>Cocktail Napkins (pack of 100)</option><option>Cocktail Shaker Set</option></select><button onclick="this.closest('.kit-item-row').remove()" style="background:none;border:none;cursor:pointer;color:var(--slate);font-size:18px;line-height:1;padding:0">&times;</button>`;
   c.appendChild(d);
 }
 
@@ -36561,306 +36539,7 @@ function confirmInvite() { closeInviteModal(); toast('Invitation sent successful
 /* ═══════════════════════════════════════════════════
    DATA
 ═══════════════════════════════════════════════════ */
-var tasks = [
-  /* URGENT — overdue or immediate */
-  {
-    id:1, type:'Budget Alert', priority:'urgent', status:'Action Required',
-    assignedTo:{name:'Alex M.', initials:'AM', role:'VP Field Marketing', color:'#C8980A'},
-    assignedRule:'VP Field Marketing',
-    program:'PATRÓN On-Premise Elite', hub:'Activations', hubColor:'#00767B',
-    event:'Program-level — Q1 2026', eventDate:'Apr 5, 2026', eventTime:'',
-    worker:null,
-    dueDate:'2026-04-05', dueDateLabel:'Today', dueClass:'today',
-    notes:'PATRÓN On-Premise Elite is 18% over Q1 budget. $6,840 remaining vs. $8,320 projected spend through Q1 close. Supplemental budget authorization required before additional events can be created.',
-    action:'Review Budget', actionLabel:'Review & Authorize',
-    brand:'PATRÓN'
-  },
-  {
-    id:2, type:'Confirm Payment', priority:'urgent', status:'Payment Pending',
-    assignedTo:{name:'Sam K.', initials:'SK', role:'Finance Lead', color:'#2D8A4E'},
-    assignedRule:'Finance Lead',
-    program:'BACARDÍ Rum Off-Premise 2026', hub:'Activations', hubColor:'#00767B',
-    event:"Spec's — Houston, TX", eventDate:'Mar 15, 2026', eventTime:'1–5pm',
-    worker:{name:'Chloe B.', initials:'CB', type:'FyldPromoter', color:'#7C3AED'},
-    dueDate:'2026-03-17', dueDateLabel:'2 days overdue', dueClass:'overdue',
-    notes:'Event closed. Worker payout of $128.00 pending confirmation. Confirm to release payment via Stripe.',
-    action:'Confirm Payment', actionLabel:'Confirm & Release',
-    payAmount:'$128.00', brand:'BACARDÍ Rum'
-  },
-  {
-    id:3, type:'Confirm Payment', priority:'urgent', status:'Payment Pending',
-    assignedTo:{name:'Sam K.', initials:'SK', role:'Finance Lead', color:'#2D8A4E'},
-    assignedRule:'Finance Lead',
-    program:'BACARDÍ Rum Off-Premise 2026', hub:'Activations', hubColor:'#00767B',
-    event:'Total Wine — Chestnut Hill, MA', eventDate:'Mar 15, 2026', eventTime:'12–4pm',
-    worker:{name:'Maria S.', initials:'MS', type:'FyldPromoter', color:'#00767B'},
-    dueDate:'2026-03-17', dueDateLabel:'2 days overdue', dueClass:'overdue',
-    notes:'Event closed with 98% execution score. Worker payout of $112.00 pending confirmation.',
-    action:'Confirm Payment', actionLabel:'Confirm & Release',
-    payAmount:'$112.00', brand:'BACARDÍ Rum'
-  },
-  /* HIGH — due soon */
-  {
-    id:4, type:'Approve Recap', priority:'high', status:'Post-Event Review',
-    assignedTo:{name:'Jordan L.', initials:'JL', role:'Program Manager', color:'#00767B'},
-    assignedRule:'Program Manager',
-    program:'BACARDÍ Rum Off-Premise 2026', hub:'Activations', hubColor:'#00767B',
-    event:'Total Wine — Orlando, FL', eventDate:'Mar 14, 2026', eventTime:'12–4pm',
-    worker:{name:'Devon R.', initials:'DR', type:'FyldPromoter', color:'#C8980A'},
-    dueDate:'2026-03-19', dueDateLabel:'Mar 19', dueClass:'',
-    notes:'Post-event recap submitted. Review consumer engagement data, execution photos, and score before approval.',
-    action:'Review Recap', actionLabel:'Review & Approve',
-    execScore:'91%', brand:'BACARDÍ Rum'
-  },
-  {
-    id:5, type:'Compliance Alert', priority:'high', status:'Action Required',
-    assignedTo:{name:'Alex M.', initials:'AM', role:'VP Field Marketing', color:'#C8980A'},
-    assignedRule:'VP Field Marketing',
-    program:'BACARDÍ Rum Off-Premise 2026', hub:'Activations', hubColor:'#00767B',
-    event:'Tampa Market — Multiple Locations', eventDate:'Apr 3, 2026', eventTime:'',
-    worker:null,
-    dueDate:'2026-04-07', dueDateLabel:'Apr 7', dueClass:'',
-    notes:'Tampa market execution score dropped to 71% — below the 85% program compliance threshold. Three consecutive events flagged. Market-level review and corrective action required.',
-    action:'Review', actionLabel:'View Market Report',
-    brand:'BACARDÍ Rum'
-  },
-  {
-    id:6, type:'Budget Alert', priority:'high', status:'Action Required',
-    assignedTo:{name:'Sam K.', initials:'SK', role:'Finance Lead', color:'#2D8A4E'},
-    assignedRule:'Finance Lead',
-    program:'BACARDÍ RTD Summer Push', hub:'Activations', hubColor:'#00767B',
-    event:null, eventDate:null, eventTime:null,
-    worker:null,
-    dueDate:'2026-03-20', dueDateLabel:'Mar 20', dueClass:'',
-    notes:'Worker Pay category has reached 89% of allocation with 13 events remaining. Review and adjust budget allocation or pause new event bookings.',
-    action:'Review Budget', actionLabel:'Review Budget',
-    brand:'BACARDÍ RTD'
-  },
-  {
-    id:7, type:'Kit Dispatch', priority:'high', status:'Open',
-    assignedTo:{name:'Riley P.', initials:'RP', role:'Staffing Coordinator', color:'#1E4DB7'},
-    assignedRule:'Staffing Coordinator',
-    program:'BACARDÍ Rum Off-Premise 2026', hub:'Activations', hubColor:'#00767B',
-    event:'BevMo — Providence, RI', eventDate:'Mar 20, 2026', eventTime:'2–6pm',
-    worker:{name:'James T.', initials:'JT', type:'FyldPromoter', color:'#1E4DB7'},
-    dueDate:'2026-03-19', dueDateLabel:'Mar 19', dueClass:'',
-    notes:'Standard Demo Kit must be dispatched by Mar 19 to arrive before event on Mar 20. Confirm shipping address with venue.',
-    action:'Mark Dispatched', actionLabel:'Confirm Dispatch',
-    brand:'BACARDÍ Rum'
-  },
-  /* NORMAL */
-  {
-    id:8, type:'Review Worker', priority:'normal', status:'Completed',
-    assignedTo:{name:'Riley P.', initials:'RP', role:'Staffing Coordinator', color:'#1E4DB7'},
-    assignedRule:'Staffing Coordinator',
-    program:'BACARDÍ Rum Off-Premise 2026', hub:'Activations', hubColor:'#00767B',
-    event:"Binny's — Chicago, IL", eventDate:'Mar 13, 2026', eventTime:'12–4pm',
-    worker:{name:'Tyrell M.', initials:'TM', type:'FyldPromoter', color:'#842029'},
-    dueDate:'2026-03-21', dueDateLabel:'Mar 21', dueClass:'',
-    notes:'Event closed with 88% execution score. Worker performance review requested. Rate quality of execution and consumer engagement.',
-    action:'Rate Worker', actionLabel:'Leave Review',
-    execScore:'88%', brand:'BACARDÍ Rum'
-  },
-  {
-    id:9, type:'Approve Event', priority:'normal', status:'Pending Approval',
-    assignedTo:{name:'Jordan L.', initials:'JL', role:'Program Manager', color:'#00767B'},
-    assignedRule:'Program Manager',
-    program:'BACARDÍ RTD Summer Push', hub:'Activations', hubColor:'#00767B',
-    event:'Target — Charlotte, NC', eventDate:'Mar 20, 2026', eventTime:'2–6pm',
-    worker:{name:'Tanya W.', initials:'TW', type:'FyldPromoter', color:'#7C3AED'},
-    dueDate:'2026-03-19', dueDateLabel:'Mar 19', dueClass:'',
-    notes:'New event pending manager approval before it can be opened for worker applications. Review event details and confirm requirements.',
-    action:'Approve', actionLabel:'Approve Event',
-    brand:'BACARDÍ RTD'
-  },
-  {
-    id:10, type:'Asset Missing', priority:'normal', status:'Action Required',
-    assignedTo:{name:'Dana W.', initials:'DW', role:'Brand Manager', color:'#7C3AED'},
-    assignedRule:'Brand Manager',
-    program:'BACARDÍ RTD Summer Push', hub:'Activations', hubColor:'#00767B',
-    event:'Total Wine — Orlando, FL', eventDate:'Mar 21, 2026', eventTime:'1–5pm',
-    worker:null,
-    dueDate:'2026-03-20', dueDateLabel:'Mar 20', dueClass:'',
-    notes:'Brand Knowledge quiz not assigned to this event. FyldPromoters require brand knowledge certification before execution.',
-    action:'Assign Asset', actionLabel:'Assign Asset',
-    brand:'BACARDÍ RTD'
-  },
-  {
-    id:11, type:'Confirm Payment', priority:'normal', status:'Payment Pending',
-    assignedTo:{name:'Sam K.', initials:'SK', role:'Finance Lead', color:'#2D8A4E'},
-    assignedRule:'Finance Lead',
-    program:'Seasonal Display Push — Q1', hub:'Merchandising', hubColor:'#1E4DB7',
-    event:'Total Wine — Boston, MA', eventDate:'Mar 15, 2026', eventTime:'9am–1pm',
-    worker:{name:'Rosa P.', initials:'RP', type:'FyldChecker', color:'#1E4DB7'},
-    dueDate:'2026-03-22', dueDateLabel:'Mar 22', dueClass:'',
-    notes:'Shelf audit completed with 94% score. FyldChecker payout of $96.00 pending confirmation.',
-    action:'Confirm Payment', actionLabel:'Confirm & Release',
-    payAmount:'$96.00', brand:'BACARDÍ Rum + RTD'
-  },
-  {
-    id:12, type:'Review Worker', priority:'normal', status:'Completed',
-    assignedTo:{name:'Riley P.', initials:'RP', role:'Staffing Coordinator', color:'#1E4DB7'},
-    assignedRule:'Staffing Coordinator',
-    program:'Seasonal Display Push — Q1', hub:'Merchandising', hubColor:'#1E4DB7',
-    event:'Walmart — Providence, RI', eventDate:'Mar 14, 2026', eventTime:'8am–12pm',
-    worker:{name:'Ben C.', initials:'BC', type:'FyldChecker', color:'#7C3AED'},
-    dueDate:'2026-03-23', dueDateLabel:'Mar 23', dueClass:'',
-    notes:'Shelf audit completed with 87% execution score. Worker performance review pending.',
-    action:'Rate Worker', actionLabel:'Leave Review',
-    execScore:'87%', brand:'BACARDÍ Rum + RTD'
-  },
-  {id:13,type:'Review Shelf Audit',priority:'urgent',status:'Pending Review',assignedTo:{name:'Jordan L.',initials:'JL',role:'Program Manager',color:'#C8980A'},program:'BACARDÍ Rum Off-Premise 2026',hub:'Merchandising',hubColor:'#1E4DB7',event:'Kroger #447 — Natick',eventDate:'Mar 26, 2026',worker:{name:'Chloe B.',initials:'CB',type:'FyldChecker',color:'#27AE60'},dueDate:'2026-03-26',dueDateLabel:'Mar 26',dueClass:'today',notes:'Compliance 62% — below 80%. 3 planogram deviations, 1 OOS.',action:'Review',actionLabel:'Review & Approve',brand:'BACARDÍ Rum',auditData:{score:62,threshold:80,passed:false,exceptions:[{type:'Planogram Deviation',detail:'Superior 750mL shifted',severity:'high'},{type:'Out of Stock',detail:'Black 750mL — 0 units',severity:'urgent'}],photosSubmitted:8,photosRequired:4,geoVerified:true,checkedIn:'8:04 AM',submittedAt:'10:47 AM'}},
-  {id:14,type:'Planogram Exception',priority:'high',status:'Pending Review',assignedTo:{name:'Jordan L.',initials:'JL',role:'Program Manager',color:'#00767B'},program:'PATRÓN On-Premise Elite',hub:'Merchandising',hubColor:'#1E4DB7',event:'Total Wine #1205 — Boston',eventDate:'Mar 26, 2026',worker:{name:'Patrick K.',initials:'PK',type:'FyldChecker',color:'#9B59B6'},dueDate:'2026-03-26',dueDateLabel:'Mar 26',dueClass:'',notes:'PATRÓN back bar position incorrect. 2 planogram exceptions flagged.',action:'Review',actionLabel:'Review Exception',brand:'PATRÓN',auditData:{score:78,threshold:80,passed:false,exceptions:[{type:'Planogram Deviation',detail:'PATRÓN Añejo shifted 2 slots',severity:'high'},{type:'Display Issue',detail:'POS tent cards missing',severity:'normal'}],photosSubmitted:6,photosRequired:4,geoVerified:true,checkedIn:'9:15 AM',submittedAt:'11:30 AM'}},
-  {id:15,type:'Expiration Alert',priority:'urgent',status:'Action Required',assignedTo:{name:'Drew B.',initials:'DB',role:'Ops Coordinator',color:'#7C3AED'},program:'BACARDÍ RTD Summer Push',hub:'Merchandising',hubColor:'#1E4DB7',event:"BJ's Wholesale #45 — Framingham",eventDate:'Mar 19, 2026',worker:{name:'Patrick K.',initials:'PK',type:'FyldChecker',color:'#9B59B6'},dueDate:'2026-03-26',dueDateLabel:'Mar 26',dueClass:'today',notes:'BACARDÍ RTD Limón 355mL expiring Mar 31 — 4 units on shelf.',action:'Coordinate Pull',actionLabel:'Coordinate with Distributor',brand:'BACARDÍ RTD'},
-  {id:16,type:'Compliance Alert',priority:'high',status:'Pending Review',assignedTo:{name:'Jordan L.',initials:'JL',role:'Program Manager',color:'#00767B'},program:'PATRÓN On-Premise Elite',hub:'Merchandising',hubColor:'#1E4DB7',event:'Wegmans #78 — Burlington',eventDate:'Mar 30, 2026',worker:{name:'Patrick K.',initials:'PK',type:'FyldChecker',color:'#9B59B6'},dueDate:'2026-03-30',dueDateLabel:'Mar 30',dueClass:'',notes:'Compliance score 71% — below 80%. Display & POS issues.',action:'Review',actionLabel:'Review Audit',brand:'PATRÓN',auditData:{score:71,threshold:80,passed:false,exceptions:[{type:'Display Issue',detail:'POS materials misplaced',severity:'high'},{type:'Planogram Deviation',detail:'PATRÓN Silver facing reduced',severity:'normal'}],photosSubmitted:10,photosRequired:6,geoVerified:true,checkedIn:'10:05 AM',submittedAt:'12:20 PM'}},
-  {id:17,type:'Display Install Review',priority:'normal',status:'Pending Review',assignedTo:{name:'Jordan L.',initials:'JL',role:'Program Manager',color:'#00767B'},program:'BACARDÍ Rum Off-Premise 2026',hub:'Merchandising',hubColor:'#1E4DB7',event:'Star Market #33 — Brookline',eventDate:'Mar 15, 2026',worker:{name:'Chloe B.',initials:'CB',type:'FyldChecker',color:'#27AE60'},dueDate:'2026-03-28',dueDateLabel:'Mar 28',dueClass:'',notes:'Summer display installed — 96% compliance. Excellent execution.',action:'Review',actionLabel:'Approve Audit',brand:'BACARDÍ Rum',auditData:{score:96,threshold:80,passed:true,exceptions:[],photosSubmitted:12,photosRequired:6,geoVerified:true,checkedIn:'11:00 AM',submittedAt:'1:15 PM'}},
-  {id:18,type:'Damage Report',priority:'high',status:'Action Required',assignedTo:{name:'Drew B.',initials:'DB',role:'Ops Coordinator',color:'#7C3AED'},program:'PATRÓN On-Premise Elite',hub:'On-Demand',hubColor:'#7C3AED',event:"Del Frisco's #101 — New York",eventDate:'Mar 18, 2026',eventTime:'7-11pm',worker:{name:'Patrick K.',initials:'PK',type:'FyldRunner',color:'#9B59B6'},dueDate:'2026-03-27',dueDateLabel:'Mar 27',dueClass:'',notes:'Runner flagged damage at pickup — ice bucket cracked, tent sign bent. Photos submitted.',action:'Resolve Damage',actionLabel:'Resolve & Reroute',brand:'PATRÓN',custody:{steps:[{label:'Kit Prepared',status:'done',time:'Mar 17, 4:00 PM',note:'Assembled at NYC Storage'},{label:'Dispatched',status:'done',time:'Mar 18, 5:00 PM'},{label:'Damage Found',status:'done',time:'Mar 18, 5:42 PM',note:'3 damage photos submitted',photo:true},{label:'Awaiting Resolution',status:'current',time:'Pending',note:'Ops to determine replacement'},{label:'Delivered',status:'pending',time:'—',photo:true},{label:'Confirmed',status:'pending',time:'—'}]}},
-  {id:19,type:'Return Processing',priority:'normal',status:'Pending',assignedTo:{name:'Drew B.',initials:'DB',role:'Ops Coordinator',color:'#7C3AED'},program:'BACARDÍ Rum Off-Premise 2026',hub:'On-Demand',hubColor:'#7C3AED',event:'BevMo #312 — Providence',eventDate:'Mar 26, 2026',eventTime:'5-9pm',worker:{name:'James T.',initials:'JT',type:'FyldRunner',color:'#5B8DEF'},dueDate:'2026-03-27',dueDateLabel:'Mar 27',dueClass:'',notes:'Return Standard Tasting Kit to Boston Warehouse by Mar 27.',action:'Confirm Return',actionLabel:'Confirm Return',brand:'BACARDÍ Rum',custody:{steps:[{label:'Event Completed',status:'done',time:'Mar 26, 9:15 PM'},{label:'Kit Retrieved',status:'done',time:'Mar 26, 9:30 PM',photo:true},{label:'In Transit',status:'current',time:'Mar 27, 8:00 AM',note:'Return window: 8-10 AM'},{label:'Returned',status:'pending',time:'—',note:'Check in with Dave at receiving',photo:true},{label:'Inventory Logged',status:'pending',time:'—'}]}},
-  {id:20,type:'Worker Credential Expiring',priority:'normal',status:'Action Required',assignedTo:{name:'Riley P.',initials:'RP',role:'Workforce Coordinator',color:'#1E4DB7'},program:'BACARDÍ Rum Off-Premise 2026',hub:'Activations',hubColor:'#00767B',event:null,eventDate:null,eventTime:null,worker:{name:'Devon R.',initials:'DR',type:'FyldPromoter',color:'#E67E22'},dueDate:'2026-04-05',dueDateLabel:'Apr 5',dueClass:'',notes:"Devon R.'s FL Responsible Vendor Cert expires Apr 5 — 6 days. 3 FL events in April.",action:'Notify Worker',actionLabel:'Notify Worker',brand:'BACARDÍ Rum'},
-  {id:21,type:'Kit Dispatch',priority:'urgent',status:'Open',
-    assignedTo:{name:'Drew B.',initials:'DB',role:'Ops Coordinator',color:'#7C3AED'},
-    program:'BACARDÍ Rum Off-Premise 2026',hub:'On-Demand',hubColor:'#7C3AED',
-    event:'Total Wine #1205 — Boston, MA',eventDate:'Apr 1, 2026',eventTime:'2–6pm',
-    worker:{name:'James T.',initials:'JT',type:'FyldRunner',color:'#5B8DEF'},
-    dueDate:'2026-03-31',dueDateLabel:'Mar 31',dueClass:'',
-    notes:'Standard Tasting Kit must be dispatched by Mar 31. Confirm runner pickup window with Boston warehouse.',
-    action:'Confirm Dispatch',actionLabel:'Confirm Dispatch',brand:'BACARDÍ Rum',
-    custody:{steps:[
-      {label:'Kit Prepared',status:'done',time:'Mar 30, 9:00 AM',note:'Assembled at Boston Warehouse',photo:false},
-      {label:'Awaiting Dispatch',status:'current',time:'Pending',note:'Confirm runner pickup window',photo:false},
-      {label:'Picked Up',status:'pending',time:'—',note:'Runner picks up from warehouse',photo:true},
-      {label:'In Transit',status:'pending',time:'—',photo:false},
-      {label:'Delivered to Venue',status:'pending',time:'—',photo:true},
-      {label:'Confirmed',status:'pending',time:'—',photo:false}
-    ]}},
-  {id:22,type:'Delivery Confirmation',priority:'urgent',status:'In Transit',
-    assignedTo:{name:'Drew B.',initials:'DB',role:'Ops Coordinator',color:'#7C3AED'},
-    program:'BACARDÍ RTD Summer Push',hub:'On-Demand',hubColor:'#7C3AED',
-    event:"BJ's Wholesale #45 — Framingham, MA",eventDate:'Mar 19, 2026',eventTime:'9am–1pm',
-    worker:{name:'James T.',initials:'JT',type:'FyldRunner',color:'#5B8DEF'},
-    dueDate:'2026-03-19',dueDateLabel:'Mar 19',dueClass:'today',
-    notes:"Runner en route to BJ's. Must deliver by 8:00 AM. Pickup photo confirmed.",
-    action:'Confirm Delivery',actionLabel:'Confirm Delivery',brand:'BACARDÍ RTD',
-    custody:{steps:[
-      {label:'Kit Prepared',status:'done',time:'Mar 19, 6:30 AM',photo:false},
-      {label:'Dispatched',status:'done',time:'Mar 19, 7:00 AM',photo:false},
-      {label:'Picked Up',status:'done',time:'Mar 19, 7:18 AM',note:'Pickup photo submitted',photo:true},
-      {label:'In Transit',status:'current',time:'Mar 19, 7:20 AM',note:'ETA: 8:05 AM',photo:false},
-      {label:'Delivered to Venue',status:'pending',time:'—',note:'Receiving dock, ask for Mike',photo:true},
-      {label:'Confirmed',status:'pending',time:'—',photo:false}
-    ]}},
-  {id:23,type:'Emergency Restock',priority:'urgent',status:'Open',
-    assignedTo:{name:'Drew B.',initials:'DB',role:'Ops Coordinator',color:'#7C3AED'},
-    program:'BACARDÍ Rum Off-Premise 2026',hub:'On-Demand',hubColor:'#7C3AED',
-    event:'Total Wine #1205 — Boston, MA',eventDate:'Mar 25, 2026',eventTime:'2–6pm',
-    worker:null,
-    dueDate:'2026-03-25',dueDateLabel:'Mar 25',dueClass:'',
-    notes:'OOS alert — BACARDÍ Superior 750mL depleted at 3:45 PM with 2+ hours remaining. Dispatch emergency runner.',
-    action:'Dispatch Runner',actionLabel:'Dispatch Emergency Runner',brand:'BACARDÍ Rum',
-    custody:{steps:[
-      {label:'OOS Alert Triggered',status:'done',time:'Mar 25, 3:45 PM',note:'Auto-generated by FyldHub',photo:false},
-      {label:'Runner Assignment',status:'current',time:'Pending',note:'Find FyldRunner within 5 miles',photo:false},
-      {label:'Product Pickup',status:'pending',time:'—',photo:false},
-      {label:'In Transit',status:'pending',time:'—',photo:false},
-      {label:'Restocked at Venue',status:'pending',time:'—',note:'Hand off to FyldPromoter',photo:true},
-      {label:'Confirmed',status:'pending',time:'—',photo:false}
-    ]}},
-  {id:24, type:'Approve Event', priority:'high', status:'Pending Approval',
-    assignedTo:{name:'Sam R.', initials:'SR', role:'Brand Manager', color:'#1E4DB7'},
-    assignedRule:'Brand Manager',
-    program:'BACARDÍ RTD Summer Push', hub:'Activations', hubColor:'#00767B',
-    event:'Costco — Dedham, MA', eventDate:'Apr 10, 2026', eventTime:'1–5pm',
-    worker:{name:'Priya K.', initials:'PK', type:'FyldPromoter', color:'#7C3AED'},
-    dueDate:'2026-04-08', dueDateLabel:'Apr 8', dueClass:'',
-    notes:'New event requires Brand Manager approval before opening for worker applications. Review event brief and brand requirements.',
-    action:'Approve', actionLabel:'Approve Event',
-    brand:'BACARDÍ RTD'},
-  {id:25, type:'Budget Alert', priority:'high', status:'Action Required',
-    assignedTo:{name:'Dana K.', initials:'DK', role:'Program Owner', color:'#7C3AED'},
-    assignedRule:'Program Owner',
-    program:'PATRÓN On-Premise Elite', hub:'Activations', hubColor:'#00767B',
-    event:'Program-level — Q2 Planning', eventDate:'Apr 15, 2026', eventTime:'',
-    worker:null,
-    dueDate:'2026-04-10', dueDateLabel:'Apr 10', dueClass:'',
-    notes:'PATRÓN On-Premise Elite Q2 event budget requires Program Owner sign-off before Q2 events can be created. Review proposed allocation across markets.',
-    action:'Review Budget', actionLabel:'Review & Approve',
-    brand:'PATRÓN'},
-  {
-    id:26, type:'Kit Dispatch', priority:'high', status:'Open',
-    assignedTo:{name:'Dana K.', initials:'DK', role:'Logistics Coordinator', color:'#7C3AED'},
-    assignedRule:'Logistics Coordinator',
-    program:'PATRÓN On-Premise Elite', hub:'On-Demand', hubColor:'#7C3AED',
-    event:'STK Steakhouse — New York, NY', eventDate:'Apr 2, 2026', eventTime:'7–11pm',
-    worker:{name:'James T.', initials:'JT', type:'FyldRunner', color:'#5B8DEF'},
-    dueDate:'2026-04-01', dueDateLabel:'Apr 1', dueClass:'',
-    notes:'PATRÓN Tasting Kit must be dispatched by Apr 1. Confirm pickup window with James T. at NYC warehouse.',
-    action:'Confirm Dispatch', actionLabel:'Confirm Dispatch',
-    brand:'PATRÓN',
-    custody:{steps:[
-      {label:'Kit Prepared',status:'done',time:'Mar 31, 2:00 PM',note:'Assembled at NYC Storage',photo:false},
-      {label:'Awaiting Dispatch',status:'current',time:'Pending',note:'Confirm runner pickup window',photo:false},
-      {label:'Picked Up',status:'pending',time:'—',note:'Runner picks up from warehouse',photo:true},
-      {label:'In Transit',status:'pending',time:'—',photo:false},
-      {label:'Delivered to Venue',status:'pending',time:'—',photo:true},
-      {label:'Confirmed',status:'pending',time:'—',photo:false}
-    ]}
-  },
-  {
-    id:27, type:'Delivery Confirmation', priority:'urgent', status:'In Transit',
-    assignedTo:{name:'Dana K.', initials:'DK', role:'Logistics Coordinator', color:'#7C3AED'},
-    assignedRule:'Logistics Coordinator',
-    program:'BACARDÍ Rum Off-Premise 2026', hub:'On-Demand', hubColor:'#7C3AED',
-    event:'Total Wine #1205 — Boston, MA', eventDate:'Apr 1, 2026', eventTime:'2–6pm',
-    worker:{name:'Marcus D.', initials:'MD', type:'FyldRunner', color:'#E67E22'},
-    dueDate:'2026-04-01', dueDateLabel:'Today', dueClass:'today',
-    notes:'Runner en route to Total Wine Boston. Must deliver by 1:00 PM. Pickup confirmed — awaiting delivery photo.',
-    action:'Confirm Delivery', actionLabel:'Confirm Delivery',
-    brand:'BACARDÍ Rum',
-    custody:{steps:[
-      {label:'Kit Prepared',status:'done',time:'Mar 31, 11:00 AM',note:'Assembled at Boston Warehouse',photo:false},
-      {label:'Picked Up',status:'done',time:'Apr 1, 10:30 AM',photo:true},
-      {label:'In Transit',status:'current',time:'Apr 1, 11:00 AM',note:'ETA: 1:00 PM',photo:false},
-      {label:'Delivered to Venue',status:'pending',time:'—',photo:true},
-      {label:'Confirmed',status:'pending',time:'—',photo:false}
-    ]}
-  },
-  {
-    id:28, type:'Activation Request', priority:'high', status:'Pending Approval',
-    assignedTo:{name:'Casey T.', initials:'CT', role:'Field Team', color:'#059669'},
-    assignedRule:'Field Team',
-    program:'BACARDÍ Rum Off-Premise 2026', hub:'Activations', hubColor:'#00767B',
-    event:'Total Wine #447 — Natick, MA', eventDate:'Apr 10, 2026', eventTime:'2–6pm',
-    worker:null,
-    dueDate:'2026-04-05', dueDateLabel:'Apr 5', dueClass:'',
-    notes:'Activation request submitted for Total Wine Natick. FyldPromoter in-store tasting — BACARDÍ Superior and Gold. Awaiting Program Manager approval before opening for worker applications.',
-    action:'View Status', actionLabel:'View Status',
-    brand:'BACARDÍ Rum'
-  },
-  {
-    id:29, type:'Account Visit', priority:'normal', status:'Open',
-    assignedTo:{name:'Casey T.', initials:'CT', role:'Field Team', color:'#059669'},
-    assignedRule:'Field Team',
-    program:'PATRÓN On-Premise Elite', hub:'Activations', hubColor:'#00767B',
-    event:'STK Steakhouse — Boston, MA', eventDate:'Apr 3, 2026', eventTime:'6–8pm',
-    worker:null,
-    dueDate:'2026-04-03', dueDateLabel:'Apr 3', dueClass:'',
-    notes:'Pre-event account visit. Confirm bar layout, back bar placement, and confirm PATRÓN Silver and Añejo are in stock. Submit field notes before event day.',
-    action:'Submit Notes', actionLabel:'Submit Field Notes',
-    brand:'PATRÓN'
-  },
-  {
-    id:30, type:'Compliance Flag', priority:'urgent', status:'Action Required',
-    assignedTo:{name:'Casey T.', initials:'CT', role:'Field Team', color:'#059669'},
-    assignedRule:'Field Team',
-    program:'BACARDÍ RTD Summer Push', hub:'Merchandising', hubColor:'#1E4DB7',
-    event:'BevMo #88 — Cambridge, MA', eventDate:'Mar 28, 2026', eventTime:'',
-    worker:null,
-    dueDate:'2026-04-02', dueDateLabel:'Apr 2', dueClass:'',
-    notes:'BACARDÍ RTD shelf tag missing at BevMo Cambridge. Competitor product placed in allocated BACARDÍ space. Photo submitted — planogram deviation logged. Awaiting merchandising response.',
-    action:'View Flag', actionLabel:'View Details',
-    brand:'BACARDÍ RTD'
-  }
-];
+var tasks = [];
 
 var tkSortState = {col:'', dir:'asc'};
 var tkCurrentView = 'my'; /* 'my' or 'team' */
@@ -37726,7 +37405,7 @@ function switchRepRole(role){currentRole=role;renderReportSidebar();updateRepRol
 function renderExecutiveSummary(area,ev){
   var progs=APP_DATA.programs||[];var closed=ev.filter(function(e){return['Closed','Approved','Payment Pending'].indexOf(e.st)!==-1;}).length;var spend=ev.reduce(function(a,e){return a+(e.payRate||18)*4+(e.productCost||0)+(e.suppliesCost||0);},0);
   var progRows=progs.map(function(p){var pe=ev.filter(function(e){return e.prog===p.name;});var pc=pe.filter(function(e){return['Closed','Approved','Payment Pending'].indexOf(e.st)!==-1;}).length;var pct=pe.length?Math.round((pc/pe.length)*100):0;var st=pct>=80?'On Track':pct>=50?'At Risk':'Behind';var stc=pct>=80?'b-teal':pct>=50?'b-amber':'b-red';return '<tr><td style="font-weight:600">'+p.name+'</td><td>'+pe.length+'</td><td>'+pct+'%</td><td><span class="badge '+stc+'">'+st+'</span></td></tr>';}).join('');
-  area.innerHTML='<div style="max-width:900px"><div style="font-size:16px;font-weight:800;color:var(--dark);margin-bottom:4px">Executive Summary</div><div style="font-size:14px;color:var(--slate);margin-bottom:20px">Bacardi USA \u00b7 Enterprise \u00b7 March 2026</div><div class="rep-kpi-grid">'+repKpi('3 / 4','Programs On Track','\u2191 +1 vs Feb',true)+repKpi('68%','Spend vs Plan','$12.4K remaining',true)+repKpi('91%','Coverage Rate','3 understaffed',false)+repKpi('3','Compliance Exceptions','2 markets',false)+'</div><div class="rep-chart-card"><div class="rep-chart-title">Program Health</div><table class="rep-table"><thead><tr><th>Program</th><th>Events</th><th>Completion</th><th>Status</th></tr></thead><tbody>'+progRows+'</tbody></table></div><div class="rep-chart-card" style="border-left:3px solid #E5484D"><div class="rep-chart-title" style="color:#E5484D">Key Risks</div><div class="vp-row"><div><div class="vp-rt">BACARDI RTD — Behind Pace</div><div class="vp-rs">25% complete &middot; Q2 at risk</div></div><span class="badge" style="background:#FEE2E2;color:#991B1B;font-size:13px">Behind</span></div><div class="vp-row"><div><div class="vp-rt">Tampa — Compliance Below Threshold</div><div class="vp-rs">71% vs 85% target</div></div><span class="badge" style="background:#FEF3C7;color:#92400E;font-size:13px">At Risk</span></div></div></div>';
+  area.innerHTML='<div style="max-width:900px"><div style="font-size:16px;font-weight:800;color:var(--dark);margin-bottom:4px">Executive Summary</div><div style="font-size:14px;color:var(--slate);margin-bottom:20px">Your Company \u00b7 Enterprise \u00b7 March 2026</div><div class="rep-kpi-grid">'+repKpi('3 / 4','Programs On Track','\u2191 +1 vs Feb',true)+repKpi('68%','Spend vs Plan','$12.4K remaining',true)+repKpi('91%','Coverage Rate','3 understaffed',false)+repKpi('3','Compliance Exceptions','2 markets',false)+'</div><div class="rep-chart-card"><div class="rep-chart-title">Program Health</div><table class="rep-table"><thead><tr><th>Program</th><th>Events</th><th>Completion</th><th>Status</th></tr></thead><tbody>'+progRows+'</tbody></table></div><div class="rep-chart-card" style="border-left:3px solid #E5484D"><div class="rep-chart-title" style="color:#E5484D">Key Risks</div><div class="vp-row" style="display:none"><div><div class="vp-rt"></div><div class="vp-rs"></div></div><span class="badge" style="background:#FEE2E2;color:#991B1B;font-size:13px">Behind</span></div><div class="vp-row"><div><div class="vp-rt">Tampa — Compliance Below Threshold</div><div class="vp-rs">71% vs 85% target</div></div><span class="badge" style="background:#FEF3C7;color:#92400E;font-size:13px">At Risk</span></div></div></div>';
 }
 function renderProgramHealth(area,ev){
   var progs=APP_DATA.programs||[];if(!_progHealthId&&progs.length)_progHealthId=progs[0].name;var prog=progs.find(function(p){return p.name===_progHealthId;})||progs[0];if(!prog){area.innerHTML='<div style="padding:40px;text-align:center;color:var(--slate)">No programs.</div>';return;}
@@ -37789,7 +37468,7 @@ function generatePDF(){
   var photoHtml='';if(sel.photos&&selPhotos.length){photoHtml='<div class="pdf-sec" style="page-break-before:always"><div class="pdf-sec-title">Photo Evidence ('+selPhotos.length+')</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">';selPhotos.forEach(function(p){photoHtml+='<div style="border:1px solid #e5e7eb;border-radius:6px;padding:10px;text-align:center"><div style="background:#f1f5f9;height:90px;display:flex;align-items:center;justify-content:center;border-radius:4px;margin-bottom:6px;font-size:28px">&#128247;</div><div style="font-size:14px;font-weight:600;margin-bottom:2px">'+p.label+'</div><div style="font-size:13px;color:#64748b">'+p.evName+'</div><div style="font-size:13px;color:#94a3b8">'+p.ts+'</div></div>';});photoHtml+='</div></div>';}
   var notesHtml='';if(sel.notes&&notes.trim()){notesHtml='<div class="pdf-sec" style="background:#f8fafc;border:1px solid #e5e7eb;border-radius:8px;padding:16px"><div class="pdf-sec-title">Notes</div><p style="font-size:13px;line-height:1.6;margin:0">'+notes.replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</p></div>';}
   var doc='<!DOCTYPE html><html><head><meta charset="utf-8"><title>'+title+'</title><style>body{font-family:Arial,sans-serif;margin:0;padding:24px;color:#1a2b3c;-webkit-print-color-adjust:exact;print-color-adjust:exact}.pdf-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:24px;padding-bottom:16px;border-bottom:3px solid #00767B}.pdf-brand{font-size:13px;font-weight:700;color:#00767B;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}.pdf-title{font-size:22px;font-weight:800;margin:0 0 4px}.pdf-meta{font-size:14px;color:#64748b}.pdf-sec{margin-bottom:20px;page-break-inside:avoid}.pdf-sec-title{font-size:14px;font-weight:700;margin-bottom:12px}.rep-kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}.rep-kpi{background:#f8fafc;border:1px solid #e5e7eb;border-radius:8px;padding:12px 14px}.rep-kpi-lbl{font-size:9px;font-weight:600;color:#64748b;text-transform:uppercase;margin-bottom:4px}.rep-kpi-val{font-size:20px;font-weight:700;line-height:1}.rep-kpi-delta{font-size:13px;margin-top:3px;color:#64748b}.rep-table{width:100%;border-collapse:collapse;font-size:14px}.rep-table th{text-align:left;padding:6px 10px;background:#f1f5f9;font-size:13px;text-transform:uppercase;color:#64748b;border-bottom:2px solid #e5e7eb;font-weight:600}.rep-table td{padding:7px 10px;border-bottom:1px solid #f1f5f9;font-size:14px}.badge{display:inline-block;padding:1px 7px;border-radius:10px;font-size:13px;font-weight:600}.dw-appr-btn{display:none}@page{margin:20mm 16mm}</style></head><body>';
-  if(sel.header){doc+='<div class="pdf-header"><div><div class="pdf-brand">FyldHub \u00b7 Field Execution Report</div><div class="pdf-title">'+title+'</div><div class="pdf-meta">'+filterStr+' \u00b7 Generated '+new Date().toLocaleDateString()+'</div></div><div style="text-align:right;font-size:14px;color:#64748b"><div>Bacardi USA \u00b7 Enterprise</div><div style="font-size:13px;color:#94a3b8;margin-top:2px">Confidential</div></div></div>';}
+  if(sel.header){doc+='<div class="pdf-header"><div><div class="pdf-brand">FyldHub \u00b7 Field Execution Report</div><div class="pdf-title">'+title+'</div><div class="pdf-meta">'+filterStr+' \u00b7 Generated '+new Date().toLocaleDateString()+'</div></div><div style="text-align:right;font-size:14px;color:#64748b"><div>Your Company \u00b7 Enterprise</div><div style="font-size:13px;color:#94a3b8;margin-top:2px">Confidential</div></div></div>';}
   doc+=kpiHtml+chartHtml+photoHtml+notesHtml+'</body></html>';
   var ifr=document.createElement('iframe');ifr.style.cssText='position:fixed;left:-9999px;top:0;width:1200px;height:900px;border:none;opacity:0';document.body.appendChild(ifr);
   var iDoc=ifr.contentDocument||ifr.contentWindow.document;iDoc.open();iDoc.write(doc);iDoc.close();closePDFModal();toast('PDF preview preparing\u2026');
@@ -38035,8 +37714,7 @@ function renderVPDashboard(){
   function appr(txt,fn){var ac=fn||"toast(\'Opening...\')";return '<button class="dw-appr-btn" onclick="'+ac+'">'+txt+'</button>';}
   var h='';
   h+='<div class="vp-filter-bar"><span class="vp-filter-lbl">Brand</span><select class="vp-filter-sel"><option>All Brands</option></select><span class="vp-filter-lbl">Region</span><select class="vp-filter-sel"><option>All Markets</option><option>Northeast</option><option>Southeast</option></select><span class="vp-filter-lbl">Channel</span><select class="vp-filter-sel"><option>All Channels</option><option>Off-Premise</option><option>On-Premise</option></select><span style="margin-left:auto;font-size:14px;color:var(--slate)">Period</span><select class="vp-filter-sel"><option>Mar 2026 (MTD)</option><option>Q1 2026</option><option>YTD 2026</option></select></div>';
-  h+='<div class="vp-dq"><div class="vp-dq-hdr">&#9889; Decisions Required Today &middot; 3 items &middot; 2 urgent</div><div class="vp-dq-list">';
-  h+='<div class="vp-dq-item" onclick="switchModule(\'settings\');setTimeout(function(){showTab(\'financials\')},150)""><div class="vp-dq-dot urg"></div><div><div class="vp-dq-txt">BACARDI RTD &mdash; Budget supplemental</div><div class="vp-dq-sub">$8K needed by Apr 15</div></div>'+bdg('URGENT','#FEE2E2','#991B1B')+'</div>';
+  h+='<div class="vp-dq"><div class="vp-dq-hdr">&#9889; Decisions Required Today</div><div class="vp-dq-list">';
   h+='<div class="vp-dq-item" onclick="switchModule(\'events\')""><div class="vp-dq-dot rev"></div><div><div class="vp-dq-txt">Tampa &mdash; Below compliance threshold</div><div class="vp-dq-sub">71% vs 85% target</div></div>'+bdg('REVIEW','#FEF3C7','#92400E')+'</div>';
   h+='<div class="vp-dq-item" onclick="switchModule(\'events\')""><div class="vp-dq-dot rev"></div><div><div class="vp-dq-txt">Southern Glazer&#39;s &mdash; Inactive 14 days</div><div class="vp-dq-sub">2 markets at risk</div></div>'+bdg('REVIEW','#FEF3C7','#92400E')+'</div>';
   h+='</div></div>';
@@ -38046,33 +37724,33 @@ function renderVPDashboard(){
   // Zone 1: Commercial
   var z1='';
   var roi='<div style="font-size:13px;font-weight:600;color:var(--slate);text-transform:uppercase;letter-spacing:.4px;margin-bottom:8px">Investment &#8594; Interactions &#8594; Lift &#8594; Return</div>';
-  [['BACARDI Rum Off-Prem','$31.2K','462','#00767B','+12%','$48K'],['BACARDI RTD Summer','$3.2K','89','#1E4DB7','+7%','$11K'],['PATRON On-Prem Elite','$8.4K','124','#7C3AED','+15%','$24K']].forEach(function(r){
+  [].forEach(function(r){
     roi+='<div style="margin-bottom:8px"><div style="font-size:14px;font-weight:600;color:var(--dark);margin-bottom:4px">'+r[0]+'</div><div class="vp-roi-row"><div class="vp-roi-cell"><div class="vp-roi-lbl">Invested</div><div class="vp-roi-val">'+r[1]+'</div></div><div class="vp-roi-arr">&#8594;</div><div class="vp-roi-cell"><div class="vp-roi-lbl">Interactions</div><div class="vp-roi-val" style="color:'+r[3]+'">'+r[2]+'</div></div><div class="vp-roi-arr">&#8594;</div><div class="vp-roi-cell"><div class="vp-roi-lbl">Lift</div><div class="vp-roi-val" style="color:#16A34A">'+r[4]+'</div></div><div class="vp-roi-arr">&#8594;</div><div class="vp-roi-cell"><div class="vp-roi-lbl">Return</div><div class="vp-roi-val" style="color:#16A34A">'+r[5]+'</div></div></div></div>';
   });
   z1+=w('Program ROI Chain','Investment to estimated return','YTD',roi,'vp-w2');
-  var st=''; [['BACARDI Rum Off-Prem','80%','+12%','#00767B'],['PATRON On-Premise','71%','+15%','#7C3AED'],['BACARDI RTD Summer','25%','+7%','#1E4DB7']].forEach(function(s){st+='<div style="margin-bottom:8px"><div style="display:flex;justify-content:space-between;margin-bottom:3px"><span style="font-size:14px;font-weight:600;color:var(--dark)">'+s[0]+'</span><span style="font-size:14px;font-weight:700;color:#16A34A">'+s[2]+'</span></div>'+bar(s[1],s[3])+'</div>';});
+  var st=''; [].forEach(function(s){st+='<div style="margin-bottom:8px"><div style="display:flex;justify-content:space-between;margin-bottom:3px"><span style="font-size:14px;font-weight:600;color:var(--dark)">'+s[0]+'</span><span style="font-size:14px;font-weight:700;color:#16A34A">'+s[2]+'</span></div>'+bar(s[1],s[3])+'</div>';});
   z1+=w('Sell-Through Impact','Activation lift vs baseline','Live',st);
   var mh=''; [['Boston',94,'#D1FAE5','#16A34A'],['Cambridge',96,'#D1FAE5','#16A34A'],['Brookline',89,'#FEF3C7','#D97706'],['Providence',88,'#FEF3C7','#D97706'],['Tampa',71,'#FEE2E2','#E5484D']].forEach(function(m){mh+='<div class="vp-hcell" style="background:'+m[2]+'"><span style="font-size:14px;font-weight:600">'+m[0]+'</span><span style="font-size:13px;font-weight:700;color:'+m[3]+'">'+m[1]+'%</span></div>';});
   z1+=w('Market Performance','Execution score heatmap','Mar 2026',mh);
   z1+=w('Depletion Trend','Distributor vs execution','',stub('Distributor Data Required','Connect distributor feed.','Distributor API'));
-  var se=''; [['BACARDI Rum Off-Prem','$31.2K / $40K','78%','#00767B','On Track'],['PATRON On-Prem','$8.4K / $12K','70%','#7C3AED','On Track'],['BACARDI RTD Summer','$3.2K / $12K','27%','#E5484D','Behind Pace']].forEach(function(s){se+='<div style="margin-bottom:8px"><div style="display:flex;justify-content:space-between;margin-bottom:3px"><span style="font-size:14px;font-weight:600">'+s[0]+'</span><span style="font-size:13px;color:var(--slate)">'+s[1]+'</span></div>'+bar(s[2],s[3])+'<div style="font-size:13px;margin-top:2px;color:'+s[3]+'">'+s[2]+' &middot; '+s[4]+'</div></div>';});
+  var se=''; [].forEach(function(s){se+='<div style="margin-bottom:8px"><div style="display:flex;justify-content:space-between;margin-bottom:3px"><span style="font-size:14px;font-weight:600">'+s[0]+'</span><span style="font-size:13px;color:var(--slate)">'+s[1]+'</span></div>'+bar(s[2],s[3])+'<div style="font-size:13px;margin-top:2px;color:'+s[3]+'">'+s[2]+' &middot; '+s[4]+'</div></div>';});
   z1+=w('Spend Efficiency','Budget burn by program','Q1 2026',se);
   z1+=w('Competitive Context','Market share &amp; positioning','',stub('Market Intelligence Pending','Connect Crisp retail intelligence.','Crisp'));
   var ka=''; [['Total Wine &amp; More','8 events &middot; +14% lift','91%','#16A34A'],['Whole Foods','2 events &middot; +11% lift','100%','#16A34A'],['BevMo!','1 event &middot; Pending','Pending','#D97706'],['Star Market','1 event &middot; Apr 28','Confirmed','#3B82F6'],['Walmart','0 events','\u2014','#94A3B8']].forEach(function(c){ka+=row(c[0],c[1],'<span style="font-size:14px;font-weight:700;color:'+c[3]+'">'+c[2]+'</span>');});
   z1+=w('Key Account Performance','Completion &amp; lift by chain','5 Chains',ka);
-  var ch2=''; [['BACARDI Rum Off-Prem','#00767B','8 Act','3 Audits','1 Kit','+12%'],['PATRON On-Prem','#7C3AED','4 Act','0 Audits','2 Kits','+15%'],['BACARDI RTD','#1E4DB7','1 Act','0 Audits','0 Kits','+7%']].forEach(function(c){ch2+='<div style="padding:8px 0;border-bottom:1px solid var(--border)"><div style="display:flex;justify-content:space-between;margin-bottom:4px"><span style="font-size:14px;font-weight:700;color:'+c[1]+'">'+c[0]+'</span><span style="font-size:14px;font-weight:700;color:#16A34A">'+c[5]+'</span></div><div style="display:flex;gap:6px;flex-wrap:wrap"><span style="font-size:13px;background:#E0F5F3;color:#00767B;padding:1px 6px;border-radius:10px">'+c[2]+'</span><span style="font-size:13px;background:#EEF2FF;color:#1E4DB7;padding:1px 6px;border-radius:10px">'+c[3]+'</span><span style="font-size:13px;background:#F5F3FF;color:#7C3AED;padding:1px 6px;border-radius:10px">'+c[4]+'</span></div></div>';});
+  var ch2=''; [].forEach(function(c){ch2+='<div style="padding:8px 0;border-bottom:1px solid var(--border)"><div style="display:flex;justify-content:space-between;margin-bottom:4px"><span style="font-size:14px;font-weight:700;color:'+c[1]+'">'+c[0]+'</span><span style="font-size:14px;font-weight:700;color:#16A34A">'+c[5]+'</span></div><div style="display:flex;gap:6px;flex-wrap:wrap"><span style="font-size:13px;background:#E0F5F3;color:#00767B;padding:1px 6px;border-radius:10px">'+c[2]+'</span><span style="font-size:13px;background:#EEF2FF;color:#1E4DB7;padding:1px 6px;border-radius:10px">'+c[3]+'</span><span style="font-size:13px;background:#F5F3FF;color:#7C3AED;padding:1px 6px;border-radius:10px">'+c[4]+'</span></div></div>';});
   z1+=w('Cross-Hub Performance','All hubs contributing','Live',ch2,'vp-w2');
   h+=zone('Commercial Performance','Sell-through &middot; market impact &middot; spend','vp-g3',z1);
 
   // Zone 2: Operational Risk
   var z2='';
-  var ar=''; ar+=row('BACARDI RTD Summer Push','25% complete &middot; 14 days behind',bdg('Behind','#FEE2E2','#991B1B')); ar+=row('BACARDI Rum Off-Prem','80% complete &middot; 2 need staffing',bdg('At Risk','#FEF3C7','#92400E')); ar+=row('PATRON On-Prem Elite','71% complete &middot; on track',bdg('On Track','#D1FAE5','#065F46'));
+  var ar='';   
   z2+=w('At-Risk Programs','Off track or behind pace','3 Programs',ar);
   var sg=''; sg+=row('Tampa, FL &mdash; Mar 28','Total Wine #892 &middot; Need 2 &middot; 0 confirmed',appr('Assign',"openDetailFromDash(6,\'workers\')")); sg+=row('Providence, RI &mdash; Apr 5','BevMo! #312 &middot; Need 2 &middot; 1 confirmed',appr('Assign',"openDetailFromDash(4,\'workers\')")); sg+=row('Brookline, MA &mdash; Apr 28','Star Market #33 &middot; Need 1 &middot; 0 confirmed',appr('Assign',"openDetailFromDash(13,\'workers\')"));
   z2+=w('Staffing &amp; Coverage Gaps','Events needing action','3 Gaps',sg);
   var cx=''; cx+=row('Tampa &mdash; Exec Score','71% vs 85% target','<span style="font-size:14px;font-weight:700;color:#E5484D">71%</span>'); cx+=row('Providence &mdash; Missing Recap','Event #17 &middot; Overdue 3 days','<span style="font-size:14px;font-weight:700;color:#D97706">Overdue</span>');
   z2+=w('Compliance Exceptions','Below threshold or overdue','2 Flags',cx);
-  var ps=''; [['#E5484D','Tampa below threshold 2 weeks running','Recommend staffing review'],['#F59E0B','BACARDI RTD at risk of missing Q2 target','$2.1K on $12K budget'],['#16A34A','PATRON lift +15% — strongest this quarter','Expand On-Premise coverage']].forEach(function(s){ps+='<div class="vp-sig"><div class="vp-sig-dot" style="background:'+s[0]+'"></div><div><div class="vp-sig-txt">'+s[1]+'</div><div class="vp-sig-sub">'+s[2]+'</div></div></div>';});
+  var ps=''; [].forEach(function(s){ps+='<div class="vp-sig"><div class="vp-sig-dot" style="background:'+s[0]+'"></div><div><div class="vp-sig-txt">'+s[1]+'</div><div class="vp-sig-sub">'+s[2]+'</div></div></div>';});
   z2+=w('Proactive Signals','AI-generated alerts','3 Signals',ps);
   z2+=w('Logistics Delays','Delivery and fulfillment issues','',stub('Logistics Integration Required','Connect EasyPost or ShipStation.','EasyPost'));
   var mr2='';
@@ -38083,7 +37761,7 @@ function renderVPDashboard(){
 
   // Zone 3: Governance
   var z3='';
-  var pa=''; pa+=row('BACARDI RTD &mdash; Budget Supplemental','$8K &middot; Finance &middot; Due Apr 15',appr('Approve',"switchModule(\'settings\');setTimeout(function(){showTab(\'financials\')},150)")); pa+=row('Jordan T. &mdash; Expense Reimb','$142 &middot; Event #1',appr('Review',"openDetailFromDash(1,\'financials\')")); pa+=row('Carlos B. &mdash; Pay Rate Change','$18 &rarr; $20/hr',appr('Review',"openDetailFromDash(1,\'financials\')"));
+  var pa='';  pa+=row('Jordan T. &mdash; Expense Reimb','$142 &middot; Event #1',appr('Review',"openDetailFromDash(1,\'financials\')")); pa+=row('Carlos B. &mdash; Pay Rate Change','$18 &rarr; $20/hr',appr('Review',"openDetailFromDash(1,\'financials\')"));
   z3+=w('Pending Approvals','Awaiting executive sign-off','3 Items',pa);
   var au=''; [['#16A34A','Expense approved &mdash; Jordan T. $142','2h ago'],['#3B82F6','Event closed &mdash; Whole Foods Cambridge','4h ago'],['#00767B','Worker added &mdash; Carlos B. to Tampa','6h ago'],['#F59E0B','Role modified &mdash; Dana Kim','1d ago']].forEach(function(a){au+='<div class="vp-arow"><div class="vp-adot" style="background:'+a[0]+'"></div><div class="vp-atxt">'+a[1]+'</div><div class="vp-atime">'+a[2]+'</div></div>';});
   z3+=w('Recent Audit Events','Notable actions','Last 3 Days',au);
@@ -38122,7 +37800,7 @@ function renderVPDashboard(){
   var z5='';
   var ra=''; [['#16A34A','<strong>Expense approved</strong> &mdash; Jordan T. $142','2h ago'],['#3B82F6','<strong>Event closed</strong> &mdash; Whole Foods Cambridge','4h ago'],['#00767B','<strong>Worker added</strong> &mdash; Carlos B. to Tampa','6h ago']].forEach(function(a){ra+='<div class="vp-arow"><div class="vp-adot" style="background:'+a[0]+'"></div><div class="vp-atxt">'+a[1]+'</div><div class="vp-atime">'+a[2]+'</div></div>';});
   z5+=w('Recent Activity','Latest actions','Last 48h',ra);
-  var te=''; te+=row('Total Wine #1205 &mdash; Boston','2:00-6:00 PM &middot; BACARDI Rum',bdg('Live Now','#DCFCE7','#166534')); te+=row('BevMo! #312 &mdash; Providence','Apr 5 &middot; PATRON &middot; Confirmed',bdg('3 days','#E0F5F3','#00767B')); te+=row('Total Wine #892 &mdash; Tampa','Apr 15 &middot; Staffing gap',bdg('13 days','#FEF3C7','#92400E'));
+  var te='';   te+=row('Total Wine #892 &mdash; Tampa','Apr 15 &middot; Staffing gap',bdg('13 days','#FEF3C7','#92400E'));
   z5+=w('Today&#39;s Events &amp; Upcoming','Live and scheduled','Live + 2',te);
   h+=zone('Supporting Activity','Activity feed &middot; upcoming','vp-g2',z5);
 
@@ -38513,7 +38191,7 @@ function renderWorkerPerf(area,ev){
   area.innerHTML='<div style="max-width:900px"><div style="font-size:16px;font-weight:800;color:var(--dark);margin-bottom:4px">Worker Performance</div><div style="font-size:14px;color:var(--slate);margin-bottom:20px">Top workers by execution score</div><div class="rep-kpi-grid">'+repKpi(avgSc+'%','Avg Exec Score','',true)+repKpi(avgR,'Avg Rating','',true)+repKpi(wkRows.length,'Active Workers','',true)+repKpi(wkRows.reduce(function(a,w){return a+w.ev;},0),'Events in Period','',true)+'</div><div class="rep-chart-card"><div class="rep-chart-title">Top Workers</div><table class="rep-table"><thead><tr><th>Worker</th><th>Score</th><th>Rating</th><th>Events</th><th>Reliability</th></tr></thead><tbody>'+rows+'</tbody></table></div></div>';
 }
 
-function renderSamplingAct(area,ev){var bd={'BACARDÍ Rum':{v:1240,e:892,s:634,sold:182},'BACARDÍ RTD':{v:876,e:621,s:445,sold:98},'PATRÓN':{v:543,e:421,s:287,sold:76}};var t={v:0,e:0,s:0,sold:0};Object.keys(bd).forEach(function(b){Object.keys(t).forEach(function(k){t[k]+=bd[b][k];});});var cr=t.v>0?((t.sold/t.v)*100).toFixed(1):0;area.innerHTML='<div style="max-width:900px"><div style="font-size:16px;font-weight:800;color:var(--dark);margin-bottom:4px">Sampling Activity</div><div style="font-size:14px;color:var(--slate);margin-bottom:20px">Consumer interactions \u00b7 March 2026</div><div class="rep-kpi-grid">'+repKpi(t.v.toLocaleString(),'Visitors','8%',true)+repKpi(t.e.toLocaleString(),'Engaged','12%',true)+repKpi(t.s.toLocaleString(),'Sampled','6%',true)+repKpi(cr+'%','Visitor\u2192Sale','0.3%',true)+'</div><div class="rep-chart-card"><div class="rep-chart-title">Consumer Funnel by Brand</div><canvas id="rep-c-funnel" height="110"></canvas></div></div>';setTimeout(function(){destroyChart('funnel');var c=document.getElementById('rep-c-funnel');if(c&&typeof Chart!=='undefined'){var brands=Object.keys(bd);_repCharts['funnel']=new Chart(c,{type:'bar',data:{labels:brands,datasets:[{label:'Visitors',data:brands.map(function(b){return bd[b].v;}),backgroundColor:'#DBEAFE',borderRadius:4},{label:'Engaged',data:brands.map(function(b){return bd[b].e;}),backgroundColor:'#93C5FD',borderRadius:4},{label:'Sampled',data:brands.map(function(b){return bd[b].s;}),backgroundColor:'#00767B',borderRadius:4},{label:'Sold',data:brands.map(function(b){return bd[b].sold;}),backgroundColor:'#1E4DB7',borderRadius:4}]},options:{responsive:true,plugins:{legend:{position:'bottom'}},scales:{y:{beginAtZero:true}}}});}},50);}
+function renderSamplingAct(area,ev){var bd = {};var t={v:0,e:0,s:0,sold:0};Object.keys(bd).forEach(function(b){Object.keys(t).forEach(function(k){t[k]+=bd[b][k];});});var cr=t.v>0?((t.sold/t.v)*100).toFixed(1):0;area.innerHTML='<div style="max-width:900px"><div style="font-size:16px;font-weight:800;color:var(--dark);margin-bottom:4px">Sampling Activity</div><div style="font-size:14px;color:var(--slate);margin-bottom:20px">Consumer interactions \u00b7 March 2026</div><div class="rep-kpi-grid">'+repKpi(t.v.toLocaleString(),'Visitors','8%',true)+repKpi(t.e.toLocaleString(),'Engaged','12%',true)+repKpi(t.s.toLocaleString(),'Sampled','6%',true)+repKpi(cr+'%','Visitor\u2192Sale','0.3%',true)+'</div><div class="rep-chart-card"><div class="rep-chart-title">Consumer Funnel by Brand</div><canvas id="rep-c-funnel" height="110"></canvas></div></div>';setTimeout(function(){destroyChart('funnel');var c=document.getElementById('rep-c-funnel');if(c&&typeof Chart!=='undefined'){var brands=Object.keys(bd);_repCharts['funnel']=new Chart(c,{type:'bar',data:{labels:brands,datasets:[{label:'Visitors',data:brands.map(function(b){return bd[b].v;}),backgroundColor:'#DBEAFE',borderRadius:4},{label:'Engaged',data:brands.map(function(b){return bd[b].e;}),backgroundColor:'#93C5FD',borderRadius:4},{label:'Sampled',data:brands.map(function(b){return bd[b].s;}),backgroundColor:'#00767B',borderRadius:4},{label:'Sold',data:brands.map(function(b){return bd[b].sold;}),backgroundColor:'#1E4DB7',borderRadius:4}]},options:{responsive:true,plugins:{legend:{position:'bottom'}},scales:{y:{beginAtZero:true}}}});}},50);}
 
 function renderChannelBrkdn(area,ev){var ch=['Off-Premise','On-Premise','Special'];var cd={};ch.forEach(function(c){cd[c]={t:0,cl:0,co:0};});ev.forEach(function(e){if(!cd[e.ch])return;cd[e.ch].t++;if(['Closed','Approved','Payment Pending'].indexOf(e.st)!==-1)cd[e.ch].cl++;cd[e.ch].co+=(e.payRate||18)*4+(e.productCost||0)+(e.suppliesCost||0);});area.innerHTML='<div style="max-width:900px"><div style="font-size:16px;font-weight:800;color:var(--dark);margin-bottom:4px">Channel Breakdown</div><div style="font-size:14px;color:var(--slate);margin-bottom:20px">March 2026</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px"><div class="rep-chart-card"><div class="rep-chart-title">Events by Channel</div><canvas id="rep-c-chpie" height="160"></canvas></div><div class="rep-chart-card"><div class="rep-chart-title">Completion Rate</div><canvas id="rep-c-chbar" height="160"></canvas></div></div></div>';setTimeout(function(){destroyChart('chpie');var c1=document.getElementById('rep-c-chpie');if(c1&&typeof Chart!=='undefined')_repCharts['chpie']=new Chart(c1,{type:'doughnut',data:{labels:ch,datasets:[{data:ch.map(function(c){return cd[c].t;}),backgroundColor:['#00767B','#1E4DB7','#7C3AED'],borderWidth:0}]},options:{responsive:true,plugins:{legend:{position:'bottom'}},cutout:'65%'}});destroyChart('chbar');var c2=document.getElementById('rep-c-chbar');if(c2&&typeof Chart!=='undefined')_repCharts['chbar']=new Chart(c2,{type:'bar',data:{labels:ch,datasets:[{label:'%',data:ch.map(function(c){var d=cd[c];return d.t>0?Math.round((d.cl/d.t)*100):0;}),backgroundColor:['#00767B','#1E4DB7','#7C3AED'],borderRadius:4}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,max:100}}}});},50);}
 
@@ -38708,10 +38386,10 @@ var _METRICS=['Events Completed','Completion Rate','Samples Distributed','Consum
 function initCustomBuilder(){var d=document.getElementById('rep-dims-list'),m=document.getElementById('rep-metrics-list');if(!d||!m)return;d.innerHTML=_DIMS.map(function(x){return '<div class="rep-dim-pill" onclick="selectCustomDim(this.textContent,this)">'+x+'</div>';}).join('');m.innerHTML=_METRICS.map(function(x){return '<div class="rep-metric-pill" onclick="selectCustomMetric(this.textContent,this)">'+x+'</div>';}).join('');var h=document.getElementById('rep-custom-group');if(h)h.style.display='none';}
 function selectCustomMetric(metric,el){document.querySelectorAll('.rep-metric-pill').forEach(function(p){p.classList.remove('active');});el.classList.add('active');_customMetric=metric;renderCustomChart();}
 function setCustomChartType(ct,el){document.querySelectorAll('.rep-ct').forEach(function(b){b.classList.remove('active');});el.classList.add('active');_customChartType=ct;if(_customMetric)renderCustomChart();}
-function renderCustomChart(){if(!_customMetric)return;var wrap=document.getElementById('rep-custom-chart-wrap'),tEl=document.getElementById('rep-custom-title'),sEl=document.getElementById('rep-custom-subtitle');if(!wrap)return;var g=document.getElementById('rep-custom-group')?document.getElementById('rep-custom-group').value:'brand';var labels={brand:['BACARDÍ Rum','BACARDÍ RTD','PATRÓN'],channel:['Off-Premise','On-Premise','Special'],hub:['Activations','Merchandising','On-Demand']};var lbl=labels[g]||labels.brand;var data=lbl.map(function(){return Math.round(Math.random()*50+20);});if(tEl)tEl.textContent=_customMetric+' by '+(g.charAt(0).toUpperCase()+g.slice(1));if(sEl)sEl.textContent='March 2026';if(_customChartType==='table'){destroyChart('custom');wrap.innerHTML='<table class="rep-table" style="width:100%"><thead><tr><th>'+(g.charAt(0).toUpperCase()+g.slice(1))+'</th><th>'+_customMetric+'</th></tr></thead><tbody>'+lbl.map(function(l,i){return '<tr><td>'+l+'</td><td style="font-weight:700">'+data[i]+'</td></tr>';}).join('')+'</tbody></table>';return;}wrap.innerHTML='<canvas id="rep-custom-canvas-chart"></canvas>';setTimeout(function(){destroyChart('custom');var c=document.getElementById('rep-custom-canvas-chart');if(!c||typeof Chart==='undefined')return;var type=_customChartType==='pie'?'doughnut':_customChartType;var ds=type==='doughnut'?[{data:data,backgroundColor:REP_COLORS.slice(0,lbl.length),borderWidth:0}]:[{label:_customMetric,data:data,backgroundColor:'#00767B',borderRadius:4}];_repCharts['custom']=new Chart(c,{type:type,data:{labels:lbl,datasets:ds},options:{responsive:true,plugins:{legend:{position:type==='doughnut'?'bottom':'top'}},cutout:type==='doughnut'?'60%':undefined,scales:type==='doughnut'?undefined:{y:{beginAtZero:true}}}});},50);}
+function renderCustomChart(){if(!_customMetric)return;var wrap=document.getElementById('rep-custom-chart-wrap'),tEl=document.getElementById('rep-custom-title'),sEl=document.getElementById('rep-custom-subtitle');if(!wrap)return;var g=document.getElementById('rep-custom-group')?document.getElementById('rep-custom-group').value:'brand';var labels={brand:[],channel:['Off-Premise','On-Premise','Special'],hub:['Activations','Merchandising','On-Demand']};var lbl=labels[g]||labels.brand;var data=lbl.map(function(){return Math.round(Math.random()*50+20);});if(tEl)tEl.textContent=_customMetric+' by '+(g.charAt(0).toUpperCase()+g.slice(1));if(sEl)sEl.textContent='March 2026';if(_customChartType==='table'){destroyChart('custom');wrap.innerHTML='<table class="rep-table" style="width:100%"><thead><tr><th>'+(g.charAt(0).toUpperCase()+g.slice(1))+'</th><th>'+_customMetric+'</th></tr></thead><tbody>'+lbl.map(function(l,i){return '<tr><td>'+l+'</td><td style="font-weight:700">'+data[i]+'</td></tr>';}).join('')+'</tbody></table>';return;}wrap.innerHTML='<canvas id="rep-custom-canvas-chart"></canvas>';setTimeout(function(){destroyChart('custom');var c=document.getElementById('rep-custom-canvas-chart');if(!c||typeof Chart==='undefined')return;var type=_customChartType==='pie'?'doughnut':_customChartType;var ds=type==='doughnut'?[{data:data,backgroundColor:REP_COLORS.slice(0,lbl.length),borderWidth:0}]:[{label:_customMetric,data:data,backgroundColor:'#00767B',borderRadius:4}];_repCharts['custom']=new Chart(c,{type:type,data:{labels:lbl,datasets:ds},options:{responsive:true,plugins:{legend:{position:type==='doughnut'?'bottom':'top'}},cutout:type==='doughnut'?'60%':undefined,scales:type==='doughnut'?undefined:{y:{beginAtZero:true}}}});},50);}
 
 /* Advanced Charts */
-function initAdvancedCharts(){setTimeout(function(){destroyChart('adv-lift');var c1=document.getElementById('rep-adv-lift');if(c1&&typeof Chart!=='undefined')_repCharts['adv-lift']=new Chart(c1,{type:'line',data:{labels:['-8wk','-6wk','-4wk','-2wk','Activation','+2wk','+4wk','+6wk','+8wk'],datasets:[{label:'Activation Stores',data:[4.2,4.1,4.3,4.2,4.8,6.1,7.2,7.8,8.1],borderColor:'#00767B',backgroundColor:'rgba(0,118,123,.08)',fill:true,tension:.4,pointRadius:4},{label:'Control Stores',data:[4.1,4.2,4.0,4.1,4.2,4.3,4.1,4.2,4.2],borderColor:'#94A3B8',borderDash:[4,4],backgroundColor:'transparent',tension:.4,pointRadius:3}]},options:{responsive:true,plugins:{legend:{position:'bottom'}},scales:{y:{title:{display:true,text:'Units/Store/Wk'}}}}});var hm=document.getElementById('rep-adv-heatmap');if(hm){var mkts=[{m:'Boston',v:94},{m:'NY',v:89},{m:'Chicago',v:82},{m:'Atlanta',v:78},{m:'Tampa',v:85},{m:'Houston',v:71}];hm.innerHTML=mkts.map(function(mk){var p=(mk.v-65)/35;return '<div style="background:rgba(0,118,123,'+(0.3+p*0.7)+');border-radius:6px;padding:10px 8px;text-align:center"><div style="font-size:14px;font-weight:700;color:var(--dark)">'+mk.m+'</div><div style="font-size:18px;font-weight:800;color:var(--dark)">'+mk.v+'</div></div>';}).join('');}destroyChart('adv-sku');var c2=document.getElementById('rep-adv-sku');if(c2&&typeof Chart!=='undefined')_repCharts['adv-sku']=new Chart(c2,{type:'bar',data:{labels:['Superior 750','Gold 1.75L','Coconut 750','Spiced 750','Silver 750','Repo 750'],datasets:[{label:'Pre',data:[8.2,3.1,4.8,5.2,6.1,2.8],backgroundColor:'#E5E7EB',borderRadius:4},{label:'Post',data:[12.4,4.9,7.2,8.1,8.4,3.9],backgroundColor:'#00767B',borderRadius:4}]},options:{responsive:true,plugins:{legend:{position:'bottom'}},scales:{y:{beginAtZero:true}}}});destroyChart('scatter');var sc=document.getElementById('rep-adv-scatter');if(sc&&typeof Chart!=='undefined'){var scData=[{x:96,y:28},{x:94,y:24},{x:91,y:21},{x:89,y:19},{x:88,y:17},{x:86,y:15},{x:84,y:12},{x:93,y:22},{x:87,y:16},{x:92,y:20},{x:85,y:13},{x:90,y:18},{x:95,y:26},{x:83,y:11},{x:97,y:30}];_repCharts['scatter']=new Chart(sc,{type:'scatter',data:{datasets:[{label:'Events',data:scData,backgroundColor:'rgba(0,118,123,.6)',pointRadius:6},{label:'Trend',data:[{x:80,y:8},{x:100,y:32}],type:'line',borderColor:'#1E4DB7',borderDash:[4,4],pointRadius:0,fill:false}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{title:{display:true,text:'Exec Score'},min:78,max:100},y:{title:{display:true,text:'Lift %'},min:0}}}});}destroyChart('bench');var bc=document.getElementById('rep-adv-bench');if(bc&&typeof Chart!=='undefined'){_repCharts['bench']=new Chart(bc,{type:'bar',data:{labels:['Completion','Interactions/Event','Reliability'],datasets:[{label:'Bacardi USA',data:[87,42,94],backgroundColor:'#00767B',borderRadius:4},{label:'Industry Avg',data:[74,31,81],backgroundColor:'#CBD5E1',borderRadius:4}]},options:{responsive:true,plugins:{legend:{position:'bottom'}},scales:{y:{beginAtZero:true,max:100}}}});}},100);}
+function initAdvancedCharts(){setTimeout(function(){destroyChart('adv-lift');var c1=document.getElementById('rep-adv-lift');if(c1&&typeof Chart!=='undefined')_repCharts['adv-lift']=new Chart(c1,{type:'line',data:{labels:['-8wk','-6wk','-4wk','-2wk','Activation','+2wk','+4wk','+6wk','+8wk'],datasets:[{label:'Activation Stores',data:[4.2,4.1,4.3,4.2,4.8,6.1,7.2,7.8,8.1],borderColor:'#00767B',backgroundColor:'rgba(0,118,123,.08)',fill:true,tension:.4,pointRadius:4},{label:'Control Stores',data:[4.1,4.2,4.0,4.1,4.2,4.3,4.1,4.2,4.2],borderColor:'#94A3B8',borderDash:[4,4],backgroundColor:'transparent',tension:.4,pointRadius:3}]},options:{responsive:true,plugins:{legend:{position:'bottom'}},scales:{y:{title:{display:true,text:'Units/Store/Wk'}}}}});var hm=document.getElementById('rep-adv-heatmap');if(hm){var mkts=[{m:'Boston',v:94},{m:'NY',v:89},{m:'Chicago',v:82},{m:'Atlanta',v:78},{m:'Tampa',v:85},{m:'Houston',v:71}];hm.innerHTML=mkts.map(function(mk){var p=(mk.v-65)/35;return '<div style="background:rgba(0,118,123,'+(0.3+p*0.7)+');border-radius:6px;padding:10px 8px;text-align:center"><div style="font-size:14px;font-weight:700;color:var(--dark)">'+mk.m+'</div><div style="font-size:18px;font-weight:800;color:var(--dark)">'+mk.v+'</div></div>';}).join('');}destroyChart('adv-sku');var c2=document.getElementById('rep-adv-sku');if(c2&&typeof Chart!=='undefined')_repCharts['adv-sku']=new Chart(c2,{type:'bar',data:{labels:['Superior 750','Gold 1.75L','Coconut 750','Spiced 750','Silver 750','Repo 750'],datasets:[{label:'Pre',data:[8.2,3.1,4.8,5.2,6.1,2.8],backgroundColor:'#E5E7EB',borderRadius:4},{label:'Post',data:[12.4,4.9,7.2,8.1,8.4,3.9],backgroundColor:'#00767B',borderRadius:4}]},options:{responsive:true,plugins:{legend:{position:'bottom'}},scales:{y:{beginAtZero:true}}}});destroyChart('scatter');var sc=document.getElementById('rep-adv-scatter');if(sc&&typeof Chart!=='undefined'){var scData=[{x:96,y:28},{x:94,y:24},{x:91,y:21},{x:89,y:19},{x:88,y:17},{x:86,y:15},{x:84,y:12},{x:93,y:22},{x:87,y:16},{x:92,y:20},{x:85,y:13},{x:90,y:18},{x:95,y:26},{x:83,y:11},{x:97,y:30}];_repCharts['scatter']=new Chart(sc,{type:'scatter',data:{datasets:[{label:'Events',data:scData,backgroundColor:'rgba(0,118,123,.6)',pointRadius:6},{label:'Trend',data:[{x:80,y:8},{x:100,y:32}],type:'line',borderColor:'#1E4DB7',borderDash:[4,4],pointRadius:0,fill:false}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{title:{display:true,text:'Exec Score'},min:78,max:100},y:{title:{display:true,text:'Lift %'},min:0}}}});}destroyChart('bench');var bc=document.getElementById('rep-adv-bench');if(bc&&typeof Chart!=='undefined'){_repCharts['bench']=new Chart(bc,{type:'bar',data:{labels:['Completion','Interactions/Event','Reliability'],datasets:[{label:'Your Company',data:[0,0,0],backgroundColor:'#00767B',borderRadius:4},{label:'Industry Avg',data:[74,31,81],backgroundColor:'#CBD5E1',borderRadius:4}]},options:{responsive:true,plugins:{legend:{position:'bottom'}},scales:{y:{beginAtZero:true,max:100}}}});}},100);}
 
 
 /* FyldCard Module */
